@@ -188,24 +188,24 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
         }
 
-        /* Arrow icon using Unicode or simple SVG approach */
-        .back-to-top::before {
-    content: ''; /* نترك المحتوى فارغاً لأننا سنضع صورة */
-    display: inline-block; /* للسماح بتحديد العرض والارتفاع */
+       /* Arrow icon perfectly centered inside the circle */
+.back-to-top::before {
+    content: ''; /* المحتوى فارغ للاعتماد على الخلفية */
+    display: block; /* ليتعامل معه الفليكس بوكس كعنصر كتلة */
     
-    /* تحديد مسار الصورة وأبعادها */
+    /* أبعاد الأيقونة داخل الدائرة */
+    width: 24px;  
+    height: 24px; 
+    
+    /* جلب الصورة وضبطها لتكون محصورة ومنصفة */
     background-image: url('arrow.png'); 
-    width: 20px;  /* يمكنك تغيير العرض حسب حجم الأيقونة المناسب لك */
-    height: 20px; /* يمكنك تغيير الارتفاع حسب حجم الأيقونة المناسب لك */
+    background-size: contain;     /* تضمن أن الأيقونة لن تخرج عن حدود الـ 24px */
+    background-repeat: no-repeat; /* عدم تكرار الصورة */
+    background-position: center;  /* التوسيط داخل الـ 24px */
     
-    /* ضبط ضبط الصورة داخل الأبعاد */
-    background-size: contain;     /* لجعل الصورة تتناسب تماماً مع الأبعاد */
-    background-repeat: no-repeat; /* لمنع تكرار الصورة */
-    background-position: center;  /* لتوسيط الصورة */
-    
-    /* اختياري: إضافة مسافة صغيرة بين الأيقونة والنص إذا كان هناك نص */
-    margin-right: 5px; 
-    vertical-align: middle; /* لضبط محاذاة الأيقونة عمودياً مع النص */
+    /* تصفير الهوامش لضمان عدم حدوث إزاحة بسبب اتجاه الصفحة RTL */
+    margin: 0; 
+    padding: 0;
 }
 
         .cover {
