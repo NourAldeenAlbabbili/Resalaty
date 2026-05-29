@@ -2172,6 +2172,32 @@
         }
         window.addEventListener('scroll', updateActive, { passive: true });
         updateActive();
+        // ── إضافة صوت نقرة تفاعلية للموقع ───────────────────
+        
+        // 1. تجهيز كائن الصوت وتحديد مسار الملف
+        const clickSound = new Audio('click.mp3');
+        clickSound.volume = 0.4; // ضبط مستوى الصوت (0.0 هادئ جداً إلى 1.0 أعلى شيء)
+
+        // 2. دالة تشغيل الصوت مع إعادة التصفير الفوري
+        function playClick() {
+            // كود سحري لتصفير الوقت: يسمح بتكرار الصوت بسرعة جنونية إذا نقر المستخدم عدة نقرات متتالية دون انتظار انتهاء الصوت الأول
+            clickSound.currentTime = 0; 
+            
+            // تشغيل الصوت (مع معالجة حظر المتصفحات للميديا التلقائية)
+            clickSound.play().catch(error => {
+                console.log("المتصفح حظر تشغيل الصوت حتى يتفاعل المستخدم أولاً:", error);
+            });
+        }
+
+        // 3. تطبيق الصوت على العناصر التفاعلية في الموقع
+        // الكود يراقب أي نقرة (ماوس أو لمس جوال) على الأزرار، الروابط، القوائم، أو أزرار لوحة المفاتيح
+        document.addEventListener('DOMContentLoaded', () => {
+            const interactiveElements = document.querySelectorAll('button, a, .toc-link, .key, .dark-mode-toggle, .mini-card');
+            
+            interactiveElements.forEach(element => {
+                element.addEventListener('click', playClick);
+            });
+        });
     </script>
 </body>
 </html>
