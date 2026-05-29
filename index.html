@@ -1288,7 +1288,7 @@
             }
         }
 
-        /* ── FOOTER ─────────────────────────────────────────── */
+/* ── FOOTER ─────────────────────────────────────────── */
         .site-footer {
             background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
             color: #e2e8f0;
@@ -1298,6 +1298,15 @@
             border-top: 4px solid var(--secondary);
             position: relative;
             z-index: 1;
+        }
+
+        /* كلاس مخصص للعبارة الترحيبية فوق الأيقونات لتعطي مسافة وسطر منفصل */
+        .footer-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-bottom: 20px; /* يعطي مساحة ممتازة قبل الأيقونات */
+            display: block; /* يجبرها على أخذ سطر كامل بمفردها */
         }
 
         .footer-icons {
@@ -1344,29 +1353,27 @@
         .footer-icon-link.insta:hover { background: #E4405F; }
         .footer-icon-link.tele:hover { background: #0088cc; }
 
-       .footer-address {
-    font-size: 14px;
-    opacity: 0.8;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    flex-wrap: wrap;
-    
-    /* التعديل الجديد لتثبيت اللون */
-    color: #e2e8f0 !important; /* نفس لون الـ footer الرمادي الفاتح الرايق */
-    text-decoration: none !important; /* إلغاء الخط السفلي تماماً */
-}
+        /* التنسيق الصحيح لإجبار الرابط على اللون الرمادي الفاتح */
+        .footer-address {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            color: #e2e8f0 !important;
+            text-decoration: none !important;
+        }
 
-/* لمنع الرابط من تغيير لونه إذا انكبس عليه أو صار "مزاراً" */
-.footer-address, 
-.footer-address:visited, 
-.footer-address:hover, 
-.footer-address:active {
-    color: #e2e8f0 !important;
-    text-decoration: none !important;
-}
+        /* منع الرابط تماماً من أخذ اللون البنفسجي بعد الزيارة */
+        .footer-address:visited, 
+        .footer-address:hover, 
+        .footer-address:active {
+            color: #e2e8f0 !important;
+            text-decoration: none !important;
+        }
 
         .footer-address img {
             width: 18px;
@@ -1403,8 +1410,7 @@
             font-size: 13px;
             opacity: 0.7;
             margin-top: 16px;
-        }
-    </style>
+        }    </style>
 </head>
 <body>
 
