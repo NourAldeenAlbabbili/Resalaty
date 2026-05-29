@@ -1250,8 +1250,10 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            filter: brightness(0) invert(1);
-            transition: filter 0.3s;
+            /* إزالة الفلتر الذي كان يبيض الأيقونة */
+            filter: none;
+            opacity: 1;
+            transition: filter 0.3s, opacity 0.3s;
         }
 
         .footer-icon-link:hover {
@@ -1281,8 +1283,9 @@
         .footer-address img {
             width: 18px;
             height: 18px;
-            filter: brightness(0) invert(1);
-            opacity: 0.8;
+            /* إزالة الفلتر أيضًا من أيقونة الموقع */
+            filter: none;
+            opacity: 0.9;
         }
 
         .footer-contact-row {
@@ -1994,7 +1997,7 @@
         </div>
 
         <div class="footer-address">
-            <img src="location.png" alt="Location" style="width:18px; height:18px; filter: brightness(0) invert(1); opacity:0.8;">
+            <img src="location.png" alt="Location" style="width:18px; height:18px; filter: none; opacity:0.9;">
             سوريا - دمشق - الجسر الابيض - شركسية - مقابل جامع الجسر الابيض
         </div>
 
