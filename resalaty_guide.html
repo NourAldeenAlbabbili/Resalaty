@@ -1,0 +1,1999 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل نظام رسالتي الشامل</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --primary: #1e3a8a;
+            --primary-dark: #0f1e5c;
+            --primary-light: #dbeafe;
+            --secondary: #f59e0b;
+            --secondary-dark: #b45309;
+            --secondary-light: #fef3c7;
+            --accent: #10b981;
+            --accent-dark: #065f46;
+            --accent-light: #d1fae5;
+            --danger: #ef4444;
+            --danger-light: #fee2e2;
+            --bg: #f1f5f9;
+            --surface: #ffffff;
+            --surface-alt: #f8fafc;
+            --ink: #0f172a;
+            --ink-light: #475569;
+            --ink-muted: #94a3b8;
+            --border: #e2e8f0;
+            --border-dark: #cbd5e1;
+            --radius-sm: 6px;
+            --radius: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 10px 20px -5px rgba(0, 0, 0, 0.04);
+            --shadow-lg: 0 20px 40px -10px rgba(0, 0, 0, 0.08), 0 8px 16px -6px rgba(0, 0, 0, 0.04);
+            --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: var(--bg);
+            background-image:
+                linear-gradient(135deg, rgba(30, 58, 138, 0.03) 0%, transparent 50%),
+                linear-gradient(225deg, rgba(245, 158, 11, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.04) 0%, transparent 40%);
+            color: var(--ink);
+            line-height: 1.75;
+            font-size: 16px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Geometric background pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231e3a8a' fill-opacity='0.02'%3E%3Cpath d='M40 0L80 40L40 80L0 40z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-size: 80px 80px;
+            opacity: 0.7;
+        }
+
+        /* Floating geometric accents */
+        body::after {
+            content: '';
+            position: fixed;
+            top: -250px;
+            left: -250px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(30, 58, 138, 0.04) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ── COVER ─────────────────────────────────────────── */
+        .cover {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 40%, #0f1e5c 70%, #0a0f1f 100%);
+            color: #fff;
+            text-align: center;
+            padding: 90px 40px 80px;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%);
+            margin-bottom: 0;
+            z-index: 1;
+        }
+
+        .cover::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(245, 158, 11, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(16, 185, 129, 0.12) 0%, transparent 50%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .cover::after {
+            content: '';
+            position: absolute;
+            bottom: -60px;
+            right: -100px;
+            width: 350px;
+            height: 350px;
+            border: 2px solid rgba(245, 158, 11, 0.25);
+            border-radius: 60px;
+            transform: rotate(25deg);
+            pointer-events: none;
+        }
+
+        .cover-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 28px;
+            border-radius: 50px;
+            font-size: 13px;
+            letter-spacing: 0.06em;
+            margin-bottom: 28px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cover h1 {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .cover h1 span {
+            color: var(--secondary);
+            display: inline-block;
+        }
+
+        .cover .subtitle {
+            font-size: 1.15rem;
+            opacity: 0.8;
+            max-width: 520px;
+            margin: 0 auto 36px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cover-meta {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+            opacity: 0.75;
+            font-size: 14px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cover-meta span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            padding: 8px 16px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* ── LAYOUT ─────────────────────────────────────────── */
+        .wrapper {
+            max-width: 1060px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 0;
+            min-height: calc(100vh - 200px);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── SIDEBAR / TOC ──────────────────────────────────── */
+        .sidebar {
+            position: sticky;
+            top: 24px;
+            height: calc(100vh - 48px);
+            overflow-y: auto;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 28px 18px;
+            margin-top: 24px;
+            box-shadow: var(--shadow);
+            z-index: 10;
+            transition: var(--transition);
+        }
+
+        .sidebar:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .sidebar h3 {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin: 22px 0 10px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid var(--primary-light);
+            position: relative;
+        }
+
+        .sidebar h3:first-child {
+            margin-top: 0;
+        }
+
+        .sidebar h3::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--secondary);
+        }
+
+        .toc-link {
+            display: block;
+            padding: 7px 12px;
+            border-radius: var(--radius-sm);
+            font-size: 13.5px;
+            color: var(--ink-light);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-right: 3px solid transparent;
+            margin-bottom: 2px;
+            position: relative;
+        }
+
+        .toc-link:hover {
+            background: var(--primary-light);
+            color: var(--primary);
+            transform: translateX(-4px);
+            border-right-color: var(--primary);
+        }
+
+        .toc-link.active {
+            background: var(--primary-light);
+            color: var(--primary);
+            font-weight: 700;
+            border-right-color: var(--secondary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .toc-sub {
+            padding-right: 20px;
+            font-size: 12.5px;
+        }
+
+        /* ── MAIN CONTENT ──────────────────────────────────── */
+        .main-content {
+            padding: 40px 40px 80px 36px;
+            min-width: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ── PART DIVIDER ───────────────────────────────────── */
+        .part-divider {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, #1e40af 100%);
+            color: #fff;
+            padding: 44px 48px;
+            margin: 50px -40px 40px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 98% 100%, 0 100%);
+        }
+
+        .part-divider::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -80px;
+            width: 250px;
+            height: 250px;
+            border: 2px solid rgba(245, 158, 11, 0.3);
+            border-radius: 50px;
+            transform: rotate(35deg);
+            pointer-events: none;
+        }
+
+        .part-divider::after {
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            right: 60px;
+            width: 150px;
+            height: 150px;
+            background: rgba(16, 185, 129, 0.15);
+            border-radius: 40px;
+            transform: rotate(15deg);
+            pointer-events: none;
+        }
+
+        .part-divider .part-num {
+            font-size: 56px;
+            font-weight: 900;
+            opacity: 0.12;
+            line-height: 1;
+            position: relative;
+            z-index: 2;
+        }
+
+        .part-divider .part-info {
+            position: relative;
+            z-index: 2;
+        }
+
+        .part-divider .part-info .part-label {
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            opacity: 0.65;
+            margin-bottom: 6px;
+        }
+
+        .part-divider .part-info h2 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        /* ── SECTION HEADINGS ───────────────────────────────── */
+        .section {
+            margin-bottom: 56px;
+            scroll-margin-top: 40px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+
+        .section-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .icon-blue {
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .icon-gold {
+            background: var(--secondary-light);
+            color: var(--secondary-dark);
+        }
+
+        .icon-green {
+            background: var(--accent-light);
+            color: var(--accent-dark);
+        }
+
+        .icon-red {
+            background: var(--danger-light);
+            color: var(--danger);
+        }
+
+        h2.section-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--ink);
+            position: relative;
+        }
+
+        h3.subsection {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--ink);
+            margin: 32px 0 16px;
+            padding-right: 16px;
+            border-right: 4px solid var(--secondary);
+            position: relative;
+        }
+
+        /* ── CARDS ──────────────────────────────────────────── */
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin-bottom: 18px;
+            box-shadow: var(--shadow);
+            transition: all var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 40%;
+            background: var(--primary);
+            border-radius: 0 0 0 var(--radius-sm);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+            border-color: var(--border-dark);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+            height: 60%;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .mini-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all var(--transition);
+            cursor: default;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mini-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: var(--secondary);
+            border-radius: 3px 3px 0 0;
+            transition: width 0.3s ease;
+        }
+
+        .mini-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-6px);
+            border-color: var(--secondary);
+        }
+
+        .mini-card:hover::after {
+            width: 60%;
+        }
+
+        .mini-card .mc-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+            transition: var(--transition);
+        }
+
+        .mini-card:hover .mc-icon {
+            transform: scale(1.15);
+        }
+
+        .mini-card .mc-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 6px;
+        }
+
+        .mini-card .mc-desc {
+            font-size: 12.5px;
+            color: var(--ink-light);
+            line-height: 1.55;
+        }
+
+        /* ── STEP LIST ──────────────────────────────────────── */
+        .steps {
+            list-style: none;
+            counter-reset: step;
+        }
+
+        .steps li {
+            counter-increment: step;
+            display: flex;
+            gap: 18px;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .steps li:last-child {
+            border-bottom: none;
+        }
+
+        .steps li:hover {
+            background: var(--surface-alt);
+            padding-right: 12px;
+            margin-right: -12px;
+            border-radius: var(--radius-sm);
+        }
+
+        .steps li::before {
+            content: counter(step);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 2px;
+            box-shadow: 0 2px 8px rgba(30, 58, 138, 0.3);
+            transition: var(--transition);
+        }
+
+        .steps li:hover::before {
+            background: var(--secondary);
+            box-shadow: 0 2px 12px rgba(245, 158, 11, 0.4);
+            transform: scale(1.1);
+        }
+
+        .step-content strong {
+            display: block;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .step-content span {
+            font-size: 14px;
+            color: var(--ink-light);
+        }
+
+        /* ── KEYPAD DIAGRAM ─────────────────────────────────── */
+        .keypad {
+            display: inline-grid;
+            grid-template-columns: repeat(4, 52px);
+            gap: 8px;
+            direction: ltr;
+        }
+
+        .key {
+            width: 52px;
+            height: 52px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 16px;
+            font-weight: 600;
+            border: 2px solid var(--border-dark);
+            background: var(--surface);
+            box-shadow: var(--shadow-sm);
+            color: var(--ink);
+            transition: all var(--transition);
+        }
+
+        .key:hover {
+            box-shadow: var(--shadow);
+            transform: translateY(-2px);
+        }
+
+        .key.fn {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary-dark);
+            box-shadow: 0 3px 0 var(--primary-dark);
+        }
+
+        .key.fn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 5px 0 var(--primary-dark);
+        }
+
+        .key.special {
+            background: var(--secondary-light);
+            border-color: #f59e0b;
+            box-shadow: 0 3px 0 #d97706;
+            color: var(--secondary-dark);
+        }
+
+        .key.special:hover {
+            background: #fef3c7;
+            transform: translateY(-1px);
+            box-shadow: 0 5px 0 #d97706;
+        }
+
+        .key.nav {
+            background: var(--accent-light);
+            border-color: #10b981;
+            box-shadow: 0 3px 0 #059669;
+            color: var(--accent-dark);
+        }
+
+        .key.nav:hover {
+            background: #d1fae5;
+            transform: translateY(-1px);
+            box-shadow: 0 5px 0 #059669;
+        }
+
+        .keypad-wrap {
+            display: flex;
+            gap: 36px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin: 24px 0;
+        }
+
+        .key-legend {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .key-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 13.5px;
+            padding: 6px 10px;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+        }
+
+        .key-legend-item:hover {
+            background: var(--surface-alt);
+        }
+
+        .legend-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        .dot-blue {
+            background: var(--primary);
+        }
+
+        .dot-gold {
+            background: #f59e0b;
+        }
+
+        .dot-green {
+            background: var(--accent);
+        }
+
+        .dot-gray {
+            background: var(--border-dark);
+        }
+
+        /* ── STATUS BOX ─────────────────────────────────────── */
+        .status-box {
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .status-box:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .status-box.info {
+            background: var(--primary-light);
+            border-color: #93c5fd;
+            border-right: 5px solid var(--primary);
+        }
+
+        .status-box.warn {
+            background: var(--secondary-light);
+            border-color: #fcd34d;
+            border-right: 5px solid var(--secondary);
+        }
+
+        .status-box.success {
+            background: var(--accent-light);
+            border-color: #6ee7b7;
+            border-right: 5px solid var(--accent);
+        }
+
+        .status-box.danger {
+            background: var(--danger-light);
+            border-color: #fca5a5;
+            border-right: 5px solid var(--danger);
+        }
+
+        .status-icon {
+            font-size: 28px;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .status-box:hover .status-icon {
+            transform: scale(1.2);
+        }
+
+        .status-text strong {
+            display: block;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .status-text span {
+            font-size: 13.5px;
+            line-height: 1.6;
+        }
+
+        /* ── SCREENS ─────────────────────────────────────────── */
+        .screen-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 24px 0;
+        }
+
+        .screen {
+            width: 135px;
+            background: #1a1a2e;
+            border-radius: var(--radius-sm);
+            padding: 10px;
+            border: 3px solid #334155;
+            flex-shrink: 0;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .screen:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--secondary);
+        }
+
+        .screen-top {
+            background: #0a0a14;
+            border-radius: 4px;
+            padding: 8px;
+            min-height: 65px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 8px;
+            color: #86efac;
+            line-height: 1.5;
+            white-space: pre;
+            overflow: hidden;
+        }
+
+        .screen-label {
+            text-align: center;
+            font-size: 11px;
+            color: var(--ink-muted);
+            margin-top: 8px;
+            font-weight: 600;
+        }
+
+        /* ── CODE ─────────────────────────────────────────────── */
+        .code-block {
+            background: #0f172a;
+            color: #e2e8f0;
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            line-height: 1.8;
+            overflow-x: auto;
+            margin: 18px 0;
+            border: 1px solid #1e293b;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .code-block::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            right: 16px;
+            width: 10px;
+            height: 10px;
+            background: var(--secondary);
+            border-radius: 50%;
+        }
+
+        .code-block .kw {
+            color: #7dd3fc;
+        }
+
+        .code-block .fn {
+            color: #a78bfa;
+        }
+
+        .code-block .str {
+            color: #86efac;
+        }
+
+        .code-block .cm {
+            color: #64748b;
+            font-style: italic;
+        }
+
+        .code-block .num {
+            color: #fb923c;
+        }
+
+        .code-block .type {
+            color: #f0abfc;
+        }
+
+        /* ── FUNCTION DOC ────────────────────────────────────── */
+        .fn-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .fn-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .fn-header {
+            background: var(--surface-alt);
+            padding: 14px 20px;
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .fn-name {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .fn-layer {
+            font-size: 11px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+        }
+
+        .fn-body {
+            padding: 16px 20px;
+        }
+
+        .fn-desc {
+            font-size: 14px;
+            color: var(--ink-light);
+            margin-bottom: 14px;
+            line-height: 1.7;
+        }
+
+        .fn-params {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 13px;
+        }
+
+        .fn-params th {
+            background: var(--surface-alt);
+            padding: 10px 14px;
+            text-align: right;
+            font-weight: 600;
+            border: 1px solid var(--border);
+        }
+
+        .fn-params td {
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        .param-name {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .param-type {
+            font-size: 11px;
+            color: var(--ink-muted);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .layer-student {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .layer-teacher {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .layer-gateway {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .layer-server {
+            background: #ede9fe;
+            color: #5b21b6;
+        }
+
+        /* ── FEATURE TABLE ───────────────────────────────────── */
+        .feature-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: 14px;
+            margin: 18px 0;
+            box-shadow: var(--shadow);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .feature-table th {
+            background: var(--primary);
+            color: #fff;
+            padding: 13px 18px;
+            text-align: right;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.02em;
+        }
+
+        .feature-table td {
+            padding: 12px 18px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            background: var(--surface);
+            transition: var(--transition);
+        }
+
+        .feature-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .feature-table tr:hover td {
+            background: var(--primary-light);
+        }
+
+        .check {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .cross {
+            color: var(--danger);
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        /* ── INVESTOR SECTION ────────────────────────────────── */
+        .investor-hero {
+            background: linear-gradient(135deg, #0f172a, #1e3a8a 60%, #1e40af 100%);
+            color: #fff;
+            border-radius: var(--radius-xl);
+            padding: 48px 40px;
+            margin-bottom: 36px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .investor-hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            border: 2px solid rgba(245, 158, 11, 0.25);
+            border-radius: 60px;
+            transform: rotate(30deg);
+        }
+
+        .investor-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            right: -60px;
+            width: 200px;
+            height: 200px;
+            background: rgba(16, 185, 129, 0.12);
+            border-radius: 50px;
+            transform: rotate(20deg);
+        }
+
+        .investor-hero h3 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .investor-hero p {
+            opacity: 0.8;
+            font-size: 1.05rem;
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .kpi-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 18px;
+            margin: 28px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .kpi {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: var(--radius);
+            padding: 22px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .kpi:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .kpi .val {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--secondary);
+        }
+
+        .kpi .lab {
+            font-size: 12px;
+            opacity: 0.7;
+            margin-top: 6px;
+            line-height: 1.5;
+        }
+
+        .feature-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 40px;
+            padding: 10px 18px;
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--ink);
+            margin: 5px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .feature-pill:hover {
+            box-shadow: var(--shadow);
+            transform: translateY(-3px);
+            border-color: var(--secondary);
+            background: var(--secondary-light);
+        }
+
+        .pill-icon {
+            font-size: 17px;
+        }
+
+        .arch-diagram {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            text-align: center;
+            margin: 24px 0;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .arch-diagram:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .arch-nodes {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+            flex-wrap: wrap;
+        }
+
+        .arch-node {
+            background: var(--surface-alt);
+            border: 2px solid var(--border-dark);
+            border-radius: var(--radius);
+            padding: 14px 20px;
+            text-align: center;
+            min-width: 110px;
+            transition: var(--transition);
+            cursor: default;
+        }
+
+        .arch-node:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow);
+            transform: translateY(-3px);
+            background: var(--primary-light);
+        }
+
+        .arch-node .an-icon {
+            font-size: 26px;
+            margin-bottom: 6px;
+        }
+
+        .arch-node .an-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--ink);
+        }
+
+        .arch-node .an-sub {
+            font-size: 10px;
+            color: var(--ink-muted);
+            margin-top: 3px;
+        }
+
+        .arch-arrow {
+            font-size: 20px;
+            color: var(--secondary);
+            padding: 0 10px;
+            flex-shrink: 0;
+            font-weight: 700;
+        }
+
+        /* ── MISC ─────────────────────────────────────────────── */
+        p {
+            margin-bottom: 16px;
+            color: var(--ink-light);
+        }
+
+        ul,
+        ol {
+            padding-right: 24px;
+            margin-bottom: 16px;
+            color: var(--ink-light);
+        }
+
+        li {
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        strong {
+            color: var(--ink);
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid var(--border);
+            margin: 36px 0;
+        }
+
+        .note {
+            background: var(--secondary-light);
+            border-right: 5px solid var(--secondary);
+            padding: 14px 18px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 14px;
+            margin: 18px 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .note strong {
+            color: var(--secondary-dark);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+        }
+
+        .badge-new {
+            background: var(--primary-light);
+            color: #1e40af;
+        }
+
+        .badge-pro {
+            background: var(--secondary-light);
+            color: #92400e;
+        }
+
+        /* Scrollbar styling */
+        .sidebar::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .sidebar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb {
+            background: var(--border-dark);
+            border-radius: 10px;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb:hover {
+            background: var(--ink-muted);
+        }
+
+        @media(max-width:760px) {
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .main-content {
+                padding: 20px 16px;
+            }
+
+            .part-divider {
+                margin: 32px -16px 24px;
+                padding: 28px 18px;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cover {
+                padding: 48px 20px;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 50% 100%, 0 95%);
+            }
+
+            .cover h1 {
+                font-size: 1.8rem;
+            }
+
+            .arch-nodes {
+                gap: 8px;
+            }
+
+            .arch-arrow {
+                transform: rotate(90deg);
+                padding: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- COVER -->
+    <div class="cover">
+        <div class="cover-badge"><img src="Resalaty.svg" width="265" height="265" alt="Resalaty Logo"></div>
+        <h1>نظام <span>رسالتي</span><br>لإدارة الامتحانات</h1>
+        <p class="subtitle">الدليل الرسمي الشامل — دليل المستخدم، والمستثمر</p>
+        <div class="cover-meta">
+            <span>📡 معالجات متطورة</span>
+            <span>🖥️ لوحة تحكم ويب</span>
+            <span>🔋 مراقبة البطارية</span>
+            <span>📊 تصحيح آلي</span>
+        </div>
+    </div>
+
+    <!-- BODY -->
+    <div class="two-col wrapper" style="max-width:100%;width:100%;padding:0">
+
+        <!-- SIDEBAR -->
+        <nav class="sidebar">
+            <h3>الأجزاء</h3>
+            <a class="toc-link" href="#part1">الجزء الأول: دليل المستخدم</a>
+            <a class="toc-link" href="#part3">الجزء الثاني: دليل المستثمر</a>
+
+            <h3>دليل الطالب</h3>
+            <a class="toc-link toc-sub" href="#student-start">الاتصال والتشغيل</a>
+            <a class="toc-link toc-sub" href="#student-login">تسجيل الدخول</a>
+            <a class="toc-link toc-sub" href="#student-exam">إجراء الامتحان</a>
+            <a class="toc-link toc-sub" href="#student-save">حفظ وإرسال</a>
+            <a class="toc-link toc-sub" href="#student-screens">مرجع الشاشات</a>
+            <a class="toc-link toc-sub" href="#student-sleep">وضع السكون</a>
+
+            <h3>دليل المدرس</h3>
+            <a class="toc-link toc-sub" href="#teacher-dashboard">لوحة التحكم</a>
+            <a class="toc-link toc-sub" href="#teacher-commands">الأوامر المتاحة</a>
+            <a class="toc-link toc-sub" href="#teacher-battery">مراقبة البطارية</a>
+            <a class="toc-link toc-sub" href="#teacher-api">بنية الـ API</a>
+
+            <h3>دليل المستثمر</h3>
+            <a class="toc-link toc-sub" href="#inv-overview">نظرة عامة</a>
+            <a class="toc-link toc-sub" href="#inv-features">المميزات</a>
+            <a class="toc-link toc-sub" href="#inv-market">السوق المستهدف</a>
+        </nav>
+
+        <!-- MAIN -->
+        <main class="main-content">
+
+            <!-- ═══════════════════════════════════════════════════
+     PART 1 — USER GUIDE
+═══════════════════════════════════════════════════ -->
+            <div class="part-divider" id="part1">
+                <div class="part-num">01</div>
+                <div class="part-info">
+                    <div class="part-label">الجزء الأول</div>
+                    <h2>دليل المستخدم النهائي</h2>
+                </div>
+            </div>
+
+            <!-- ─── STUDENT SECTION ─── -->
+            <div class="section" id="student-start">
+                <div class="section-header">
+                    <div class="section-icon icon-blue">🎓</div>
+                    <h2 class="section-title">القسم الأول — دليل الطالب</h2>
+                </div>
+
+                <p>دارة الطالب عبارة عن جهاز الكتروني مزود بوسيلة عرض ولوحة مفاتيح. يتواصل مع نقطة المدرس عبر اتصال لاسلكي دون الحاجة لشبكة Wi-Fi.</p>
+
+                <h3 class="subsection" id="student-start">▸ التشغيل الأول</h3>
+
+                <ol class="steps">
+                    <li>
+                        <div class="step-content">
+                            <strong>الضغط على زر الطاقة</strong>
+                            <span>اضغط مع الاستمرار على زر الطاقة (Pin 35) لمدة ثانيتين لتشغيل الجهاز. ستظهر شاشة "Resalaty System" لمدة 3 ثوان.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-content">
+                            <strong>انتظار إشارة الاتصال</strong>
+                            <span>تحقق من مربع الحالة في الزاوية: [OK] يعني أن المدرس متصل، [--] يعني لا اتصال. لا تدخل بياناتك قبل ظهور [OK].</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-content">
+                            <strong>التحقق من مستوى البطارية</strong>
+                            <span>أيقونة البطارية تظهر في الزاوية العليا اليمنى. إذا كانت أقل من 20% شحّن الجهاز قبل الامتحان.</span>
+                        </div>
+                    </li>
+                </ol>
+
+                <h3 class="subsection" id="student-login">▸ تسجيل الدخول للامتحان</h3>
+
+                <div class="screen-row">
+                    <div>
+                        <div class="screen">
+                            <div class="screen-top">Enter ID:      [BAT]
+
+  ╔══════════════╗
+  ║    1234      ║
+  ╚══════════════╝
+*: DEL   #: CHECK</div>
+                        </div>
+                        <div class="screen-label">إدخال الرقم</div>
+                    </div>
+                    <div>
+                        <div class="screen">
+                            <div class="screen-top">OK    Enter ID:      [BAT]
+
+  ╔══════════════╗
+  ║  Checking... ║
+  ╚══════════════╝
+
+</div>
+                        </div>
+                        <div class="screen-label">جارٍ التحقق</div>
+                    </div>
+                    <div>
+                        <div class="screen">
+                            <div class="screen-top">OK   Set Password:   [BAT]
+
+
+        ****
+
+
+</div>
+                        </div>
+                        <div class="screen-label">كلمة المرور</div>
+                    </div>
+                    <div>
+                        <div class="screen">
+                            <div class="screen-top">OK   Select Q:       [BAT]
+
+
+
+
+*: GO  D:END  #:BCK</div>
+                        </div>
+                        <div class="screen-label">اختيار السؤال</div>
+                    </div>
+                </div>
+
+                <ol class="steps">
+                    <li>
+                        <div class="step-content">
+                            <strong>أدخل رقمك الدراسي</strong>
+                            <span>اضغط الأرقام من لوحة المفاتيح. لحذف رقم اضغط [#]. للتأكيد والتحقق اضغط [*].</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-content">
+                            <strong>انتظر رد السيرفر (3 ثوان)</strong>
+                            <span>ستظهر شاشة "Checking..." أثناء التحقق. إذا لم يكن لديك امتحان اليوم ستظهر رسالة توضيحية.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-content">
+                            <strong>أدخل كلمة المرور</strong>
+                            <span>للمستخدم الجديد: اختر كلمة مرور لا تقل عن 4 أرقام واحفظها جيداً. للمستخدم القديم: أدخل كلمة مرورك السابقة.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-content">
+                            <strong>اضغط [*] للتأكيد</strong>
+                            <span>سيتحقق السيرفر من كلمة المرور ويفتح لك الامتحان تلقائياً.</span>
+                        </div>
+                    </li>
+                </ol>
+
+                <div class="status-box warn">
+                    <div class="status-icon">⚠️</div>
+                    <div class="status-text">
+                        <strong>ملاحظة مهمة</strong>
+                        <span>إذا كانت كلمة المرور أقل من 4 أرقام ستظهر رسالة "Min 4 Digits!" ويجب إعادة الإدخال.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EXAM SECTION -->
+            <div class="section" id="student-exam">
+                <h3 class="subsection">▸ إجراء الامتحان والإجابة على الأسئلة</h3>
+
+                <div class="keypad-wrap">
+                    <div>
+                        <div class="keypad">
+                            <div class="key">1</div><div class="key">2</div><div class="key">3</div><div class="key fn">A</div>
+                            <div class="key">4</div><div class="key">5</div><div class="key">6</div><div class="key fn">B</div>
+                            <div class="key">7</div><div class="key">8</div><div class="key">9</div><div class="key fn">C</div>
+                            <div class="key special">*</div><div class="key">0</div><div class="key special">#</div><div class="key fn">D</div>
+                        </div>
+                    </div>
+                    <div class="key-legend">
+                        <div class="key-legend-item"><div class="legend-dot dot-blue"></div><strong>A/B/C/D</strong> — الإجابة على السؤال الحالي</div>
+                        <div class="key-legend-item"><div class="legend-dot dot-gold"></div><strong>* (النجمة)</strong> — حفظ الإجابة / تأكيد / إرسال</div>
+                        <div class="key-legend-item"><div class="legend-dot dot-gold"></div><strong># (المربع)</strong> — حذف / رجوع</div>
+                        <div class="key-legend-item"><div class="legend-dot dot-gray"></div><strong>0-9</strong> — إدخال الرقم / رقم السؤال</div>
+                        <div class="key-legend-item"><div class="legend-dot dot-green"></div><strong>زر NEXT</strong> — الانتقال للسؤال التالي</div>
+                        <div class="key-legend-item"><div class="legend-dot dot-green"></div><strong>زر PREV</strong> — الرجوع للسؤال السابق</div>
+                    </div>
+                </div>
+
+                <h3 class="subsection">▸ خطوات الإجابة التفصيلية</h3>
+
+                <ol class="steps">
+                    <li>
+                        <div class="step-content">
+                            <strong>اختر رقم السؤال</strong>
+                            <span>في شاشة "Select Q" اكتب رقم السؤال ثم اضغط [*]. مثال: اضغط [5] ثم [*] للذهاب للسؤال الخامس.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-content">
+                            <strong>اقرأ السؤال وأجب بـ A أو B أو C أو D</strong>
+                            <span>ستظهر إجابتك المختارة كبيرة على الشاشة. يمكنك تغييرها في أي وقت قبل الحفظ.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-content">
+                            <strong>اضغط [*] لحفظ الإجابة</strong>
+                            <span>ستظهر رسالة "SAVED!" مع الوقت الكلي للامتحان. الإجابة المحفوظة تُرسل للذاكرة الداخلية فوراً (لا تُفقد عند انقطاع الكهرباء).</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-content">
+                            <strong>الانتقال بين الأسئلة</strong>
+                            <span>استخدم أزرار NEXT/PREV الجانبية للتنقل السريع، أو عد لشاشة الاختيار باستخدام [#] ثم ادخل رقم السؤال مباشرة.</span>
+                        </div>
+                    </li>
+                </ol>
+
+                <div class="card">
+                    <strong>💡 الشريط العلوي في شاشة الإجابة:</strong>
+                    <p style="margin-top:8px;margin-bottom:0">يعرض الشريط العلوي: السؤالين الحاليين وإجابتهما، حالة الاتصال بالمدرس [OK/--]، ومستوى البطارية. يُحدَّث تلقائياً.</p>
+                </div>
+            </div>
+
+            <!-- SAVE & SUBMIT -->
+            <div class="section" id="student-save">
+                <h3 class="subsection">▸ إنهاء الامتحان وإرسال الإجابات</h3>
+
+                <ol class="steps">
+                    <li>
+                        <div class="step-content">
+                            <strong>اضغط [D] من شاشة اختيار السؤال</strong>
+                            <span>للانتقال لشاشة التقييم الذاتي. يمكنك تقييم أداءك بـ A (100%) أو B (75%) أو C (50%) أو D (25%).</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-content">
+                            <strong>اختر تقييمك ثم اضغط [*]</strong>
+                            <span>يمكن تخطي التقييم بالضغط على [*] مباشرة دون اختيار. لن يؤثر ذلك على النتيجة الفعلية.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-content">
+                            <strong>انتظر رسالة "FINISHED! Data Sent."</strong>
+                            <span>تأكد من ظهور المدرس [OK] قبل الإرسال. إذا كان المدرس غير متصل ستظهر رسالة "Teacher Offline!" وتحتاج إعادة المحاولة.</span>
+                        </div>
+                    </li>
+                </ol>
+
+                <div class="status-box info">
+                    <div class="status-icon">⏱️</div>
+                    <div class="status-text">
+                        <strong>وقت الانتظار الأدنى</strong>
+                        <span>إذا حدّد المدرس وقتاً أدنى للامتحان وحاولت الإرسال قبله، ستظهر رسالة "Too Early!" مع الوقت المتبقي بالدقائق والثواني.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SCREEN REFERENCE -->
+            <div class="section" id="student-screens">
+                <h3 class="subsection">▸ مرجع الشاشات والرسائل</h3>
+
+                <table class="feature-table">
+                    <thead><tr><th>الشاشة / الرسالة</th><th>المعنى</th><th>الإجراء المطلوب</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>Resalaty System</code></td><td>شاشة البداية عند التشغيل</td><td>انتظر 3 ثوان تلقائياً</td></tr>
+                        <tr><td><code>[OK]</code> (مربع مملوء)</td><td>المدرس متصل وجاهز</td><td>أكمل إجراءاتك بشكل طبيعي</td></tr>
+                        <tr><td><code>[--]</code> (مربع فارغ)</td><td>المدرس غير متصل</td><td>انتظر أو تواصل مع المشرف</td></tr>
+                        <tr><td><code>Checking...</code></td><td>جارٍ التحقق من البيانات</td><td>انتظر 3 ثوان بدون ضغط</td></tr>
+                        <tr><td><code>Min 4 Digits!</code></td><td>كلمة المرور قصيرة جداً</td><td>أدخل 4 أرقام على الأقل</td></tr>
+                        <tr><td><code>Wrong Password!</code></td><td>كلمة المرور خاطئة</td><td>أعد إدخال كلمة المرور الصحيحة</td></tr>
+                        <tr><td><code>SAVED! Tot:Xm Ys</code></td><td>تم حفظ الإجابة بنجاح</td><td>انتقل للسؤال التالي</td></tr>
+                        <tr><td><code>Too Early!</code></td><td>لم ينقضِ الوقت الأدنى</td><td>انتظر المدة المحددة</td></tr>
+                        <tr><td><code>Teacher Offline!</code></td><td>المدرس غير متصل وقت الإرسال</td><td>انتظر اتصال المدرس وأعد الإرسال</td></tr>
+                        <tr><td><code>FINISHED! Data Sent.</code></td><td>تم إرسال الإجابات بنجاح</td><td>أنت انتهيت، اترك الجهاز</td></tr>
+                        <tr><td><code>EXAM STOPPED!</code></td><td>أوقف المدرس الامتحان جبراً</td><td>توقف فوراً وتواصل مع المدرس</td></tr>
+                        <tr><td><code>SLEEPING...</code></td><td>الجهاز يدخل وضع النوم</td><td>اضغط زر الطاقة للإيقاظ</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- SLEEP -->
+            <div class="section" id="student-sleep">
+                <h3 class="subsection">▸ وضع السكون وإدارة الطاقة</h3>
+
+                <div class="card-grid">
+                    <div class="mini-card">
+                        <div class="mc-icon">😴</div>
+                        <div class="mc-title">النوم التلقائي</div>
+                        <div class="mc-desc">بعد 5 دقائق من عدم النشاط يدخل الجهاز النوم تلقائياً لتوفير البطارية</div>
+                    </div>
+                    <div class="mini-card">
+                        <div class="mc-icon">⏰</div>
+                        <div class="mc-title">النوم اليدوي</div>
+                        <div class="mc-desc">اضغط زر الطاقة واستمر 2 ثانية لإدخال الجهاز النوم يدوياً</div>
+                    </div>
+                    <div class="mini-card">
+                        <div class="mc-icon">🔆</div>
+                        <div class="mc-title">الإيقاظ</div>
+                        <div class="mc-desc">اضغط زر الطاقة مرة واحدة لإيقاظ الجهاز من النوم واستئناف الجلسة</div>
+                    </div>
+                    <div class="mini-card">
+                        <div class="mc-icon">💾</div>
+                        <div class="mc-title">حفظ تلقائي</div>
+                        <div class="mc-desc">يُحفظ تقدمك والوقت المتراكم تلقائياً قبل الدخول في النوم</div>
+                    </div>
+                </div>
+
+                <div class="status-box success">
+                    <div class="status-icon">✅</div>
+                    <div class="status-text">
+                        <strong>استئناف الجلسة بعد الإيقاظ</strong>
+                        <span>عند إيقاظ الجهاز سيعود مباشرة لشاشة الامتحان من حيث توقفت، مع الحفاظ على جميع إجاباتك والوقت المتراكم بدقة.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ─── TEACHER SECTION ─── -->
+            <div class="section" id="teacher-dashboard">
+                <div class="section-header">
+                    <div class="section-icon icon-green">🖥️</div>
+                    <h2 class="section-title">القسم الثاني — دليل المدرس / لوحة التحكم</h2>
+                </div>
+
+                <p>تعمل لوحة التحكم على عنوان مخصص على السيرفر وتتحدث تلقائياً كل 30 ثانية. من خلالها يمكن إرسال الأوامر وتتبع الأجهزة وعرض نتائج الامتحانات.</p>
+
+                <div class="arch-diagram">
+                    <div class="arch-nodes">
+                        <div class="arch-node">
+                            <div class="an-icon">🖥️</div>
+                            <div class="an-label">لوحة التحكم</div>
+                            <div class="an-sub">Control Panel - Dashboard</div>
+                        </div>
+                        <div class="arch-arrow">→</div>
+                        <div class="arch-node">
+                            <div class="an-icon">🗄️</div>
+                            <div class="an-label">قاعدة البيانات</div>
+                            <div class="an-sub">Database</div>
+                        </div>
+                        <div class="arch-arrow">→</div>
+                        <div class="arch-node">
+                            <div class="an-icon">📡</div>
+                            <div class="an-label">البوابة</div>
+                            <div class="an-sub">Gateway Node</div>
+                        </div>
+                        <div class="arch-arrow">→</div>
+                        <div class="arch-node">
+                            <div class="an-icon">📻</div>
+                            <div class="an-label">المدرس</div>
+                            <div class="an-sub">Teacher Node</div>
+                        </div>
+                        <div class="arch-arrow">→</div>
+                        <div class="arch-node">
+                            <div class="an-icon">📱</div>
+                            <div class="an-label">الطالب</div>
+                            <div class="an-sub">Student Node</div>
+                        </div>
+                    </div>
+                    <p style="margin-top:16px;font-size:13px;color:var(--ink-muted)">مسار تدفق الأوامر من لوحة التحكم إلى الجهاز</p>
+                </div>
+
+                <h3 class="subsection">▸ قراءة إحصائيات لوحة التحكم</h3>
+
+                <table class="feature-table">
+                    <thead><tr><th>البطاقة الإحصائية</th><th>ما تعنيه</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Total Devices</strong></td><td>إجمالي الأجهزة التي تواصلت مع السيرفر على الإطلاق</td></tr>
+                        <tr><td><strong>Active Today</strong></td><td>الأجهزة التي أرسلت بيانات خلال آخر 24 ساعة</td></tr>
+                        <tr><td><strong>Exams Submitted</strong></td><td>إجمالي الامتحانات المُرسلة والمحفوظة في قاعدة البيانات</td></tr>
+                        <tr><td><strong>Pending Commands</strong></td><td>الأوامر التي أُدخلت لكنها لم تُرسل بعد للأجهزة</td></tr>
+                    </tbody>
+                </table>
+
+                <h3 class="subsection" id="teacher-commands">▸ الأوامر المتاحة للمدرس</h3>
+
+                <div class="note"><strong>📌 طريقة الإرسال:</strong> اختر الجهاز من القائمة اليسرى ← اكتب الأمر في حقل "Command" ← حدد رقم الطالب أو اتركه فارغاً للإرسال للكل ← اضغط Send.</div>
+
+                <table class="feature-table">
+                    <thead><tr><th>الأمر</th><th>الوصف</th><th>مثال</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>STOP</code></td><td>إيقاف الامتحان لجميع الطلاب فوراً</td><td><code>STOP</code></td></tr>
+                        <tr><td><code>STOP_ID:[رقم]</code></td><td>إيقاف امتحان طالب بعينه</td><td><code>STOP_ID:1234</code></td></tr>
+                        <tr><td><code>MSG:[نص]</code></td><td>إرسال رسالة لجميع الطلاب</td><td><code>MSG:اقرأ السؤال جيداً</code></td></tr>
+                        <tr><td><code>MSG_ID:[رقم],[نص]</code></td><td>إرسال رسالة لطالب محدد</td><td><code>MSG_ID:1234,راجع سؤالك</code></td></tr>
+                        <tr><td><code>Q_NUM:[عدد],[دقائق]</code></td><td>تحديد عدد الأسئلة والوقت الأدنى للكل</td><td><code>Q_NUM:30,45</code></td></tr>
+                        <tr><td><code>Q_NUM_ID:[طالب],[عدد],[دقائق]</code></td><td>تحديد عدد الأسئلة لطالب محدد</td><td><code>Q_NUM_ID:1234,20,30</code></td></tr>
+                        <tr><td><code>SNIFF_ID:[رقم]</code></td><td>تفعيل صوت إنذار على جهاز طالب</td><td><code>SNIFF_ID:1234</code></td></tr>
+                        <tr><td><code>SNIFF_STOP</code></td><td>إيقاف صوت الإنذار لجميع الطلاب</td><td><code>SNIFF_STOP</code></td></tr>
+                        <tr><td><code>SNIFF_STOP_ID:[رقم]</code></td><td>إيقاف صوت الإنذار لطالب محدد</td><td><code>SNIFF_STOP_ID:1234</code></td></tr>
+                        <tr><td><code>CMD:UPDATE</code></td><td>تفعيل وضع التحديث عبر Wi-Fi (OTA)</td><td><code>CMD:UPDATE</code></td></tr>
+                        <tr><td><code>BAT_REQ</code></td><td>طلب قراءة البطارية من جميع الأجهزة</td><td><code>BAT_REQ</code></td></tr>
+                        <tr><td><code>BAT_REQ_ID:[رقم]</code></td><td>طلب قراءة البطارية من طالب محدد</td><td><code>BAT_REQ_ID:1234</code></td></tr>
+                    </tbody>
+                </table>
+
+                <h3 class="subsection" id="teacher-battery">▸ مراقبة البطارية</h3>
+
+                <ol class="steps">
+                    <li>
+                        <div class="step-content">
+                            <strong>فحص فوري للكل</strong>
+                            <span>انقر زر "🔄 Check All Connected Devices" في لوحة التحكم. ستُحدَّث قيم البطارية في قاعدة البيانات فوراً وتظهر بجانب كل طالب.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-content">
+                            <strong>فحص جهاز بعينه</strong>
+                            <span>اختر الجهاز من القائمة ثم انقر "🔍 Check This Device Battery Only". مفيد للتحقق من طالب محدد دون إزعاج الآخرين.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-content">
+                            <strong>الفحص التلقائي كل 5 دقائق</strong>
+                            <span>كل جهاز يحدّث قيمة بطاريته تلقائياً في نبضات الـ Ping المنتظمة. لا تحتاج إجراءاً يدوياً لمتابعة الوضع العام.</span>
+                        </div>
+                    </li>
+                </ol>
+
+                <h3 class="subsection" id="teacher-api">▸ فهم ردود الـ API</h3>
+
+                <table class="feature-table">
+                    <thead><tr><th>نوع الرد (type)</th><th>المعنى</th><th>الإجراء</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>NEW_USER</code></td><td>طالب يسجل لأول مرة</td><td>سيُطلب منه ضبط كلمة مرور جديدة</td></tr>
+                        <tr><td><code>AUTH_REQ</code></td><td>طالب مسجل مسبقاً</td><td>سيُطلب منه إدخال كلمة مروره</td></tr>
+                        <tr><td><code>LOGIN_OK</code></td><td>تسجيل دخول ناجح</td><td>يفتح الامتحان تلقائياً على الجهاز</td></tr>
+                        <tr><td><code>LOGIN_FAIL</code></td><td>كلمة مرور خاطئة</td><td>يُعاد الطالب لإدخال كلمة المرور</td></tr>
+                        <tr><td><code>NOT_FOUND</code></td><td>الرقم غير موجود في قاعدة البيانات</td><td>تحقق من صحة الرقم أو أضف الطالب</td></tr>
+                        <tr><td><code>NO_EXAM_TODAY</code></td><td>لا امتحان مجدول لهذا الطالب اليوم</td><td>تحقق من جدول الامتحانات</td></tr>
+                        <tr><td><code>RESULT_OK</code></td><td>تم استقبال وحفظ الامتحان بنجاح</td><td>يظهر "FINISHED!" على جهاز الطالب</td></tr>
+                        <tr><td><code>BATTERY_REPLY</code></td><td>رد فوري على طلب فحص البطارية</td><td>يُحفظ في عمود battery في جدول students</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ═══════════════════════════════════════════════════
+     PART 2 — INVESTOR GUIDE
+═══════════════════════════════════════════════════ -->
+            <div class="part-divider" id="part3">
+                <div class="part-num">02</div>
+                <div class="part-info">
+                    <div class="part-label">الجزء الثاني</div>
+                    <h2>دليل المستثمر</h2>
+                </div>
+            </div>
+
+            <div class="section" id="inv-overview">
+                <div class="investor-hero">
+                    <h3>نظام رسالتي</h3>
+                    <p>منظومة امتحانات رقمية متكاملة ومتصلة اللاسلكي — من الحزمة الإلكترونية إلى قاعدة البيانات</p>
+                    <div class="kpi-row">
+                        <div class="kpi"><div class="val">4</div><div class="lab">طبقات متكاملة من الجهاز للسيرفر</div></div>
+                        <div class="kpi"><div class="val">∞</div><div class="lab">عدد غير منته من الأسئلة لكل امتحان</div></div>
+                        <div class="kpi"><div class="val">100%</div><div class="lab">تصحيح آلي فوري عند الإرسال</div></div>
+                        <div class="kpi"><div class="val">OTA</div><div class="lab">تحديث لاسلكي بدون فك التجميع</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" id="inv-features">
+                <div class="section-header">
+                    <div class="section-icon icon-red">🚀</div>
+                    <h2 class="section-title">الميزات والمزايا التنافسية</h2>
+                </div>
+
+                <h3 class="subsection">▸ الاتصال اللاسلكي</h3>
+
+                <div style="margin:16px 0">
+                    <span class="feature-pill"><span class="pill-icon">📡</span> اتصال لاسلكي بدون شبكة Wi-Fi</span>
+                    <span class="feature-pill"><span class="pill-icon">⚡</span> فارق زمني &lt; 10ms للإرسال</span>
+                    <span class="feature-pill"><span class="pill-icon">🔄</span> إعادة اتصال تلقائية</span>
+                    <span class="feature-pill"><span class="pill-icon">📍</span> تسجيل MAC تلقائي</span>
+                    <span class="feature-pill"><span class="pill-icon">📶</span> قناة Wi-Fi ثابتة</span>
+                    <span class="feature-pill"><span class="pill-icon">❤️</span> نبضة تخاطب كل 3 ثوان</span>
+                </div>
+
+                <h3 class="subsection">▸ موثوقية البيانات والاستمرارية</h3>
+
+                <table class="feature-table">
+                    <thead><tr><th>الميزة</th><th>التفاصيل التقنية</th><th>قيمة للمؤسسة</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>حفظ تلقائي لكل إجابة</strong></td>
+                            <td>كتابة فورية في NVS عند كل ضغطة [*]</td>
+                            <td>صفر فقدان للبيانات حتى مع انقطاع الكهرباء</td>
+                        </tr>
+                        <tr>
+                            <td><strong>استئناف الجلسة بعد النوم</strong></td>
+                            <td>حفظ الوقت المتراكم واستئنافه بدقة ميلي ثانية</td>
+                            <td>حماية من الذعر عند انتهاء البطارية المفاجئ</td>
+                        </tr>
+                        <tr>
+                            <td><strong>إرسال على دفعات (Chunked)</strong></td>
+                            <td>تقسيم كل 20 سؤال + رسالة FINISH للتأكيد</td>
+                            <td>ضمان اكتمال الإرسال حتى مع الضوضاء</td>
+                        </tr>
+                        <tr>
+                            <td><strong>تحديث OTA لاسلكي</strong></td>
+                            <td>عبر Wi-Fi مع مراقبة تقدم التحديث</td>
+                            <td>صيانة الأجهزة دون جمعها</td>
+                        </tr>
+                        <tr>
+                            <td><strong>إصلاح تلقائي لقاعدة البيانات</strong></td>
+                            <td>AUTO-REPAIR يضيف الأعمدة المفقودة تلقائياً</td>
+                            <td>ترقية سلسة المعطيات بدون توقف أو خطأ في قاعدة البيانات</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 class="subsection">▸ الأمان ومكافحة الغش</h3>
+
+                <div class="card-grid">
+                    <div class="mini-card">
+                        <div class="mc-icon">🔐</div>
+                        <div class="mc-title">كلمة مرور شخصية</div>
+                        <div class="mc-desc">كل طالب يضبط كلمة مرور خاصة تُحفظ مشفرة في السيرفر</div>
+                    </div>
+                    <div class="mini-card">
+                        <div class="mc-icon">🚨</div>
+                        <div class="mc-title">نظام الإنذار الصوتي</div>
+                        <div class="mc-desc">تفعيل صوت تنبيه على جهاز أي طالب مشتبه به من لوحة التحكم</div>
+                    </div>
+                    <div class="mini-card">
+                        <div class="mc-icon">⏱️</div>
+                        <div class="mc-title">وقت أدنى للامتحان</div>
+                        <div class="mc-desc">منع إرسال الإجابات قبل مرور الحد الأدنى من الوقت</div>
+                    </div>
+                    <div class="mini-card">
+                        <div class="mc-icon">🛑</div>
+                        <div class="mc-title">إيقاف فوري فردي أو جماعي</div>
+                        <div class="mc-desc">إيقاف امتحان طالب أو الجميع في لحظة من لوحة التحكم</div>
+                    </div>
+                    <div class="mini-card">
+                        <div class="mc-icon">📊</div>
+                        <div class="mc-title">تتبع وقت كل سؤال</div>
+                        <div class="mc-desc">تسجيل دقيق للثواني على كل سؤال يكشف أنماط الغش</div>
+                    </div>
+                    <div class="mini-card">
+                        <div class="mc-icon">🔗</div>
+                        <div class="mc-title">ربط MAC بالطالب</div>
+                        <div class="mc-desc">كل جهاز مرتبط بطالب واحد لا يمكن تزويره</div>
+                    </div>
+                </div>
+
+                <h3 class="subsection">▸ الإدارة والتحكم</h3>
+
+                <div style="margin:16px 0">
+                    <span class="feature-pill"><span class="pill-icon">🔋</span> مراقبة البطارية</span>
+                    <span class="feature-pill"><span class="pill-icon">💬</span> إرسال رسائل للطلاب</span>
+                    <span class="feature-pill"><span class="pill-icon">📝</span> تعديل عدد الأسئلة أثناء الامتحان</span>
+                    <span class="feature-pill"><span class="pill-icon">🏆</span> تصحيح آلي فوري بمجرد الإرسال</span>
+                    <span class="feature-pill"><span class="pill-icon">📈</span> سجل API لكل طلب ورد</span>
+                    <span class="feature-pill"><span class="pill-icon">🔎</span> بحث وعرض تفاصيل كل امتحان</span>
+                    <span class="feature-pill"><span class="pill-icon">♻️</span> إعادة تعيين الجلسة عن بُعد</span>
+                    <span class="feature-pill"><span class="pill-icon">🎯</span> دعم نماذج امتحانات متعددة</span>
+                </div>
+            </div>
+
+            <div class="section" id="inv-market">
+                <div class="section-header">
+                    <div class="section-icon icon-blue">🎯</div>
+                    <h2 class="section-title">السوق المستهدف ومزايا التوسع</h2>
+                </div>
+
+                <div class="card-grid">
+                    <div class="mini-card">
+                        <div class="mc-icon">🏫</div>
+                        <div class="mc-title">المدارس والمعاهد</div>
+                        <div class="mc-desc">نظام اختبارات يومي خالٍ من الورق مع تقارير فورية للمدرسين</div>
+                    </div>
+                    <div class="mini-card">
+                        <div class="mc-icon">🎓</div>
+                        <div class="mc-title">مراكز التدريب</div>
+                        <div class="mc-desc">اختبارات الشهادات والكفاءات بنتائج موثقة وموثوقة</div>
+                    </div>
+                    <div class="mini-card">
+                        <div class="mc-icon">🏛️</div>
+                        <div class="mc-title">امتحانات حكومية</div>
+                        <div class="mc-desc">بيئة مغلقة آمنة بدون إنترنت تُناسب الامتحانات الرسمية</div>
+                    </div>
+                    <div class="mini-card">
+                        <div class="mc-icon">🌍</div>
+                        <div class="mc-title">المناطق النائية</div>
+                        <div class="mc-desc">لا يتطلب إنترنت سريعاً، يعمل بشبكة محلية داخلية فقط</div>
+                    </div>
+                </div>
+
+                <h3 class="subsection">▸ نقاط التمييز عن المنافسين</h3>
+
+                <table class="feature-table">
+                    <thead><tr><th>النقطة</th><th>نظام رسالتي</th><th>أنظمة تقليدية</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td>البنية التحتية</td>
+                            <td class="check">✓ أجهزة مخصصة — لا حاجة لحواسيب أو هواتف</td>
+                            <td class="cross">✗ تتطلب حاسوباً أو هاتفاً لكل طالب</td>
+                        </tr>
+                        <tr>
+                            <td>الاتصال</td>
+                            <td class="check">✓ لاسلكي محلي — لا يحتاج Wi-Fi للطالب</td>
+                            <td class="cross">✗ تعتمد على شبكة مدرسية مستقرة</td>
+                        </tr>
+                        <tr>
+                            <td>انقطاع الكهرباء</td>
+                            <td class="check">✓ يُكمل من حيث توقف بعد إعادة التشغيل</td>
+                            <td class="cross">✗ فقدان الامتحان كاملاً</td>
+                        </tr>
+                        <tr>
+                            <td>التصحيح</td>
+                            <td class="check">✓ تلقائي فوري مع تفاصيل كل سؤال</td>
+                            <td class="cross">✗ يدوي أو نصف آلي</td>
+                        </tr>
+                        <tr>
+                            <td>مراقبة الغش</td>
+                            <td class="check">✓ تتبع الوقت + إنذار صوتي + إيقاف فردي</td>
+                            <td class="cross">✗ رقابة بشرية فقط</td>
+                        </tr>
+                        <tr>
+                            <td>الصيانة</td>
+                            <td class="check">✓ تحديث OTA لاسلكي بضغطة واحدة</td>
+                            <td class="cross">✗ تحديث يدوي لكل جهاز</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="card" style="margin-top:32px; border-right:5px solid var(--secondary); background:var(--secondary-light)">
+                    <h3 style="color:var(--secondary-dark);margin-bottom:12px">📌 ملخص القيمة للمستثمر</h3>
+                    <p style="color:var(--ink);margin:0">نظام رسالتي يُقدم منظومة امتحانات إلكترونية شاملة مبنية على أجهزة مخصصة محكومة بـ4 طبقات متكاملة (طالب / مدرس / بوابة / سيرفر)، مع تصحيح آلي، ومراقبة بطارية، وحماية من الغش، وتحديثات لاسلكية — كل ذلك في بيئة مغلقة آمنة لا تعتمد على الإنترنت العام. النظام جاهز للتوسع مع أقل تعقيد تشغيلي ممكن.</p>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        const links = document.querySelectorAll('.toc-link');
+        const sections = [];
+        links.forEach(l => {
+            const id = l.getAttribute('href').replace('#', '');
+            const el = document.getElementById(id);
+            if (el) sections.push({ el, link: l });
+        });
+
+        function updateActive() {
+            let active = sections[0];
+            sections.forEach(s => {
+                if (window.scrollY + 100 >= s.el.offsetTop) active = s;
+            });
+            links.forEach(l => l.classList.remove('active'));
+            if (active) active.link.classList.add('active');
+        }
+        window.addEventListener('scroll', updateActive, { passive: true });
+        updateActive();
+    </script>
+</body>
+</html>
