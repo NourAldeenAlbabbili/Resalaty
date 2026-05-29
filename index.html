@@ -190,9 +190,23 @@
 
         /* Arrow icon using Unicode or simple SVG approach */
         .back-to-top::before {
-            content: '↑';
-            font-weight: bold;
-        }
+    content: ''; /* نترك المحتوى فارغاً لأننا سنضع صورة */
+    display: inline-block; /* للسماح بتحديد العرض والارتفاع */
+    
+    /* تحديد مسار الصورة وأبعادها */
+    background-image: url('arrow.png'); 
+    width: 20px;  /* يمكنك تغيير العرض حسب حجم الأيقونة المناسب لك */
+    height: 20px; /* يمكنك تغيير الارتفاع حسب حجم الأيقونة المناسب لك */
+    
+    /* ضبط ضبط الصورة داخل الأبعاد */
+    background-size: contain;     /* لجعل الصورة تتناسب تماماً مع الأبعاد */
+    background-repeat: no-repeat; /* لمنع تكرار الصورة */
+    background-position: center;  /* لتوسيط الصورة */
+    
+    /* اختياري: إضافة مسافة صغيرة بين الأيقونة والنص إذا كان هناك نص */
+    margin-right: 5px; 
+    vertical-align: middle; /* لضبط محاذاة الأيقونة عمودياً مع النص */
+}
 
         .cover {
             background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 40%, #0f1e5c 70%, #0a0f1f 100%);
