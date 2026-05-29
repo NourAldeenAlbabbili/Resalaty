@@ -1344,20 +1344,29 @@
         .footer-icon-link.insta:hover { background: #E4405F; }
         .footer-icon-link.tele:hover { background: #0088cc; }
 
-        .footer-address {
-            font-size: 14px;
-            opacity: 0.8;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            flex-wrap: wrap;
-            color: #e2e8f0;
-            text-decoration: none;
-            transition: color 0.3s;
-            color: var(--secondary);
-            text-decoration: underline;
+       .footer-address {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    
+    /* التعديل الجديد لتثبيت اللون */
+    color: #e2e8f0 !important; /* نفس لون الـ footer الرمادي الفاتح الرايق */
+    text-decoration: none !important; /* إلغاء الخط السفلي تماماً */
+}
+
+/* لمنع الرابط من تغيير لونه إذا انكبس عليه أو صار "مزاراً" */
+.footer-address, 
+.footer-address:visited, 
+.footer-address:hover, 
+.footer-address:active {
+    color: #e2e8f0 !important;
+    text-decoration: none !important;
+}
         }
 
         .footer-address img {
@@ -2074,7 +2083,7 @@
             </a>
         </div>
 
-        <div class="footer-copyright"><a href="https://maps.app.goo.gl/4tMc5o2hthCP8Pwk7">
+        <div class="footer-address"><a href="https://maps.app.goo.gl/4tMc5o2hthCP8Pwk7">
             <img src="location.png" alt="Location" style="width:18px; height:18px; filter: none; opacity:0.9;">
         سوريا - دمشق - الجسر الابيض - شركسية - مقابل جامع الجسر الابيض
         </a></div>
