@@ -146,6 +146,54 @@
             content: var(--toggle-icon);
         }
 
+        /* ── BACK TO TOP BUTTON (Material Design) ────────── */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 9998;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: #fff;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.3s;
+            font-size: 22px;
+            line-height: 1;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background-color: var(--secondary);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+            transform: translateY(-3px);
+        }
+
+        .back-to-top:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Arrow icon using Unicode or simple SVG approach */
+        .back-to-top::before {
+            content: '↑';
+            font-weight: bold;
+        }
+
         .cover {
             background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 40%, #0f1e5c 70%, #0a0f1f 100%);
             color: #fff;
@@ -1204,12 +1252,26 @@
                 height: 38px;
                 font-size: 18px;
             }
+            .back-to-top {
+                bottom: 20px;
+                left: 20px;
+                width: 42px;
+                height: 42px;
+                font-size: 18px;
+            }
         }
 
         @media(max-width:420px) {
             .api-table { font-size: 10px; }
             .api-table th { padding: 6px 6px; font-size: 9px; }
             .api-table td { padding: 6px 6px; font-size: 9px; }
+            .back-to-top {
+                bottom: 16px;
+                left: 16px;
+                width: 38px;
+                height: 38px;
+                font-size: 16px;
+            }
         }
 
         /* ── FOOTER ─────────────────────────────────────────── */
@@ -1250,7 +1312,6 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            /* إزالة الفلتر الذي كان يبيض الأيقونة */
             filter: none;
             opacity: 1;
             transition: filter 0.3s, opacity 0.3s;
@@ -1283,7 +1344,6 @@
         .footer-address img {
             width: 18px;
             height: 18px;
-            /* إزالة الفلتر أيضًا من أيقونة الموقع */
             filter: none;
             opacity: 0.9;
         }
@@ -1323,6 +1383,9 @@
 
     <!-- DARK MODE TOGGLE -->
     <div class="dark-mode-toggle" id="darkModeToggle" title="تبديل الوضع الليلي"></div>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button class="back-to-top" id="backToTopBtn" title="العودة إلى الأعلى"></button>
 
     <!-- COVER -->
     <div class="cover">
@@ -2021,6 +2084,24 @@
             } else {
                 localStorage.setItem('darkMode', 'disabled');
             }
+        });
+
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('backToTopBtn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
 
         // Active TOC link
