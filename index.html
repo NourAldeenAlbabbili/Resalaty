@@ -1,3 +1,5 @@
+تم تعديل جدول "الأوامر المتاحة للمدرس" فقط ليصبح النص داخله متكيفًا مع عرض الشاشة على الهاتف، مع الاستغناء عن شريط التمرير الأفقي تمامًا.
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -378,25 +380,10 @@
             transition: var(--transition);
         }
 
-        .icon-blue {
-            background: var(--primary-light);
-            color: var(--primary);
-        }
-
-        .icon-gold {
-            background: var(--secondary-light);
-            color: var(--secondary-dark);
-        }
-
-        .icon-green {
-            background: var(--accent-light);
-            color: var(--accent-dark);
-        }
-
-        .icon-red {
-            background: var(--danger-light);
-            color: var(--danger);
-        }
+        .icon-blue { background: var(--primary-light); color: var(--primary); }
+        .icon-gold { background: var(--secondary-light); color: var(--secondary-dark); }
+        .icon-green { background: var(--accent-light); color: var(--accent-dark); }
+        .icon-red { background: var(--danger-light); color: var(--danger); }
 
         h2.section-title {
             font-size: 1.6rem;
@@ -446,10 +433,7 @@
             border-color: var(--border-dark);
         }
 
-        .card:hover::before {
-            opacity: 1;
-            height: 60%;
-        }
+        .card:hover::before { opacity: 1; height: 60%; }
 
         .card-grid {
             display: grid;
@@ -490,9 +474,7 @@
             border-color: var(--secondary);
         }
 
-        .mini-card:hover::after {
-            width: 60%;
-        }
+        .mini-card:hover::after { width: 60%; }
 
         .mini-card .mc-icon {
             font-size: 32px;
@@ -500,9 +482,7 @@
             transition: var(--transition);
         }
 
-        .mini-card:hover .mc-icon {
-            transform: scale(1.15);
-        }
+        .mini-card:hover .mc-icon { transform: scale(1.15); }
 
         .mini-card .mc-title {
             font-size: 14px;
@@ -531,9 +511,7 @@
             transition: var(--transition);
         }
 
-        .steps li:last-child {
-            border-bottom: none;
-        }
+        .steps li:last-child { border-bottom: none; }
 
         .steps li:hover {
             background: var(--surface-alt);
@@ -602,49 +580,13 @@
             transition: all var(--transition);
         }
 
-        .key:hover {
-            box-shadow: var(--shadow);
-            transform: translateY(-2px);
-        }
-
-        .key.fn {
-            background: var(--primary);
-            color: #fff;
-            border-color: var(--primary-dark);
-            box-shadow: 0 3px 0 var(--primary-dark);
-        }
-
-        .key.fn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-1px);
-            box-shadow: 0 5px 0 var(--primary-dark);
-        }
-
-        .key.special {
-            background: var(--secondary-light);
-            border-color: #f59e0b;
-            box-shadow: 0 3px 0 #d97706;
-            color: var(--secondary-dark);
-        }
-
-        .key.special:hover {
-            background: #fef3c7;
-            transform: translateY(-1px);
-            box-shadow: 0 5px 0 #d97706;
-        }
-
-        .key.nav {
-            background: var(--accent-light);
-            border-color: #10b981;
-            box-shadow: 0 3px 0 #059669;
-            color: var(--accent-dark);
-        }
-
-        .key.nav:hover {
-            background: #d1fae5;
-            transform: translateY(-1px);
-            box-shadow: 0 5px 0 #059669;
-        }
+        .key:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+        .key.fn { background: var(--primary); color: #fff; border-color: var(--primary-dark); box-shadow: 0 3px 0 var(--primary-dark); }
+        .key.fn:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: 0 5px 0 var(--primary-dark); }
+        .key.special { background: var(--secondary-light); border-color: #f59e0b; box-shadow: 0 3px 0 #d97706; color: var(--secondary-dark); }
+        .key.special:hover { background: #fef3c7; transform: translateY(-1px); box-shadow: 0 5px 0 #d97706; }
+        .key.nav { background: var(--accent-light); border-color: #10b981; box-shadow: 0 3px 0 #059669; color: var(--accent-dark); }
+        .key.nav:hover { background: #d1fae5; transform: translateY(-1px); box-shadow: 0 5px 0 #059669; }
 
         .keypad-wrap {
             display: flex;
@@ -654,10 +596,7 @@
             margin: 24px 0;
         }
 
-        .key-legend {
-            flex: 1;
-            min-width: 200px;
-        }
+        .key-legend { flex: 1; min-width: 200px; }
 
         .key-legend-item {
             display: flex;
@@ -670,9 +609,7 @@
             transition: var(--transition);
         }
 
-        .key-legend-item:hover {
-            background: var(--surface-alt);
-        }
+        .key-legend-item:hover { background: var(--surface-alt); }
 
         .legend-dot {
             width: 16px;
@@ -681,21 +618,10 @@
             flex-shrink: 0;
         }
 
-        .dot-blue {
-            background: var(--primary);
-        }
-
-        .dot-gold {
-            background: #f59e0b;
-        }
-
-        .dot-green {
-            background: var(--accent);
-        }
-
-        .dot-gray {
-            background: var(--border-dark);
-        }
+        .dot-blue { background: var(--primary); }
+        .dot-gold { background: #f59e0b; }
+        .dot-green { background: var(--accent); }
+        .dot-gray { background: var(--border-dark); }
 
         .status-box {
             border-radius: var(--radius);
@@ -709,34 +635,11 @@
             border: 2px solid transparent;
         }
 
-        .status-box:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-2px);
-        }
-
-        .status-box.info {
-            background: var(--primary-light);
-            border-color: #93c5fd;
-            border-right: 5px solid var(--primary);
-        }
-
-        .status-box.warn {
-            background: var(--secondary-light);
-            border-color: #fcd34d;
-            border-right: 5px solid var(--secondary);
-        }
-
-        .status-box.success {
-            background: var(--accent-light);
-            border-color: #6ee7b7;
-            border-right: 5px solid var(--accent);
-        }
-
-        .status-box.danger {
-            background: var(--danger-light);
-            border-color: #fca5a5;
-            border-right: 5px solid var(--danger);
-        }
+        .status-box:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+        .status-box.info { background: var(--primary-light); border-color: #93c5fd; border-right: 5px solid var(--primary); }
+        .status-box.warn { background: var(--secondary-light); border-color: #fcd34d; border-right: 5px solid var(--secondary); }
+        .status-box.success { background: var(--accent-light); border-color: #6ee7b7; border-right: 5px solid var(--accent); }
+        .status-box.danger { background: var(--danger-light); border-color: #fca5a5; border-right: 5px solid var(--danger); }
 
         .status-icon {
             font-size: 28px;
@@ -744,9 +647,7 @@
             transition: var(--transition);
         }
 
-        .status-box:hover .status-icon {
-            transform: scale(1.2);
-        }
+        .status-box:hover .status-icon { transform: scale(1.2); }
 
         .status-text strong {
             display: block;
@@ -755,10 +656,7 @@
             margin-bottom: 4px;
         }
 
-        .status-text span {
-            font-size: 13.5px;
-            line-height: 1.6;
-        }
+        .status-text span { font-size: 13.5px; line-height: 1.6; }
 
         .screen-row {
             display: flex;
@@ -831,30 +729,12 @@
             border-radius: 50%;
         }
 
-        .code-block .kw {
-            color: #7dd3fc;
-        }
-
-        .code-block .fn {
-            color: #a78bfa;
-        }
-
-        .code-block .str {
-            color: #86efac;
-        }
-
-        .code-block .cm {
-            color: #64748b;
-            font-style: italic;
-        }
-
-        .code-block .num {
-            color: #fb923c;
-        }
-
-        .code-block .type {
-            color: #f0abfc;
-        }
+        .code-block .kw { color: #7dd3fc; }
+        .code-block .fn { color: #a78bfa; }
+        .code-block .str { color: #86efac; }
+        .code-block .cm { color: #64748b; font-style: italic; }
+        .code-block .num { color: #fb923c; }
+        .code-block .type { color: #f0abfc; }
 
         .fn-card {
             background: var(--surface);
@@ -866,10 +746,7 @@
             transition: var(--transition);
         }
 
-        .fn-card:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-2px);
-        }
+        .fn-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
 
         .fn-header {
             background: var(--surface-alt);
@@ -896,9 +773,7 @@
             letter-spacing: 0.03em;
         }
 
-        .fn-body {
-            padding: 16px 20px;
-        }
+        .fn-body { padding: 16px 20px; }
 
         .fn-desc {
             font-size: 14px;
@@ -927,94 +802,23 @@
             vertical-align: top;
         }
 
-        .param-name {
-            font-family: 'JetBrains Mono', monospace;
-            color: var(--primary);
-            font-weight: 600;
-        }
+        .param-name { font-family: 'JetBrains Mono', monospace; color: var(--primary); font-weight: 600; }
+        .param-type { font-size: 11px; color: var(--ink-muted); font-family: 'JetBrains Mono', monospace; }
+        .layer-student { background: #dbeafe; color: #1e40af; }
+        .layer-teacher { background: #d1fae5; color: #065f46; }
+        .layer-gateway { background: #fef3c7; color: #92400e; }
+        .layer-server { background: #ede9fe; color: #5b21b6; }
 
-        .param-type {
-            font-size: 11px;
-            color: var(--ink-muted);
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        .layer-student {
-            background: #dbeafe;
-            color: #1e40af;
-        }
-
-        .layer-teacher {
-            background: #d1fae5;
-            color: #065f46;
-        }
-
-        .layer-gateway {
-            background: #fef3c7;
-            color: #92400e;
-        }
-
-        .layer-server {
-            background: #ede9fe;
-            color: #5b21b6;
-        }
-
-        /* ── TABLE WRAPPER FOR MOBILE SCROLL ──────────────────── */
-        .table-scroll {
-            width: 100%;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            margin: 18px 0;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            background: var(--surface);
-            border: 1px solid var(--border);
-            position: relative;
-        }
-
-        .table-scroll::-webkit-scrollbar {
-            height: 6px;
-        }
-
-        .table-scroll::-webkit-scrollbar-track {
-            background: var(--surface-alt);
-            border-radius: 0 0 var(--radius) var(--radius);
-        }
-
-        .table-scroll::-webkit-scrollbar-thumb {
-            background: var(--border-dark);
-            border-radius: 10px;
-        }
-
-        .table-scroll::-webkit-scrollbar-thumb:hover {
-            background: var(--ink-muted);
-        }
-
-        /* swipe hint for mobile */
-        .table-scroll::after {
-            content: '⟵ اسحب للعرض ⟶';
-            position: sticky;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            display: none;
-            background: rgba(15, 23, 42, 0.85);
-            color: #fff;
-            font-size: 11px;
-            padding: 5px 14px;
-            border-radius: 20px;
-            white-space: nowrap;
-            pointer-events: none;
-            z-index: 5;
-            letter-spacing: 0.04em;
-        }
-
+        /* ════════════ TABLES (NO SCROLL) ════════════ */
         .feature-table {
             width: 100%;
             border-collapse: separate;
             border-spacing: 0;
             font-size: 14px;
-            min-width: 650px;
+            margin: 18px 0;
+            box-shadow: var(--shadow);
+            border-radius: var(--radius);
+            overflow: hidden;
             table-layout: auto;
         }
 
@@ -1026,10 +830,6 @@
             font-weight: 600;
             font-size: 13px;
             letter-spacing: 0.02em;
-            white-space: nowrap;
-            position: sticky;
-            top: 0;
-            z-index: 2;
         }
 
         .feature-table td {
@@ -1038,326 +838,66 @@
             vertical-align: top;
             background: var(--surface);
             transition: var(--transition);
+            word-break: break-word;
         }
 
-        .feature-table tr:last-child td {
-            border-bottom: none;
-        }
+        .feature-table tr:last-child td { border-bottom: none; }
 
-        .feature-table tr:hover td {
-            background: var(--primary-light);
-        }
+        .feature-table tr:hover td { background: var(--primary-light); }
 
-        .check {
-            color: var(--accent);
-            font-weight: 700;
-            font-size: 16px;
-        }
+        .check { color: var(--accent); font-weight: 700; font-size: 16px; }
+        .cross { color: var(--danger); font-weight: 700; font-size: 16px; }
 
-        .cross {
-            color: var(--danger);
-            font-weight: 700;
-            font-size: 16px;
-        }
-
-        .investor-hero {
-            background: linear-gradient(135deg, #0f172a, #1e3a8a 60%, #1e40af 100%);
-            color: #fff;
-            border-radius: var(--radius-xl);
-            padding: 48px 40px;
-            margin-bottom: 36px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow-xl);
-        }
-
-        .investor-hero::before {
-            content: '';
-            position: absolute;
-            top: -100px;
-            left: -100px;
-            width: 300px;
-            height: 300px;
-            border: 2px solid rgba(245, 158, 11, 0.25);
-            border-radius: 60px;
-            transform: rotate(30deg);
-        }
-
-        .investor-hero::after {
-            content: '';
-            position: absolute;
-            bottom: -80px;
-            right: -60px;
-            width: 200px;
-            height: 200px;
-            background: rgba(16, 185, 129, 0.12);
-            border-radius: 50px;
-            transform: rotate(20deg);
-        }
-
-        .investor-hero h3 {
-            font-size: 2.2rem;
-            font-weight: 900;
-            margin-bottom: 10px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .investor-hero p {
-            opacity: 0.8;
-            font-size: 1.05rem;
-            max-width: 500px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .kpi-row {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 18px;
-            margin: 28px 0;
-            position: relative;
-            z-index: 2;
-        }
-
-        .kpi {
-            background: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: var(--radius);
-            padding: 22px;
-            text-align: center;
-            transition: var(--transition);
-        }
-
-        .kpi:hover {
-            background: rgba(255, 255, 255, 0.12);
-            transform: translateY(-4px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .kpi .val {
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: var(--secondary);
-        }
-
-        .kpi .lab {
-            font-size: 12px;
-            opacity: 0.7;
-            margin-top: 6px;
-            line-height: 1.5;
-        }
-
-        .feature-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 40px;
-            padding: 10px 18px;
-            font-size: 13.5px;
-            font-weight: 600;
-            color: var(--ink);
-            margin: 5px;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-        }
-
-        .feature-pill:hover {
-            box-shadow: var(--shadow);
-            transform: translateY(-3px);
-            border-color: var(--secondary);
-            background: var(--secondary-light);
-        }
-
-        .pill-icon {
-            font-size: 17px;
-        }
-
-        .arch-diagram {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 28px;
-            text-align: center;
-            margin: 24px 0;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .arch-diagram:hover {
-            box-shadow: var(--shadow-lg);
-        }
-
-        .arch-nodes {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 0;
-            flex-wrap: wrap;
-        }
-
-        .arch-node {
-            background: var(--surface-alt);
-            border: 2px solid var(--border-dark);
-            border-radius: var(--radius);
-            padding: 14px 20px;
-            text-align: center;
-            min-width: 110px;
-            transition: var(--transition);
-            cursor: default;
-        }
-
-        .arch-node:hover {
-            border-color: var(--primary);
-            box-shadow: var(--shadow);
-            transform: translateY(-3px);
-            background: var(--primary-light);
-        }
-
-        .arch-node .an-icon {
-            font-size: 26px;
-            margin-bottom: 6px;
-        }
-
-        .arch-node .an-label {
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--ink);
-        }
-
-        .arch-node .an-sub {
-            font-size: 10px;
-            color: var(--ink-muted);
-            margin-top: 3px;
-        }
-
-        .arch-arrow {
-            font-size: 20px;
-            color: var(--secondary);
-            padding: 0 10px;
-            flex-shrink: 0;
-            font-weight: 700;
-        }
-
-        p {
-            margin-bottom: 16px;
-            color: var(--ink-light);
-        }
-
-        ul,
-        ol {
-            padding-right: 24px;
-            margin-bottom: 16px;
-            color: var(--ink-light);
-        }
-
-        li {
-            margin-bottom: 8px;
-            font-size: 15px;
-        }
-
-        strong {
-            color: var(--ink);
-        }
-
-        hr {
-            border: none;
-            border-top: 2px solid var(--border);
-            margin: 36px 0;
-        }
-
-        .note {
-            background: var(--secondary-light);
-            border-right: 5px solid var(--secondary);
-            padding: 14px 18px;
-            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        /* ════════════ TEACHER COMMANDS TABLE (Mobile friendly, no slider) ════════════ */
+        .commands-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
             font-size: 14px;
             margin: 18px 0;
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow);
+            border-radius: var(--radius);
+            overflow: hidden;
+            table-layout: fixed; /* يجبر الأعمدة على التكيف */
         }
 
-        .note strong {
-            color: var(--secondary-dark);
+        .commands-table th {
+            background: var(--primary);
+            color: #fff;
+            padding: 13px 12px;
+            text-align: right;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
         }
 
-        .badge {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.03em;
+        .commands-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            background: var(--surface);
+            transition: var(--transition);
+            word-break: break-word;
+            overflow-wrap: break-word;
         }
 
-        .badge-new {
-            background: var(--primary-light);
-            color: #1e40af;
-        }
+        .commands-table tr:last-child td { border-bottom: none; }
+        .commands-table tr:hover td { background: var(--primary-light); }
 
-        .badge-pro {
-            background: var(--secondary-light);
-            color: #92400e;
-        }
+        /* توزيع عرض الأعمدة بشكل مناسب */
+        .commands-table th:nth-child(1),
+        .commands-table td:nth-child(1) { width: 30%; }
+        .commands-table th:nth-child(2),
+        .commands-table td:nth-child(2) { width: 45%; }
+        .commands-table th:nth-child(3),
+        .commands-table td:nth-child(3) { width: 25%; }
 
-        .sidebar::-webkit-scrollbar {
-            width: 5px;
-        }
-
-        .sidebar::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        .sidebar::-webkit-scrollbar-thumb {
-            background: var(--border-dark);
-            border-radius: 10px;
-        }
-
-        .sidebar::-webkit-scrollbar-thumb:hover {
-            background: var(--ink-muted);
-        }
-
-        /* ═══════════════════════════════════════════════════════════
-           📱 RESPONSIVE — MOBILE FIRST IMPROVEMENTS
-        ═══════════════════════════════════════════════════════════ */
-
-        @media(max-width:960px) {
-            .two-col {
-                grid-template-columns: 220px 1fr;
-            }
-            .main-content {
-                padding: 28px 24px 60px 20px;
-            }
-            .part-divider {
-                margin: 36px -24px 28px;
-                padding: 28px 24px;
-            }
-            .part-divider .part-info h2 {
-                font-size: 1.5rem;
-            }
-            .cover {
-                padding: 60px 28px 50px;
-            }
-            .cover h1 {
-                font-size: 2rem;
-            }
-        }
-
+        /* ════════════ RESPONSIVE ════════════ */
         @media(max-width:760px) {
-            .two-col {
-                grid-template-columns: 1fr;
-            }
-            .sidebar {
-                display: none;
-            }
-            .main-content {
-                padding: 20px 16px 50px;
-            }
+            .two-col { grid-template-columns: 1fr; }
+            .sidebar { display: none; }
+            .main-content { padding: 20px 16px 50px; }
             .part-divider {
                 margin: 32px -16px 24px;
                 padding: 24px 18px;
@@ -1365,377 +905,76 @@
                 text-align: center;
                 clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%);
             }
-            .part-divider .part-num {
-                font-size: 42px;
-            }
-            .part-divider .part-info h2 {
-                font-size: 1.3rem;
-            }
+            .part-divider .part-num { font-size: 42px; }
+            .part-divider .part-info h2 { font-size: 1.3rem; }
             .cover {
                 padding: 40px 18px 44px;
                 clip-path: polygon(0 0, 100% 0, 100% 95%, 50% 100%, 0 95%);
             }
-            .cover h1 {
-                font-size: 1.7rem;
-            }
-            .cover .subtitle {
-                font-size: 0.95rem;
-            }
-            .cover-meta {
-                gap: 10px;
-                font-size: 12px;
-            }
-            .cover-meta span {
-                padding: 5px 10px;
-                font-size: 11px;
-            }
-            .arch-nodes {
-                gap: 8px;
-                flex-direction: column;
-            }
-            .arch-arrow {
-                transform: rotate(90deg);
-                padding: 6px 0;
-                font-size: 18px;
-            }
-            .arch-node {
-                min-width: 140px;
-            }
-            .section-header {
-                flex-wrap: wrap;
-                gap: 8px;
-            }
-            h2.section-title {
-                font-size: 1.35rem;
-            }
-            h3.subsection {
-                font-size: 1.1rem;
-                margin: 24px 0 12px;
-            }
-            .card {
-                padding: 16px;
-            }
-            .card-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-                gap: 12px;
-            }
-            .mini-card {
-                padding: 14px;
-            }
-            .mini-card .mc-icon {
-                font-size: 26px;
-            }
-            .mini-card .mc-title {
-                font-size: 13px;
-            }
-            .mini-card .mc-desc {
-                font-size: 11.5px;
-            }
-            .keypad-wrap {
-                flex-direction: column;
-                gap: 16px;
-                align-items: center;
-            }
-            .keypad {
-                grid-template-columns: repeat(4, 44px);
-                gap: 6px;
-            }
-            .key {
-                width: 44px;
-                height: 44px;
-                font-size: 14px;
-            }
-            .key-legend {
-                width: 100%;
-                min-width: unset;
-            }
-            .screen-row {
-                justify-content: center;
-                gap: 10px;
-            }
-            .screen {
-                width: 110px;
-                padding: 6px;
-            }
-            .screen-top {
-                font-size: 7px;
-                min-height: 50px;
-                padding: 5px;
-            }
-            .screen-label {
-                font-size: 10px;
-                margin-top: 4px;
-            }
-            .steps li {
-                gap: 12px;
-                padding: 12px 0;
-            }
-            .steps li::before {
-                width: 24px;
-                height: 24px;
-                font-size: 11px;
-            }
-            .step-content strong {
-                font-size: 13px;
-            }
-            .step-content span {
-                font-size: 12.5px;
-            }
-            .status-box {
-                padding: 14px 16px;
-                gap: 10px;
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .status-icon {
-                font-size: 24px;
-            }
-            .investor-hero {
-                padding: 28px 20px;
-                border-radius: var(--radius-lg);
-            }
-            .investor-hero h3 {
-                font-size: 1.6rem;
-            }
-            .investor-hero p {
-                font-size: 0.9rem;
-            }
-            .kpi-row {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-            }
-            .kpi {
-                padding: 14px;
-            }
-            .kpi .val {
-                font-size: 1.6rem;
-            }
-            .kpi .lab {
-                font-size: 10px;
-            }
-            .feature-pill {
-                font-size: 11.5px;
-                padding: 7px 12px;
-                margin: 3px;
-            }
-            .pill-icon {
-                font-size: 14px;
-            }
-            p,
-            li {
-                font-size: 14px;
-            }
-            .note {
-                font-size: 12.5px;
-                padding: 10px 14px;
-            }
-            .code-block {
-                font-size: 11px;
-                padding: 14px 16px;
-            }
-            .fn-header {
-                padding: 10px 14px;
-                gap: 8px;
-            }
-            .fn-name {
-                font-size: 13px;
-            }
-            .fn-body {
-                padding: 12px 14px;
-            }
-            .fn-desc {
-                font-size: 12.5px;
-            }
-            .fn-params th,
-            .fn-params td {
-                padding: 7px 10px;
-                font-size: 11px;
-            }
+            .cover h1 { font-size: 1.7rem; }
+            .cover .subtitle { font-size: 0.95rem; }
+            .cover-meta { gap: 10px; font-size: 12px; }
+            .cover-meta span { padding: 5px 10px; font-size: 11px; }
+            .arch-nodes { gap: 8px; flex-direction: column; }
+            .arch-arrow { transform: rotate(90deg); padding: 6px 0; font-size: 18px; }
+            .arch-node { min-width: 140px; }
+            .section-header { flex-wrap: wrap; gap: 8px; }
+            h2.section-title { font-size: 1.35rem; }
+            h3.subsection { font-size: 1.1rem; margin: 24px 0 12px; }
+            .card { padding: 16px; }
+            .card-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+            .mini-card { padding: 14px; }
+            .mini-card .mc-icon { font-size: 26px; }
+            .mini-card .mc-title { font-size: 13px; }
+            .mini-card .mc-desc { font-size: 11.5px; }
+            .keypad-wrap { flex-direction: column; gap: 16px; align-items: center; }
+            .keypad { grid-template-columns: repeat(4, 44px); gap: 6px; }
+            .key { width: 44px; height: 44px; font-size: 14px; }
+            .key-legend { width: 100%; min-width: unset; }
+            .screen-row { justify-content: center; gap: 10px; }
+            .screen { width: 110px; padding: 6px; }
+            .screen-top { font-size: 7px; min-height: 50px; padding: 5px; }
+            .screen-label { font-size: 10px; margin-top: 4px; }
+            .steps li { gap: 12px; padding: 12px 0; }
+            .steps li::before { width: 24px; height: 24px; font-size: 11px; }
+            .step-content strong { font-size: 13px; }
+            .step-content span { font-size: 12.5px; }
+            .status-box { padding: 14px 16px; gap: 10px; flex-direction: column; align-items: flex-start; }
+            .status-icon { font-size: 24px; }
+            .investor-hero { padding: 28px 20px; border-radius: var(--radius-lg); }
+            .investor-hero h3 { font-size: 1.6rem; }
+            .investor-hero p { font-size: 0.9rem; }
+            .kpi-row { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .kpi { padding: 14px; }
+            .kpi .val { font-size: 1.6rem; }
+            .kpi .lab { font-size: 10px; }
+            .feature-pill { font-size: 11.5px; padding: 7px 12px; margin: 3px; }
+            .pill-icon { font-size: 14px; }
+            p, li { font-size: 14px; }
+            .note { font-size: 12.5px; padding: 10px 14px; }
+            .code-block { font-size: 11px; padding: 14px 16px; }
+            .fn-header { padding: 10px 14px; gap: 8px; }
+            .fn-name { font-size: 13px; }
+            .fn-body { padding: 12px 14px; }
+            .fn-desc { font-size: 12.5px; }
+            .fn-params th, .fn-params td { padding: 7px 10px; font-size: 11px; }
 
-            /* table scroll improvements */
-            .table-scroll {
-                margin: 14px -8px;
-                border-radius: var(--radius-sm);
-                border-left: none;
-                border-right: none;
-                width: calc(100% + 16px);
-                max-width: calc(100vw - 32px);
-            }
+            /* جعل الجداول العادية تتكيف */
+            .feature-table { font-size: 12px; }
+            .feature-table th { padding: 10px 12px; font-size: 11px; }
+            .feature-table td { padding: 9px 12px; font-size: 11.5px; }
+            .check, .cross { font-size: 14px; }
 
-            /* Show swipe hint only on touch devices via hover check */
-            .table-scroll.touch-device::after {
-                display: block;
-            }
-
-            .feature-table {
-                min-width: 550px;
-                font-size: 12px;
-            }
-            .feature-table th {
-                padding: 10px 12px;
-                font-size: 11px;
-            }
-            .feature-table td {
-                padding: 9px 12px;
-                font-size: 11.5px;
-            }
-            .check,
-            .cross {
-                font-size: 14px;
-            }
+            /* تحسين جدول الأوامر */
+            .commands-table { font-size: 11px; }
+            .commands-table th { padding: 8px 8px; font-size: 10px; }
+            .commands-table td { padding: 8px 8px; font-size: 10px; }
         }
 
         @media(max-width:420px) {
-            .cover {
-                padding: 32px 12px 36px;
-            }
-            .cover h1 {
-                font-size: 1.4rem;
-            }
-            .cover .subtitle {
-                font-size: 0.82rem;
-            }
-            .cover-meta span {
-                padding: 4px 8px;
-                font-size: 10px;
-            }
-            .main-content {
-                padding: 14px 10px 40px;
-            }
-            .part-divider {
-                margin: 24px -10px 20px;
-                padding: 18px 14px;
-                border-radius: var(--radius);
-            }
-            .part-divider .part-num {
-                font-size: 32px;
-            }
-            .part-divider .part-info h2 {
-                font-size: 1.1rem;
-            }
-            .part-divider .part-info .part-label {
-                font-size: 9px;
-            }
-            h2.section-title {
-                font-size: 1.2rem;
-            }
-            h3.subsection {
-                font-size: 1rem;
-                padding-right: 10px;
-                border-right-width: 3px;
-            }
-            .card-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 8px;
-            }
-            .mini-card {
-                padding: 10px;
-            }
-            .mini-card .mc-icon {
-                font-size: 22px;
-            }
-            .mini-card .mc-title {
-                font-size: 11.5px;
-            }
-            .mini-card .mc-desc {
-                font-size: 10px;
-            }
-            .keypad {
-                grid-template-columns: repeat(4, 36px);
-                gap: 4px;
-            }
-            .key {
-                width: 36px;
-                height: 36px;
-                font-size: 12px;
-                border-radius: 4px;
-            }
-            .screen {
-                width: 90px;
-            }
-            .screen-top {
-                font-size: 6px;
-                min-height: 40px;
-            }
-            .screen-label {
-                font-size: 9px;
-            }
-            .feature-table {
-                min-width: 480px;
-                font-size: 10.5px;
-            }
-            .feature-table th {
-                padding: 7px 8px;
-                font-size: 10px;
-            }
-            .feature-table td {
-                padding: 7px 8px;
-                font-size: 10px;
-            }
-            .kpi-row {
-                grid-template-columns: 1fr 1fr;
-                gap: 6px;
-            }
-            .kpi .val {
-                font-size: 1.3rem;
-            }
-            .kpi .lab {
-                font-size: 9px;
-            }
-            .feature-pill {
-                font-size: 10px;
-                padding: 5px 9px;
-                margin: 2px;
-            }
-            .arch-node {
-                min-width: 100px;
-                padding: 10px 12px;
-            }
-            .arch-node .an-icon {
-                font-size: 20px;
-            }
-            .arch-node .an-label {
-                font-size: 10px;
-            }
-            .arch-node .an-sub {
-                font-size: 8px;
-            }
-            .table-scroll {
-                margin: 12px -6px;
-                width: calc(100% + 12px);
-                max-width: calc(100vw - 20px);
-            }
-            .table-scroll::after {
-                font-size: 9px;
-                padding: 4px 10px;
-            }
-        }
-
-        /* Extra small phones */
-        @media(max-width:360px) {
-            .card-grid {
-                grid-template-columns: 1fr;
-            }
-            .kpi-row {
-                grid-template-columns: 1fr;
-            }
-            .feature-table {
-                min-width: 420px;
-                font-size: 9.5px;
-            }
-            .feature-table th,
-            .feature-table td {
-                padding: 5px 6px;
-            }
-            .keypad {
-                grid-template-columns: repeat(4, 30px);
-                gap: 3px;
-            }
-            .key {
-                width: 30px;
-                height: 30px;
-                font-size: 10px;
-            }
+            .commands-table { font-size: 10px; }
+            .commands-table th { padding: 6px 6px; font-size: 9px; }
+            .commands-table td { padding: 6px 6px; font-size: 9px; }
         }
     </style>
 </head>
@@ -2012,25 +1251,23 @@
             <div class="section" id="student-screens">
                 <h3 class="subsection">▸ مرجع الشاشات والرسائل</h3>
 
-                <div class="table-scroll">
-                    <table class="feature-table">
-                        <thead><tr><th>الشاشة / الرسالة</th><th>المعنى</th><th>الإجراء المطلوب</th></tr></thead>
-                        <tbody>
-                            <tr><td><code>Resalaty System</code></td><td>شاشة البداية عند التشغيل</td><td>انتظر 3 ثوان تلقائياً</td></tr>
-                            <tr><td><code>[OK]</code> (مربع مملوء)</td><td>المدرس متصل وجاهز</td><td>أكمل إجراءاتك بشكل طبيعي</td></tr>
-                            <tr><td><code>[--]</code> (مربع فارغ)</td><td>المدرس غير متصل</td><td>انتظر أو تواصل مع المشرف</td></tr>
-                            <tr><td><code>Checking...</code></td><td>جارٍ التحقق من البيانات</td><td>انتظر 3 ثوان بدون ضغط</td></tr>
-                            <tr><td><code>Min 4 Digits!</code></td><td>كلمة المرور قصيرة جداً</td><td>أدخل 4 أرقام على الأقل</td></tr>
-                            <tr><td><code>Wrong Password!</code></td><td>كلمة المرور خاطئة</td><td>أعد إدخال كلمة المرور الصحيحة</td></tr>
-                            <tr><td><code>SAVED! Tot:Xm Ys</code></td><td>تم حفظ الإجابة بنجاح</td><td>انتقل للسؤال التالي</td></tr>
-                            <tr><td><code>Too Early!</code></td><td>لم ينقضِ الوقت الأدنى</td><td>انتظر المدة المحددة</td></tr>
-                            <tr><td><code>Teacher Offline!</code></td><td>المدرس غير متصل وقت الإرسال</td><td>انتظر اتصال المدرس وأعد الإرسال</td></tr>
-                            <tr><td><code>FINISHED! Data Sent.</code></td><td>تم إرسال الإجابات بنجاح</td><td>أنت انتهيت، اترك الجهاز</td></tr>
-                            <tr><td><code>EXAM STOPPED!</code></td><td>أوقف المدرس الامتحان جبراً</td><td>توقف فوراً وتواصل مع المدرس</td></tr>
-                            <tr><td><code>SLEEPING...</code></td><td>الجهاز يدخل وضع النوم</td><td>اضغط زر الطاقة للإيقاظ</td></tr>
-                        </tbody>
-                    </table>
-                </div>
+                <table class="feature-table">
+                    <thead><tr><th>الشاشة / الرسالة</th><th>المعنى</th><th>الإجراء المطلوب</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>Resalaty System</code></td><td>شاشة البداية عند التشغيل</td><td>انتظر 3 ثوان تلقائياً</td></tr>
+                        <tr><td><code>[OK]</code> (مربع مملوء)</td><td>المدرس متصل وجاهز</td><td>أكمل إجراءاتك بشكل طبيعي</td></tr>
+                        <tr><td><code>[--]</code> (مربع فارغ)</td><td>المدرس غير متصل</td><td>انتظر أو تواصل مع المشرف</td></tr>
+                        <tr><td><code>Checking...</code></td><td>جارٍ التحقق من البيانات</td><td>انتظر 3 ثوان بدون ضغط</td></tr>
+                        <tr><td><code>Min 4 Digits!</code></td><td>كلمة المرور قصيرة جداً</td><td>أدخل 4 أرقام على الأقل</td></tr>
+                        <tr><td><code>Wrong Password!</code></td><td>كلمة المرور خاطئة</td><td>أعد إدخال كلمة المرور الصحيحة</td></tr>
+                        <tr><td><code>SAVED! Tot:Xm Ys</code></td><td>تم حفظ الإجابة بنجاح</td><td>انتقل للسؤال التالي</td></tr>
+                        <tr><td><code>Too Early!</code></td><td>لم ينقضِ الوقت الأدنى</td><td>انتظر المدة المحددة</td></tr>
+                        <tr><td><code>Teacher Offline!</code></td><td>المدرس غير متصل وقت الإرسال</td><td>انتظر اتصال المدرس وأعد الإرسال</td></tr>
+                        <tr><td><code>FINISHED! Data Sent.</code></td><td>تم إرسال الإجابات بنجاح</td><td>أنت انتهيت، اترك الجهاز</td></tr>
+                        <tr><td><code>EXAM STOPPED!</code></td><td>أوقف المدرس الامتحان جبراً</td><td>توقف فوراً وتواصل مع المدرس</td></tr>
+                        <tr><td><code>SLEEPING...</code></td><td>الجهاز يدخل وضع النوم</td><td>اضغط زر الطاقة للإيقاظ</td></tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- SLEEP -->
@@ -2115,42 +1352,38 @@
 
                 <h3 class="subsection">▸ قراءة إحصائيات لوحة التحكم</h3>
 
-                <div class="table-scroll">
-                    <table class="feature-table">
-                        <thead><tr><th>البطاقة الإحصائية</th><th>ما تعنيه</th></tr></thead>
-                        <tbody>
-                            <tr><td><strong>Total Devices</strong></td><td>إجمالي الأجهزة التي تواصلت مع السيرفر على الإطلاق</td></tr>
-                            <tr><td><strong>Active Today</strong></td><td>الأجهزة التي أرسلت بيانات خلال آخر 24 ساعة</td></tr>
-                            <tr><td><strong>Exams Submitted</strong></td><td>إجمالي الامتحانات المُرسلة والمحفوظة في قاعدة البيانات</td></tr>
-                            <tr><td><strong>Pending Commands</strong></td><td>الأوامر التي أُدخلت لكنها لم تُرسل بعد للأجهزة</td></tr>
-                        </tbody>
-                    </table>
-                </div>
+                <table class="feature-table">
+                    <thead><tr><th>البطاقة الإحصائية</th><th>ما تعنيه</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Total Devices</strong></td><td>إجمالي الأجهزة التي تواصلت مع السيرفر على الإطلاق</td></tr>
+                        <tr><td><strong>Active Today</strong></td><td>الأجهزة التي أرسلت بيانات خلال آخر 24 ساعة</td></tr>
+                        <tr><td><strong>Exams Submitted</strong></td><td>إجمالي الامتحانات المُرسلة والمحفوظة في قاعدة البيانات</td></tr>
+                        <tr><td><strong>Pending Commands</strong></td><td>الأوامر التي أُدخلت لكنها لم تُرسل بعد للأجهزة</td></tr>
+                    </tbody>
+                </table>
 
                 <h3 class="subsection" id="teacher-commands">▸ الأوامر المتاحة للمدرس</h3>
 
                 <div class="note"><strong>📌 طريقة الإرسال:</strong> اختر الجهاز من القائمة اليسرى ← اكتب الأمر في حقل "Command" ← حدد رقم الطالب أو اتركه فارغاً للإرسال للكل ← اضغط Send.</div>
 
-                <!-- ═══════════════ TABLE WRAPPED FOR MOBILE ═══════════════ -->
-                <div class="table-scroll">
-                    <table class="feature-table">
-                        <thead><tr><th>الأمر</th><th>الوصف</th><th>مثال</th></tr></thead>
-                        <tbody>
-                            <tr><td><code>STOP</code></td><td>إيقاف الامتحان لجميع الطلاب فوراً</td><td><code>STOP</code></td></tr>
-                            <tr><td><code>STOP_ID:[رقم]</code></td><td>إيقاف امتحان طالب بعينه</td><td><code>STOP_ID:1234</code></td></tr>
-                            <tr><td><code>MSG:[نص]</code></td><td>إرسال رسالة لجميع الطلاب</td><td>MSG:اقرأ السؤال جيداً</td></tr>
-                            <tr><td><code>MSG_ID:[رقم],[نص]</code></td><td>إرسال رسالة لطالب محدد</td><td><code>MSG_ID:1234,راجع سؤالك</code></td></tr>
-                            <tr><td><code>Q_NUM:[عدد],[دقائق]</code></td><td>تحديد عدد الأسئلة والوقت الأدنى للكل</td><td><code>Q_NUM:30,45</code></td></tr>
-                            <tr><td><code>Q_NUM_ID:[طالب],[عدد],[دقائق]</code></td><td>تحديد عدد الأسئلة لطالب محدد</td><td>Q_NUM_ID:1234,20,30</td></tr>
-                            <tr><td><code>SNIFF_ID:[رقم]</code></td><td>تفعيل صوت إنذار على جهاز طالب</td><td><code>SNIFF_ID:1234</code></td></tr>
-                            <tr><td><code>SNIFF_STOP</code></td><td>إيقاف صوت الإنذار لجميع الطلاب</td><td><code>SNIFF_STOP</code></td></tr>
-                            <tr><td><code>SNIFF_STOP_ID:[رقم]</code></td><td>إيقاف صوت الإنذار لطالب محدد</td><td>SNIFF_STOP_ID:1234</td></tr>
-                            <tr><td><code>CMD:UPDATE</code></td><td>تفعيل وضع التحديث عبر Wi-Fi (OTA)</td><td><code>CMD:UPDATE</code></td></tr>
-                            <tr><td><code>BAT_REQ</code></td><td>طلب قراءة البطارية من جميع الأجهزة</td><td><code>BAT_REQ</code></td></tr>
-                            <tr><td><code>BAT_REQ_ID:[رقم]</code></td><td>طلب قراءة البطارية من طالب محدد</td><td><code>BAT_REQ_ID:1234</code></td></tr>
-                        </tbody>
-                    </table>
-                </div>
+                <!-- ═══════════════ COMMANDS TABLE (بدون سلايدر) ═══════════════ -->
+                <table class="commands-table">
+                    <thead><tr><th>الأمر</th><th>الوصف</th><th>مثال</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>STOP</code></td><td>إيقاف الامتحان لجميع الطلاب فوراً</td><td><code>STOP</code></td></tr>
+                        <tr><td><code>STOP_ID:[رقم]</code></td><td>إيقاف امتحان طالب بعينه</td><td><code>STOP_ID:1234</code></td></tr>
+                        <tr><td><code>MSG:[نص]</code></td><td>إرسال رسالة لجميع الطلاب</td><td>MSG:اقرأ السؤال جيداً</td></tr>
+                        <tr><td><code>MSG_ID:[رقم],[نص]</code></td><td>إرسال رسالة لطالب محدد</td><td><code>MSG_ID:1234,راجع سؤالك</code></td></tr>
+                        <tr><td><code>Q_NUM:[عدد],[دقائق]</code></td><td>تحديد عدد الأسئلة والوقت الأدنى للكل</td><td><code>Q_NUM:30,45</code></td></tr>
+                        <tr><td><code>Q_NUM_ID:[طالب],[عدد],[دقائق]</code></td><td>تحديد عدد الأسئلة لطالب محدد</td><td>Q_NUM_ID:1234,20,30</td></tr>
+                        <tr><td><code>SNIFF_ID:[رقم]</code></td><td>تفعيل صوت إنذار على جهاز طالب</td><td><code>SNIFF_ID:1234</code></td></tr>
+                        <tr><td><code>SNIFF_STOP</code></td><td>إيقاف صوت الإنذار لجميع الطلاب</td><td><code>SNIFF_STOP</code></td></tr>
+                        <tr><td><code>SNIFF_STOP_ID:[رقم]</code></td><td>إيقاف صوت الإنذار لطالب محدد</td><td>SNIFF_STOP_ID:1234</td></tr>
+                        <tr><td><code>CMD:UPDATE</code></td><td>تفعيل وضع التحديث عبر Wi-Fi (OTA)</td><td><code>CMD:UPDATE</code></td></tr>
+                        <tr><td><code>BAT_REQ</code></td><td>طلب قراءة البطارية من جميع الأجهزة</td><td><code>BAT_REQ</code></td></tr>
+                        <tr><td><code>BAT_REQ_ID:[رقم]</code></td><td>طلب قراءة البطارية من طالب محدد</td><td><code>BAT_REQ_ID:1234</code></td></tr>
+                    </tbody>
+                </table>
 
                 <h3 class="subsection" id="teacher-battery">▸ مراقبة البطارية</h3>
 
@@ -2177,21 +1410,19 @@
 
                 <h3 class="subsection" id="teacher-api">▸ فهم ردود الـ API</h3>
 
-                <div class="table-scroll">
-                    <table class="feature-table">
-                        <thead><tr><th>نوع الرد (type)</th><th>المعنى</th><th>الإجراء</th></tr></thead>
-                        <tbody>
-                            <tr><td><code>NEW_USER</code></td><td>طالب يسجل لأول مرة</td><td>سيُطلب منه ضبط كلمة مرور جديدة</td></tr>
-                            <tr><td><code>AUTH_REQ</code></td><td>طالب مسجل مسبقاً</td><td>سيُطلب منه إدخال كلمة مروره</td></tr>
-                            <tr><td><code>LOGIN_OK</code></td><td>تسجيل دخول ناجح</td><td>يفتح الامتحان تلقائياً على الجهاز</td></tr>
-                            <tr><td><code>LOGIN_FAIL</code></td><td>كلمة مرور خاطئة</td><td>يُعاد الطالب لإدخال كلمة المرور</td></tr>
-                            <tr><td><code>NOT_FOUND</code></td><td>الرقم غير موجود في قاعدة البيانات</td><td>تحقق من صحة الرقم أو أضف الطالب</td></tr>
-                            <tr><td><code>NO_EXAM_TODAY</code></td><td>لا امتحان مجدول لهذا الطالب اليوم</td><td>تحقق من جدول الامتحانات</td></tr>
-                            <tr><td><code>RESULT_OK</code></td><td>تم استقبال وحفظ الامتحان بنجاح</td><td>يظهر "FINISHED!" على جهاز الطالب</td></tr>
-                            <tr><td><code>BATTERY_REPLY</code></td><td>رد فوري على طلب فحص البطارية</td><td>يُحفظ في عمود battery في جدول students</td></tr>
-                        </tbody>
-                    </table>
-                </div>
+                <table class="feature-table">
+                    <thead><tr><th>نوع الرد (type)</th><th>المعنى</th><th>الإجراء</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>NEW_USER</code></td><td>طالب يسجل لأول مرة</td><td>سيُطلب منه ضبط كلمة مرور جديدة</td></tr>
+                        <tr><td><code>AUTH_REQ</code></td><td>طالب مسجل مسبقاً</td><td>سيُطلب منه إدخال كلمة مروره</td></tr>
+                        <tr><td><code>LOGIN_OK</code></td><td>تسجيل دخول ناجح</td><td>يفتح الامتحان تلقائياً على الجهاز</td></tr>
+                        <tr><td><code>LOGIN_FAIL</code></td><td>كلمة مرور خاطئة</td><td>يُعاد الطالب لإدخال كلمة المرور</td></tr>
+                        <tr><td><code>NOT_FOUND</code></td><td>الرقم غير موجود في قاعدة البيانات</td><td>تحقق من صحة الرقم أو أضف الطالب</td></tr>
+                        <tr><td><code>NO_EXAM_TODAY</code></td><td>لا امتحان مجدول لهذا الطالب اليوم</td><td>تحقق من جدول الامتحانات</td></tr>
+                        <tr><td><code>RESULT_OK</code></td><td>تم استقبال وحفظ الامتحان بنجاح</td><td>يظهر "FINISHED!" على جهاز الطالب</td></tr>
+                        <tr><td><code>BATTERY_REPLY</code></td><td>رد فوري على طلب فحص البطارية</td><td>يُحفظ في عمود battery في جدول students</td></tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- ═══════════════════════════════════════════════════
@@ -2237,38 +1468,36 @@
 
                 <h3 class="subsection">▸ موثوقية البيانات والاستمرارية</h3>
 
-                <div class="table-scroll">
-                    <table class="feature-table">
-                        <thead><tr><th>الميزة</th><th>التفاصيل التقنية</th><th>قيمة للمؤسسة</th></tr></thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>حفظ تلقائي لكل إجابة</strong></td>
-                                <td>كتابة فورية في NVS عند كل ضغطة [*]</td>
-                                <td>صفر فقدان للبيانات حتى مع انقطاع الكهرباء</td>
-                            </tr>
-                            <tr>
-                                <td><strong>استئناف الجلسة بعد النوم</strong></td>
-                                <td>حفظ الوقت المتراكم واستئنافه بدقة ميلي ثانية</td>
-                                <td>حماية من الذعر عند انتهاء البطارية المفاجئ</td>
-                            </tr>
-                            <tr>
-                                <td><strong>إرسال على دفعات (Chunked)</strong></td>
-                                <td>تقسيم كل 20 سؤال + رسالة FINISH للتأكيد</td>
-                                <td>ضمان اكتمال الإرسال حتى مع الضوضاء</td>
-                            </tr>
-                            <tr>
-                                <td><strong>تحديث OTA لاسلكي</strong></td>
-                                <td>عبر Wi-Fi مع مراقبة تقدم التحديث</td>
-                                <td>صيانة الأجهزة دون جمعها</td>
-                            </tr>
-                            <tr>
-                                <td><strong>إصلاح تلقائي لقاعدة البيانات</strong></td>
-                                <td>AUTO-REPAIR يضيف الأعمدة المفقودة تلقائياً</td>
-                                <td>ترقية سلسة المعطيات بدون توقف أو خطأ في قاعدة البيانات</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <table class="feature-table">
+                    <thead><tr><th>الميزة</th><th>التفاصيل التقنية</th><th>قيمة للمؤسسة</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>حفظ تلقائي لكل إجابة</strong></td>
+                            <td>كتابة فورية في NVS عند كل ضغطة [*]</td>
+                            <td>صفر فقدان للبيانات حتى مع انقطاع الكهرباء</td>
+                        </tr>
+                        <tr>
+                            <td><strong>استئناف الجلسة بعد النوم</strong></td>
+                            <td>حفظ الوقت المتراكم واستئنافه بدقة ميلي ثانية</td>
+                            <td>حماية من الذعر عند انتهاء البطارية المفاجئ</td>
+                        </tr>
+                        <tr>
+                            <td><strong>إرسال على دفعات (Chunked)</strong></td>
+                            <td>تقسيم كل 20 سؤال + رسالة FINISH للتأكيد</td>
+                            <td>ضمان اكتمال الإرسال حتى مع الضوضاء</td>
+                        </tr>
+                        <tr>
+                            <td><strong>تحديث OTA لاسلكي</strong></td>
+                            <td>عبر Wi-Fi مع مراقبة تقدم التحديث</td>
+                            <td>صيانة الأجهزة دون جمعها</td>
+                        </tr>
+                        <tr>
+                            <td><strong>إصلاح تلقائي لقاعدة البيانات</strong></td>
+                            <td>AUTO-REPAIR يضيف الأعمدة المفقودة تلقائياً</td>
+                            <td>ترقية سلسة المعطيات بدون توقف أو خطأ في قاعدة البيانات</td>
+                        </tr>
+                    </tbody>
+                </table>
 
                 <h3 class="subsection">▸ الأمان ومكافحة الغش</h3>
 
@@ -2350,43 +1579,41 @@
 
                 <h3 class="subsection">▸ نقاط التمييز عن المنافسين</h3>
 
-                <div class="table-scroll">
-                    <table class="feature-table">
-                        <thead><tr><th>النقطة</th><th>نظام رسالتي</th><th>أنظمة تقليدية</th></tr></thead>
-                        <tbody>
-                            <tr>
-                                <td>البنية التحتية</td>
-                                <td class="check">✓ أجهزة مخصصة — لا حاجة لحواسيب أو هواتف</td>
-                                <td class="cross">✗ تتطلب حاسوباً أو هاتفاً لكل طالب</td>
-                            </tr>
-                            <tr>
-                                <td>الاتصال</td>
-                                <td class="check">✓ لاسلكي محلي — لا يحتاج Wi-Fi للطالب</td>
-                                <td class="cross">✗ تعتمد على شبكة مدرسية مستقرة</td>
-                            </tr>
-                            <tr>
-                                <td>انقطاع الكهرباء</td>
-                                <td class="check">✓ يُكمل من حيث توقف بعد إعادة التشغيل</td>
-                                <td class="cross">✗ فقدان الامتحان كاملاً</td>
-                            </tr>
-                            <tr>
-                                <td>التصحيح</td>
-                                <td class="check">✓ تلقائي فوري مع تفاصيل كل سؤال</td>
-                                <td class="cross">✗ يدوي أو نصف آلي</td>
-                            </tr>
-                            <tr>
-                                <td>مراقبة الغش</td>
-                                <td class="check">✓ تتبع الوقت + إنذار صوتي + إيقاف فردي</td>
-                                <td class="cross">✗ رقابة بشرية فقط</td>
-                            </tr>
-                            <tr>
-                                <td>الصيانة</td>
-                                <td class="check">✓ تحديث OTA لاسلكي بضغطة واحدة</td>
-                                <td class="cross">✗ تحديث يدوي لكل جهاز</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <table class="feature-table">
+                    <thead><tr><th>النقطة</th><th>نظام رسالتي</th><th>أنظمة تقليدية</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td>البنية التحتية</td>
+                            <td class="check">✓ أجهزة مخصصة — لا حاجة لحواسيب أو هواتف</td>
+                            <td class="cross">✗ تتطلب حاسوباً أو هاتفاً لكل طالب</td>
+                        </tr>
+                        <tr>
+                            <td>الاتصال</td>
+                            <td class="check">✓ لاسلكي محلي — لا يحتاج Wi-Fi للطالب</td>
+                            <td class="cross">✗ تعتمد على شبكة مدرسية مستقرة</td>
+                        </tr>
+                        <tr>
+                            <td>انقطاع الكهرباء</td>
+                            <td class="check">✓ يُكمل من حيث توقف بعد إعادة التشغيل</td>
+                            <td class="cross">✗ فقدان الامتحان كاملاً</td>
+                        </tr>
+                        <tr>
+                            <td>التصحيح</td>
+                            <td class="check">✓ تلقائي فوري مع تفاصيل كل سؤال</td>
+                            <td class="cross">✗ يدوي أو نصف آلي</td>
+                        </tr>
+                        <tr>
+                            <td>مراقبة الغش</td>
+                            <td class="check">✓ تتبع الوقت + إنذار صوتي + إيقاف فردي</td>
+                            <td class="cross">✗ رقابة بشرية فقط</td>
+                        </tr>
+                        <tr>
+                            <td>الصيانة</td>
+                            <td class="check">✓ تحديث OTA لاسلكي بضغطة واحدة</td>
+                            <td class="cross">✗ تحديث يدوي لكل جهاز</td>
+                        </tr>
+                    </tbody>
+                </table>
 
                 <div class="card" style="margin-top:32px; border-right:5px solid var(--secondary); background:var(--secondary-light)">
                     <h3 style="color:var(--secondary-dark);margin-bottom:12px">📌 ملخص القيمة للمستثمر</h3>
@@ -2398,13 +1625,6 @@
     </div>
 
     <script>
-        // ── detect touch device for scroll hint ──
-        const isTouchDevice = ('ontouchstart' in window || navigator.maxTouchPoints > 0 || window.matchMedia('(pointer: coarse)').matches);
-        document.querySelectorAll('.table-scroll').forEach(el => {
-            if (isTouchDevice) el.classList.add('touch-device');
-        });
-
-        // ── active TOC link ──
         const links = document.querySelectorAll('.toc-link');
         const sections = [];
         links.forEach(l => {
@@ -2426,3 +1646,4 @@
     </script>
 </body>
 </html>
+```
