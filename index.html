@@ -1007,16 +1007,17 @@
                 <h3 class="subsection" id="teacher-commands">▸ الأوامر المتاحة للمدرس</h3>
                 <div class="note"><strong>📌 طريقة الإرسال:</strong> اختر الجهاز من القائمة اليسرى ← اكتب الأمر في حقل "Command" ← حدد رقم الطالب أو اتركه فارغاً للإرسال للكل ← اضغط Send.</div>
                 <table class="feature-table">
-                    <thead><tr><th>الأمر</th><th>الوصف</th><th>مثال</th></tr></thead>
-                    <tbody>
-                        <tr><td><code>STOP</code></td><td>إيقاف الامتحان للجميع</td><td><code>STOP</code></td></tr>
-                        <tr><td><code>STOP_ID:[رقم]</code></td><td>إيقاف امتحان طالب</td><td><code>STOP_ID:1234</code></td></tr>
-                        <tr><td><code>MSG:[نص]</code></td><td>إرسال رسالة للجميع</td><td>MSG:اقرأ جيداً</td></tr>
-                        <tr><td><code>Q_NUM:[عدد],[دقائق]</code></td><td>تحديد عدد الأسئلة</td><td><code>Q_NUM:30,45</code></td></tr>
-                        <tr><td><code>SNIFF_ID:[رقم]</code></td><td>تفعيل إنذار</td><td><code>SNIFF_ID:1234</code></td></tr>
-                        <tr><td><code>BAT_REQ</code></td><td>طلب قراءة البطارية</td><td><code>BAT_REQ</code></td></tr>
-                    </tbody>
-                </table>
+    <thead><tr><th>الزر في لوحة التحكم</th><th>الوظيفة</th><th>النطاق</th></tr></thead>
+    <tbody>
+        <tr><td><strong>إيقاف الجميع</strong> <span style="background:#e74c3c;color:#fff;padding:2px 8px;border-radius:12px;font-size:11px;">STOP</span></td><td>إيقاف الامتحان فوراً لجميع الطلاب المتصلين</td><td>🌐 عام</td></tr>
+        <tr><td><strong>فحص بطارية الجميع</strong> <span style="background:#ffc107;color:#000;padding:2px 8px;border-radius:12px;font-size:11px;">BAT_REQ</span></td><td>طلب قراءة نسبة البطارية من كل الأجهزة</td><td>🌐 عام</td></tr>
+        <tr><td><strong>إيقاف طالب</strong></td><td>إيقاف امتحان طالب محدد (بعد البحث عنه)</td><td>👤 فردي</td></tr>
+        <tr><td><strong>بدء مراقبة</strong></td><td>تفعيل صوت الإنذار على جهاز طالب مشتبه به</td><td>👤 فردي</td></tr>
+        <tr><td><strong>إيقاف مراقبة</strong></td><td>إيقاف صوت الإنذار عن جهاز الطالب</td><td>👤 فردي</td></tr>
+        <tr><td><strong>فحص بطارية طالب</strong></td><td>طلب قراءة البطارية من طالب محدد</td><td>👤 فردي</td></tr>
+        <tr><td><strong>إرسال رسالة</strong> <span style="background:#17a2b8;color:#fff;padding:2px 8px;border-radius:12px;font-size:11px;">MSG</span></td><td>إرسال رسالة نصية لجميع الطلاب أو لطالب واحد</td><td>🌐 / 👤</td></tr>
+    </tbody>
+</table>
 
                 <h3 class="subsection" id="teacher-battery">▸ مراقبة البطارية</h3>
                 <ol class="steps">
