@@ -437,19 +437,61 @@
         .investor-hero > * { position: relative; z-index: 2; }
         .investor-hero h3 { font-size: 2.2rem; font-weight: 900; margin-bottom: 15px; color: #fff; }
         .investor-hero p { font-size: 1.15rem; color: #cbd5e1; max-width: 800px; margin: 0 auto; }
-        .kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; margin-top: 40px; }
+        .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 40px; }
+        @media(max-width: 760px) { .kpi-row { grid-template-columns: repeat(2, 1fr); } }
         .kpi { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius); padding: 30px 20px; text-align: center; transition: transform 0.3s; }
         .kpi:hover { transform: translateY(-5px); background: rgba(255,255,255,0.15); }
         .kpi .val { font-size: 3rem; font-weight: 900; color: #fcd34d; line-height: 1; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; }
         .kpi .lab { font-size: 1rem; font-weight: 700; color: #f8fafc; }
 
-        .arch-diagram { display: flex; justify-content: center; overflow-x: auto; padding: 30px 0; margin-bottom: 40px; }
-        .arch-nodes { display: flex; align-items: center; gap: 15px; min-width: max-content; }
-        .arch-node { background: var(--surface); border: 2px solid var(--primary); border-radius: var(--radius); padding: 20px; text-align: center; width: 140px; box-shadow: var(--shadow); }
-        .arch-node .an-icon { font-size: 36px; margin-bottom: 10px; }
-        .arch-node .an-label { font-weight: 800; font-size: 15px; color: var(--ink); }
-        .arch-node .an-sub { font-size: 12px; color: var(--ink-light); font-family: 'JetBrains Mono', monospace; margin-top: 5px; }
-        .arch-arrow { font-size: 24px; color: var(--primary); font-weight: bold; }
+        .arch-diagram { overflow-x: auto; padding: 30px 0; margin-bottom: 40px; }
+.arch-nodes {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    align-items: center;
+    min-width: 700px;
+}
+.arch-node {
+    background: var(--surface);
+    border: 2px solid var(--primary);
+    border-radius: var(--radius);
+    padding: 22px 16px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: all 0.25s;
+    position: relative;
+}
+.arch-node:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--secondary); }
+.arch-node .an-icon { font-size: 36px; margin-bottom: 10px; }
+.arch-node .an-label { font-weight: 800; font-size: 14px; color: var(--ink); }
+.arch-node .an-sub { font-size: 11px; color: var(--ink-muted); font-family: 'JetBrains Mono', monospace; margin-top: 6px; }
+.arch-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0;
+    position: relative;
+    height: 40px;
+    margin: 0 -1px;
+}
+.arch-arrow::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    position: relative;
+}
+.arch-arrow::before {
+    content: '▶';
+    font-size: 14px;
+    color: var(--secondary);
+    position: absolute;
+    z-index: 2;
+    background: var(--bg);
+    padding: 0 4px;
+}
 
         /* IMAGES & MEDIA */
         .image-showcase { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 25px; margin: 30px 0; text-align: center; box-shadow: var(--shadow-sm); transition: all var(--transition); }
@@ -570,11 +612,157 @@
 .prev-btn {
     background-color: var(--danger, #ef4444);
 }
+.footer-icon-link,
+.footer-icon-link:visited,
+.footer-icon-link:link {
+    color: inherit;
+    text-decoration: none;
+}
+a.footer-icon-link:visited i { color: inherit !important; }
+.contact-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 30px 0;
+}
+.contact-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+    padding: 28px 24px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+.contact-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--secondary), #fcd34d);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.contact-card:hover { background: rgba(255,255,255,0.11); transform: translateY(-4px); border-color: rgba(255,255,255,0.22); }
+.contact-card:hover::before { opacity: 1; }
+.contact-card-icon { font-size: 26px; margin-bottom: 12px; }
+.contact-card-label { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.55); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; }
+.contact-card-value { font-size: 15px; font-weight: 700; color: #f8fafc; }
+.contact-card-value a { color: #93c5fd; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 14px; display: block; line-height: 2; transition: color 0.2s; }
+.contact-card-value a:visited { color: #93c5fd; }
+.contact-card-value a:hover { color: #fcd34d; }
+@media(max-width: 760px) { .contact-cards-grid { grid-template-columns: 1fr; } }
+.key-legend-item {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 1.05rem; color: var(--ink); font-weight: 600;
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+    transition: all 0.2s;
+    cursor: default;
+}
+.key-legend-item:hover {
+    background: var(--surface-alt);
+    border-color: var(--border);
+    transform: translateX(-4px);
+    color: var(--primary);
+}
+.key-legend-item:hover .legend-dot {
+    transform: scale(1.3);
+    box-shadow: 0 0 10px currentColor;
+}
+.legend-dot { transition: all 0.2s; }
+.screens-table { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); margin: 20px 0 30px; }
+.screens-table th { background: #0f172a; color: #f8fafc; padding: 16px 20px; text-align: right; font-size: 14px; font-weight: 700; letter-spacing: 0.05em; }
+.screens-table td { padding: 16px 20px; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--ink-light); transition: background 0.2s; vertical-align: middle; }
+.screens-table tr:last-child td { border-bottom: none; }
+.screens-table tr:hover td { background: var(--primary-light); color: var(--ink); }
+.screens-table code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    background: #0f172a;
+    color: #34d399;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(52,211,153,0.3);
+    letter-spacing: 0.04em;
+    box-shadow: 0 0 8px rgba(52,211,153,0.15);
+    white-space: nowrap;
+}
+/* ── مرجع الشاشات ── */
+.msg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+}
+.msg-card {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: all 0.25s;
+    cursor: default;
+}
+.msg-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--msg-color, #34d399);
+    box-shadow: 0 0 0 1px var(--msg-color, #34d399),
+                0 12px 30px rgba(0,0,0,0.4),
+                0 0 20px color-mix(in srgb, var(--msg-color, #34d399) 20%, transparent);
+}
+.msg-lcd {
+    background: #9ea78f;
+    border-bottom: 3px solid #1a202c;
+    padding: 14px 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a202c;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    direction: ltr;
+    box-shadow: inset 0 3px 8px rgba(0,0,0,0.25);
+}
+.msg-lcd-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--msg-color, #34d399);
+    box-shadow: 0 0 8px var(--msg-color, #34d399);
+    flex-shrink: 0;
+    animation: blink-dot 2s infinite;
+}
+@keyframes blink-dot {
+    0%,100% { opacity: 1; }
+    50%      { opacity: 0.2; }
+}
+.msg-card:hover .msg-lcd-dot { animation-duration: 0.4s; }
+.msg-body {
+    padding: 16px 18px;
+}
+.msg-meaning {
+    font-size: 14px;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin-bottom: 8px;
+}
+.msg-action {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.6;
+    padding-right: 12px;
+    border-right: 2px solid var(--msg-color, #34d399);
+}
     </style>
 </head>
 <body>
-    <button class="back-to-top" id="backToTopBtn" title="العودة إلى الأعلى"><i class="fas fa-arrow-up"></i></button>
-
+<button class="back-to-top" id="backToTopBtn" title="العودة إلى الأعلى">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+</button>
     <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
 
     <nav class="top-nav">
@@ -1250,7 +1438,91 @@
                 </ol>
                 <div class="status-box success"><div class="status-icon">💾</div><div class="status-text"><strong>حفظ تلقائي ودائم</strong><span>كل إجابة تُحفظ فوراً في ذاكرة الجهاز غير المتطايرة (NVS). حتى لو انطفأ الجهاز، بياناتك بأمان.</span></div></div>
             </div>
+            <div class="content-card" id="exam-student-screens">
+                <h3 class="subsection">▸ مرجع الشاشات ورسائل النظام</h3>
+                <div class="msg-grid">
 
+    <div class="msg-card" style="--msg-color:#60a5fa">
+        <div class="msg-lcd"><div class="msg-lcd-dot"></div>Resalaty System</div>
+        <div class="msg-body">
+            <div class="msg-meaning">شاشة البداية وإقلاع النظام</div>
+            <div class="msg-action">انتظر 3 ثوان حتى يكتمل الإقلاع</div>
+        </div>
+    </div>
+
+    <div class="msg-card" style="--msg-color:#34d399">
+        <div class="msg-lcd"><div class="msg-lcd-dot"></div>[OK]</div>
+        <div class="msg-body">
+            <div class="msg-meaning">نقطة المدرس متصلة وجاهزة</div>
+            <div class="msg-action">أكمل إجراءاتك بأمان</div>
+        </div>
+    </div>
+
+    <div class="msg-card" style="--msg-color:#f87171">
+        <div class="msg-lcd"><div class="msg-lcd-dot"></div>[--]</div>
+        <div class="msg-body">
+            <div class="msg-meaning">نقطة المدرس غير متصلة</div>
+            <div class="msg-action">انتظر قليلاً أو تواصل مع المشرف بالقاعة</div>
+        </div>
+    </div>
+
+    <div class="msg-card" style="--msg-color:#fbbf24">
+        <div class="msg-lcd"><div class="msg-lcd-dot"></div>Checking...</div>
+        <div class="msg-body">
+            <div class="msg-meaning">جارٍ التحقق من البيانات مع السيرفر</div>
+            <div class="msg-action">انتظر لحظات</div>
+        </div>
+    </div>
+
+    <div class="msg-card" style="--msg-color:#f87171">
+        <div class="msg-lcd"><div class="msg-lcd-dot"></div>Min 4 Digits!</div>
+        <div class="msg-body">
+            <div class="msg-meaning">كلمة المرور قصيرة جداً</div>
+            <div class="msg-action">أدخل كلمة مرور من 4 أرقام على الأقل</div>
+        </div>
+    </div>
+
+    <div class="msg-card" style="--msg-color:#f87171">
+        <div class="msg-lcd"><div class="msg-lcd-dot"></div>Wrong Password!</div>
+        <div class="msg-body">
+            <div class="msg-meaning">كلمة المرور غير مطابقة</div>
+            <div class="msg-action">أعد إدخال الكلمة الصحيحة</div>
+        </div>
+    </div>
+
+    <div class="msg-card" style="--msg-color:#34d399">
+        <div class="msg-lcd"><div class="msg-lcd-dot"></div>SAVED!</div>
+        <div class="msg-body">
+            <div class="msg-meaning">تم حفظ الإجابة بنجاح في الذاكرة</div>
+            <div class="msg-action">انتقل للسؤال التالي وتابع الامتحان</div>
+        </div>
+    </div>
+
+    <div class="msg-card" style="--msg-color:#fbbf24">
+        <div class="msg-lcd"><div class="msg-lcd-dot"></div>Too Early!</div>
+        <div class="msg-body">
+            <div class="msg-meaning">لم ينقضِ الوقت الأدنى للسؤال</div>
+            <div class="msg-action">انتظر ثوانٍ وفكر بالسؤال جيداً</div>
+        </div>
+    </div>
+
+    <div class="msg-card" style="--msg-color:#f87171">
+        <div class="msg-lcd"><div class="msg-lcd-dot"></div>Teacher Offline!</div>
+        <div class="msg-body">
+            <div class="msg-meaning">المدرس فَقَد الاتصال أثناء الإرسال</div>
+            <div class="msg-action">انتظر إشارة [OK] ثم أعد المحاولة فوراً</div>
+        </div>
+    </div>
+
+    <div class="msg-card" style="--msg-color:#a78bfa">
+        <div class="msg-lcd"><div class="msg-lcd-dot"></div>FINISHED! Data Sent.</div>
+        <div class="msg-body">
+            <div class="msg-meaning">تم إرسال حزمة الإجابات بالكامل</div>
+            <div class="msg-action">لقد أنهيت الامتحان، يمكنك إغلاق الجهاز</div>
+        </div>
+    </div>
+
+</div>
             <div class="content-card" id="exam-student-save">
                 <h3 class="subsection">▸ إنهاء الامتحان وإرسال الإجابات</h3>
                 <ol class="steps">
@@ -1259,24 +1531,6 @@
                     <li><div class="step-content"><strong>تأكيد الإرسال النهائي</strong><span>تأكد من ظهور إشارة [OK] (المدرس متصل) في أعلى الشاشة. ستظهر لك رسالة "FINISHED! Data Sent." لتأكيد استلام السيرفر لإجاباتك.</span></div></li>
                 </ol>
             </div>
-
-            <div class="content-card" id="exam-student-screens">
-                <h3 class="subsection">▸ مرجع الشاشات ورسائل النظام</h3>
-                <table class="feature-table">
-                    <thead><tr><th>الشاشة / الرسالة</th><th>المعنى والتفسير</th><th>الإجراء المطلوب منك</th></tr></thead>
-                    <tbody>
-                        <tr><td><code>Resalaty System</code></td><td>شاشة البداية وإقلاع النظام</td><td>انتظر 3 ثوان حتى يكتمل الإقلاع</td></tr>
-                        <tr><td><code>[OK]</code></td><td>نقطة المدرس متصلة وجاهزة</td><td>أكمل إجراءاتك بأمان</td></tr>
-                        <tr><td><code>[--]</code></td><td>نقطة المدرس غير متصلة بالشبكة</td><td>انتظر قليلاً أو تواصل مع المشرف بالقاعة</td></tr>
-                        <tr><td><code>Checking...</code></td><td>جارٍ التحقق من البيانات مع السيرفر</td><td>انتظر لحظات</td></tr>
-                        <tr><td><code>Min 4 Digits!</code></td><td>كلمة المرور المدخلة قصيرة جداً</td><td>أدخل كلمة مرور تتكون من 4 أرقام على الأقل</td></tr>
-                        <tr><td><code>Wrong Password!</code></td><td>كلمة المرور غير مطابقة للسجل</td><td>أعد إدخال الكلمة الصحيحة</td></tr>
-                        <tr><td><code>SAVED!</code></td><td>تم حفظ الإجابة بنجاح في الذاكرة</td><td>انتقل للسؤال التالي وتابع الامتحان</td></tr>
-                        <tr><td><code>Too Early!</code></td><td>لم ينقضِ الوقت الأدنى المسموح للسؤال</td><td>انتظر ثوانٍ إضافية وفكر بالسؤال جيداً</td></tr>
-                        <tr><td><code>Teacher Offline!</code></td><td>المدرس فَقَد الاتصال أثناء إرسال البيانات</td><td>انتظر إشارة [OK] ثم أعد المحاولة فوراً</td></tr>
-                        <tr><td><code>FINISHED! Data Sent.</code></td><td>تم إرسال حزمة الإجابات بالكامل بنجاح</td><td>لقد أنهيت الامتحان، يمكنك إغلاق الجهاز</td></tr>
-                    </tbody>
-                </table>
             </div>
 
             <div class="content-card" id="exam-student-sleep">
@@ -1294,18 +1548,18 @@
                 <p>لوحة تحكم ذكية تعمل عبر متصفح الويب (عنوان IP محلي) تتصل بنقطة التجميع (Gateway) وتتحدث البيانات تلقائياً كل 30 ثانية لتتبع حالة القاعة بالكامل.</p>
                 
                 <div class="arch-diagram">
-                    <div class="arch-nodes">
-                        <div class="arch-node"><div class="an-icon">📱</div><div class="an-label">جهاز الطالب</div><div class="an-sub">ESP-NOW Node</div></div>
-                        <div class="arch-arrow">→</div>
-                        <div class="arch-node"><div class="an-icon">📻</div><div class="an-label">نقطة المدرس</div><div class="an-sub">Receiver Node</div></div>
-                        <div class="arch-arrow">→</div>
-                        <div class="arch-node"><div class="an-icon">📡</div><div class="an-label">البوابة الموجهة</div><div class="an-sub">Network Gateway</div></div>
-                        <div class="arch-arrow">→</div>
-                        <div class="arch-node"><div class="an-icon">🖥️</div><div class="an-label">لوحة التحكم</div><div class="an-sub">Web Dashboard</div></div>
-                        <div class="arch-arrow">→</div>
-                        <div class="arch-node"><div class="an-icon">🗄️</div><div class="an-label">قاعدة البيانات</div><div class="an-sub">MySQL DB</div></div>
-                    </div>
-                </div>
+    <div class="arch-nodes">
+        <div class="arch-node"><div class="an-icon">🗄️</div><div class="an-label">قاعدة البيانات</div><div class="an-sub">MySQL DB</div></div>
+        <div class="arch-arrow"></div>
+        <div class="arch-node"><div class="an-icon">🖥️</div><div class="an-label">لوحة التحكم</div><div class="an-sub">Web Dashboard</div></div>
+        <div class="arch-arrow"></div>
+        <div class="arch-node"><div class="an-icon">📡</div><div class="an-label">البوابة الموجهة</div><div class="an-sub">Network Gateway</div></div>
+        <div class="arch-arrow"></div>
+        <div class="arch-node"><div class="an-icon">📻</div><div class="an-label">نقطة المدرس</div><div class="an-sub">Receiver Node</div></div>
+        <div class="arch-arrow"></div>
+        <div class="arch-node"><div class="an-icon">📱</div><div class="an-label">جهاز الطالب</div><div class="an-sub">ESP-NOW Node</div></div>
+    </div>
+</div>
 
                 <h3 class="subsection" id="exam-teacher-commands">▸ الأوامر اللاسلكية المتاحة للمدرس</h3>
                 <table class="feature-table">
@@ -1398,6 +1652,32 @@
 
     <footer class="site-footer">
         <span class="footer-title">مجموعة رسالتي للغات والعلوم</span>
+         <div class="contact-cards-grid">
+    <div class="contact-card">
+        <div class="contact-card-icon">💼</div>
+        <div class="contact-card-label">الإدارة والمبيعات</div>
+        <div class="contact-card-value">
+            <a href="tel:+963935111333">+963 935 111 333</a>
+            <a href="mailto:Anwar.albabily@gmail.com">Anwar.albabily@gmail.com</a>
+        </div>
+    </div>
+    <div class="contact-card">
+        <div class="contact-card-icon">💻</div>
+        <div class="contact-card-label">الاستشارات التقنية</div>
+        <div class="contact-card-value">
+            <a href="tel:+963934920997">+963 934 920 997</a>
+            <a href="mailto:NourAldeenAlbabbili@gmail.com">NourAldeenAlbabbili@gmail.com</a>
+        </div>
+    </div>
+    <div class="contact-card">
+        <div class="contact-card-icon">☎️</div>
+        <div class="contact-card-label">الهاتف الثابت</div>
+        <div class="contact-card-value">
+            <a href="tel:+963113335171">011 - 3335171</a>
+            <a href="tel:+963113335173">011 - 3335173</a>
+        </div>
+    </div>
+</div>
         <div class="footer-icons">
             <a href="https://wa.me/963935666333" target="_blank" class="footer-icon-link"><i class="fab fa-whatsapp" style="color:#25D366;"></i></a>
             <a href="https://fb.com/resalatigroup" target="_blank" class="footer-icon-link"><i class="fab fa-facebook-f" style="color:#1877F2;"></i></a>
@@ -1406,15 +1686,6 @@
         </div>
         <div class="footer-address">
             <i class="fas fa-map-marker-alt" style="color:var(--secondary);"></i> سوريا - دمشق - الجسر الأبيض - شركسية - جانب جامع الجسر الأبيض
-        </div>
-        <div class="footer-contact-row">
-            💼 <strong>الإدارة والمبيعات:</strong> <a href="tel:+963935111333">+963 935 111 333</a> | <a href="mailto:Anwar.albabily@gmail.com">Anwar.albabily@gmail.com</a>
-        </div>
-        <div class="footer-contact-row">
-            💻 <strong>الاستشارات التقنية وفريق التطوير:</strong> <a href="tel:+963934920997">+963 934 920 997</a> | <a href="mailto:NourAldeenAlbabbili@gmail.com">NourAldeenAlbabbili@gmail.com</a>
-        </div>
-        <div class="footer-contact-row">
-            ☎️ <strong>الهاتف الثابت للمعهد:</strong> <a href="tel:+963113335171">011-3335171</a> &mdash; <a href="tel:+963113335173">011-3335173</a>
         </div>
         <div class="footer-copyright">جميع الحقوق محفوظة لصالح مجموعة رسالتي للغات والعلوم © 2026 - 2027</div>
     </footer>
