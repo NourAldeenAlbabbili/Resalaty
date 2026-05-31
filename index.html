@@ -11,29 +11,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .nav-brand, 
+    /* استهداف الرابط بشكل دقيق لإلغاء أي تأثير */
+.nav-brand, 
 .nav-brand:link, 
 .nav-brand:visited, 
-.nav-brand:active { 
-    display: flex !important; 
-    align-items: center !important; /* هاي اللي بتخلي النقطة والكلمة على نفس المستوى */
-    gap: 10px !important; 
-    font-size: 1.3rem; 
-    font-weight: 800; 
-    color: var(--primary) !important; /* إجبار اللون */
-    text-decoration: none !important; /* إزالة الخط المزعج تحت الكلمة */
-    white-space: nowrap !important; /* منع نزول الكلمة لسطر جديد */
+.nav-brand:hover, 
+.nav-brand:active {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
+    text-decoration: none !important; /* إزالة الخط الأزرق نهائياً */
+    color: var(--primary) !important; /* تثبيت اللون */
+    outline: none !important;
 }
 
-/* تأكيد إزالة أي هوامش مخفية من النقطة ممكن ترفعها لفوق */
+/* ضبط النقطة لتكون في منتصف الكلمة عمودياً */
 .nav-brand-dot {
-    margin: 0 !important; 
-    width: 12px; 
-    height: 12px; 
-    border-radius: 50%; 
-    background: var(--primary); 
-    box-shadow: 0 0 15px rgba(37,99,235,0.5); 
-    animation: pulse 2s infinite; 
+    margin: 0 !important;
+    flex-shrink: 0;
+    align-self: center; /* تضمن وجود النقطة في المنتصف عمودياً */
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--primary);
+    box-shadow: 0 0 15px rgba(37,99,235,0.5);
+    animation: pulse 2s infinite;
 }
         * {
             box-sizing: border-box;
@@ -577,18 +580,20 @@
         .footer-contact-row a:hover { color: #fff; text-decoration: underline; }
         .footer-copyright { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.95rem; color: #64748b; }
         /* تثبيت لون رابط الخريطة أو أي رابط داخل العنوان */
-.footer-address a,
-.footer-address a:link,
-.footer-address a:visited,
-.footer-address a:active {
-    color: inherit; /* بياخد نفس لون النص الأساسي */
-    text-decoration: none; /* عشان نشيل الخط اللي تحت الرابط إذا حابب */
-    transition: color 0.2s;
+/* إلغاء أي تنسيق للروابط داخل الفوتر وتثبيتها بلون النص */
+.site-footer a,
+.site-footer a:link,
+.site-footer a:visited,
+.site-footer a:active {
+    color: inherit !important;      /* أخذ لون نص الفوتر الأصلي */
+    text-decoration: none !important; /* حذف الخط السفلي */
+    border-bottom: none !important;
+    outline: none !important;
 }
 
-/* حركة حلوة لما تمرر الماوس عليه */
-.footer-address a:hover {
-    color: #fff; 
+/* تأثير عند تمرير الماوس فقط */
+.site-footer a:hover {
+    color: var(--secondary) !important;
 }
 
         /* MOBILE MENU & RESPONSIVE */
@@ -1005,10 +1010,10 @@ a.footer-icon-link:visited i { color: inherit !important; }
 <nav class="top-nav">
     <div style="display:flex; align-items:center; gap:12px;">
         <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
-        <a href="#" class="nav-brand"> <a href="https://fb.com/resalatigroup">
+        <a href="#" class="nav-brand"> 
             <div class="nav-brand-dot"></div>
-            مجموعة رسالتي
-        </a></a>
+            <span><a href="https://www.facebook.com/resalatigroup">مجموعة رسالتي</a></span>
+        </a>
     </div>
 
     <ul class="nav-links">
@@ -1036,7 +1041,7 @@ a.footer-icon-link:visited i { color: inherit !important; }
                 منظومة رقمية متكاملة من طرفين: نظام ERP لإدارة المؤسسة التعليمية الخاصة
             </p>
             <div class="hero-sub">
-            (جامعة، مدرسة، مخبر لغوي، مركز تدريب) بكل تفاصيلها، وجهاز امتحانات لاسلكي فريد من نوعه — كلاهما من تصميم وبرمجة مجموعة رسالتي للغات والعلوم.
+            (جامعة، مدرسة، مخبر لغوي، مركز تدريب) بكل تفاصيلها، وجهاز امتحانات لاسلكي فريد من نوعه — كلاهما من تصميم وبرمجة  للغات والعلوم.
             </div>
                                 <div class="hero-cards">
                 <a href="#part-erp" class="hero-card lms">
