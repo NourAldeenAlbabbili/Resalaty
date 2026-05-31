@@ -1591,85 +1591,65 @@
 
             <div class="content-card" id="exam-student-exam">
     <h3 class="subsection">▸ إجراء الامتحان والإجابة على الأسئلة</h3>
-                
+    
     <div class="keypad-wrap">
-    <div class="keypad">
-        <div class="key fn">A</div><div class="key">3</div><div class="key">2</div><div class="key">1</div>
-        <div class="key fn">B</div><div class="key">6</div><div class="key">5</div><div class="key">4</div>
-        <div class="key fn">C</div><div class="key">9</div><div class="key">8</div><div class="key">7</div>
-        <div class="key fn">D</div><div class="key special">#</div><div class="key">0</div><div class="key special">*</div>
-    </div>
-
-    <div class="key-legend-side">
-        <div class="nav-buttons">
-            <div class="nav-btn next-btn">التالي</div>
-            <div class="nav-btn prev-btn">السابق</div>
+        <div class="keypad">
+            <div class="key fn">A</div><div class="key">3</div><div class="key">2</div><div class="key">1</div>
+            <div class="key fn">B</div><div class="key">6</div><div class="key">5</div><div class="key">4</div>
+            <div class="key fn">C</div><div class="key">9</div><div class="key">8</div><div class="key">7</div>
+            <div class="key fn">D</div><div class="key special">#</div><div class="key">0</div><div class="key special">*</div>
         </div>
 
-        <div class="key-legend">
-            <div class="key-legend-item"><div class="legend-dot dot-blue"></div> الأزرار الزرقاء (A/B/C/D) — لاختيار الإجابة</div>
-            <div class="key-legend-item"><div class="legend-dot dot-gold"></div> الزر النجمي (*) — للحفظ / التأكيد</div>
-            <div class="key-legend-item"><div class="legend-dot dot-gold"></div> زر المربع (#) — للحذف / الرجوع</div>
-            <div class="key-legend-item"><div class="legend-dot dot-gray"></div> الأزرار الرمادية (0-9) — تحديد رقم السؤال</div>
-            <div class="key-legend-item"><div class="legend-dot dot-green"></div> الزر الأخضر — التالي</div>
-            <div class="key-legend-item"><div class="legend-dot dot-red"></div> الزر الأحمر — السابق</div>
+        <div class="key-legend-side">
+            <div class="nav-buttons">
+                <div class="nav-btn next-btn">التالي</div>
+                <div class="nav-btn prev-btn">السابق</div>
+            </div>
+            <div class="key-legend">
+                <div class="key-legend-item"><div class="legend-dot dot-blue"></div> الأزرار الزرقاء (A/B/C/D) — اختيار الإجابة</div>
+                <div class="key-legend-item"><div class="legend-dot dot-gold"></div> الزر النجمي (*) — للحفظ / التأكيد</div>
+                <div class="key-legend-item"><div class="legend-dot dot-gold"></div> زر المربع (#) — للحذف / الرجوع</div>
+                <div class="key-legend-item"><div class="legend-dot dot-gray"></div> الأزرار الرمادية (0-9) — تحديد رقم السؤال</div>
+            </div>
         </div>
     </div>
 </div>
 
-    <ol class="steps">
-        <li><div class="step-content"><strong>اختر رقم السؤال</strong><span>في شاشة "Select Q" اكتب رقم السؤال (مثلاً 1) ثم اضغط [*].</span></div></li>
-        <li><div class="step-content"><strong>أجب باختيار الزر المناسب</strong><span>اضغط على أحد الخيارات (A أو B أو C أو D).</span></div></li>
-        <li><div class="step-content"><strong>اضغط [*] لحفظ الإجابة</strong><span>عند التأكد، اضغط النجمة. ستظهر رسالة "SAVED!".</span></div></li>
-        <li><div class="step-content"><strong>التنقل بين الأسئلة</strong><span>للانتقال للسؤال التالي أو السابق استخدم أزرار التنقل السريعة.</span></div></li>
-    </ol>
-    <div class="status-box success"><div class="status-icon">💾</div><div class="status-text"><strong>حفظ تلقائي ودائم</strong><span>كل إجابة تُحفظ فوراً في ذاكرة الجهاز (NVS).</span></div></div>
+<div class="content-card" id="exam-student-screens">
+    <h3 class="subsection">▸ مرجع الشاشات ورسائل النظام</h3>
+    <p>هذا المرجع يوضح الرسائل التي تظهر على شاشة الـ LCD الخاصة بالطالب عند التفاعل مع النظام:</p>
+    
+    <div class="msg-grid">
+        <div class="msg-card" style="--msg-color:#34d399">
+            <div class="msg-lcd"><div class="msg-lcd-dot"></div>[OK]</div>
+            <div class="msg-body">
+                <div class="msg-meaning">اتصال ناجح</div>
+                <div class="msg-action">الجهاز متصل بنقطة المدرس ويمكنك البدء</div>
+            </div>
+        </div>
+        <div class="msg-card" style="--msg-color:#f87171">
+            <div class="msg-lcd"><div class="msg-lcd-dot"></div>[--]</div>
+            <div class="msg-body">
+                <div class="msg-meaning">فقدان اتصال</div>
+                <div class="msg-action">الجهاز يحاول إعادة الاتصال تلقائياً</div>
+            </div>
+        </div>
+        <div class="msg-card" style="--msg-color:#34d399">
+            <div class="msg-lcd"><div class="msg-lcd-dot"></div>SAVED!</div>
+            <div class="msg-body">
+                <div class="msg-meaning">حفظ الإجابة</div>
+                <div class="msg-action">تم إرسال إجابتك وتخزينها في ذاكرة المدرس</div>
+            </div>
+        </div>
+        <div class="msg-card" style="--msg-color:#f87171">
+            <div class="msg-lcd"><div class="msg-lcd-dot"></div>Wrong Pass!</div>
+            <div class="msg-body">
+                <div class="msg-meaning">خطأ في الدخول</div>
+                <div class="msg-action">كلمة المرور غير مطابقة، أعد المحاولة</div>
+            </div>
+        </div>
+    </div>
 </div>
-            <div class="content-card" id="exam-student-screens">
-                <h3 class="subsection">▸ مرجع الشاشات ورسائل النظام</h3>
-                <div class="msg-grid">
-                    <div class="msg-card" style="--msg-color:#60a5fa">
-                        <div class="msg-lcd"><div class="msg-lcd-dot"></div>Resalaty System</div>
-                        <div class="msg-body">
-                            <div class="msg-meaning">شاشة البداية وإقلاع النظام</div>
-                            <div class="msg-action">انتظر 3 ثوان حتى يكتمل الإقلاع</div>
-                        </div>
-                    </div>
-                    <div class="msg-card" style="--msg-color:#34d399">
-                        <div class="msg-lcd"><div class="msg-lcd-dot"></div>[OK]</div>
-                        <div class="msg-body">
-                            <div class="msg-meaning">نقطة المدرس متصلة وجاهزة</div>
-                            <div class="msg-action">أكمل إجراءاتك بأمان</div>
-                        </div>
-                    </div>
-                    <div class="msg-card" style="--msg-color:#f87171">
-                        <div class="msg-lcd"><div class="msg-lcd-dot"></div>[--]</div>
-                        <div class="msg-body">
-                            <div class="msg-meaning">نقطة المدرس غير متصلة</div>
-                            <div class="msg-action">انتظر قليلاً أو تواصل مع المشرف بالقاعة</div>
-                        </div>
-                    </div>
-                    <div class="msg-card" style="--msg-color:#fbbf24">
-                        <div class="msg-lcd"><div class="msg-lcd-dot"></div>Checking...</div>
-                        <div class="msg-body">
-                            <div class="msg-meaning">جارٍ التحقق من البيانات مع السيرفر</div>
-                            <div class="msg-action">انتظر لحظات</div>
-                        </div>
-                    </div>
-                    <div class="msg-card" style="--msg-color:#f87171">
-                        <div class="msg-lcd"><div class="msg-lcd-dot"></div>Min 4 Digits!</div>
-                        <div class="msg-body">
-                            <div class="msg-meaning">كلمة المرور قصيرة جداً</div>
-                            <div class="msg-action">أدخل كلمة مرور من 4 أرقام على الأقل</div>
-                        </div>
-                    </div>
-                    <div class="msg-card" style="--msg-color:#f87171">
-                        <div class="msg-lcd"><div class="msg-lcd-dot"></div>Wrong Password!</div>
-                        <div class="msg-body">
-                            <div class="msg-meaning">كلمة المرور غير مطابقة</div>
-                            <div class="msg-action">أعد إدخال الكلمة الصحيحة</div>
-                        </div>
-                    </div>
                     <div class="msg-card" style="--msg-color:#34d399">
                         <div class="msg-lcd"><div class="msg-lcd-dot"></div>SAVED!</div>
                         <div class="msg-body">
