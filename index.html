@@ -11,6 +11,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        .nav-brand, 
+.nav-brand:link, 
+.nav-brand:visited, 
+.nav-brand:active { 
+    display: flex !important; 
+    align-items: center !important; /* هاي اللي بتخلي النقطة والكلمة على نفس المستوى */
+    gap: 10px !important; 
+    font-size: 1.3rem; 
+    font-weight: 800; 
+    color: var(--primary) !important; /* إجبار اللون */
+    text-decoration: none !important; /* إزالة الخط المزعج تحت الكلمة */
+    white-space: nowrap !important; /* منع نزول الكلمة لسطر جديد */
+}
+
+/* تأكيد إزالة أي هوامش مخفية من النقطة ممكن ترفعها لفوق */
+.nav-brand-dot {
+    margin: 0 !important; 
+    width: 12px; 
+    height: 12px; 
+    border-radius: 50%; 
+    background: var(--primary); 
+    box-shadow: 0 0 15px rgba(37,99,235,0.5); 
+    animation: pulse 2s infinite; 
+}
         * {
             box-sizing: border-box;
             margin: 0;
@@ -957,6 +981,18 @@ a.footer-icon-link:visited i { color: inherit !important; }
     line-height: 1.6;
     padding-right: 12px;
     border-right: 2px solid var(--msg-color, #34d399);
+}
+    .footer-address a,
+.footer-address a:link,
+.footer-address a:visited,
+.footer-address a:active {
+    color: #cbd5e1 !important; /* نفس لون نص الفوتر */
+    text-decoration: none !important; /* إزالة الخط من تحت الخريطة */
+    transition: color 0.2s;
+}
+
+.footer-address a:hover {
+    color: #fff !important; 
 }
     </style>
 </head>
