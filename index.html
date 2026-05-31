@@ -11,33 +11,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-    /* استهداف الرابط بشكل دقيق لإلغاء أي تأثير */
-.nav-brand, 
-.nav-brand:link, 
-.nav-brand:visited, 
-.nav-brand:hover, 
-.nav-brand:active {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    gap: 10px !important;
-    text-decoration: none !important; /* إزالة الخط الأزرق نهائياً */
-    color: var(--primary) !important; /* تثبيت اللون */
-    outline: none !important;
-}
+        /* استهداف الرابط بشكل دقيق لإلغاء أي تأثير */
+        .nav-brand,
+        .nav-brand:link,
+        .nav-brand:visited,
+        .nav-brand:hover,
+        .nav-brand:active {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            gap: 10px !important;
+            text-decoration: none !important;
+            color: var(--primary) !important;
+            outline: none !important;
+        }
 
-/* ضبط النقطة لتكون في منتصف الكلمة عمودياً */
-.nav-brand-dot {
-    margin: 0 !important;
-    flex-shrink: 0;
-    align-self: center; /* تضمن وجود النقطة في المنتصف عمودياً */
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--primary);
-    box-shadow: 0 0 15px rgba(37,99,235,0.5);
-    animation: pulse 2s infinite;
-}
+        .nav-brand-dot {
+            margin: 0 !important;
+            flex-shrink: 0;
+            align-self: center;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 15px rgba(37,99,235,0.5);
+            animation: pulse 2s infinite;
+        }
         * {
             box-sizing: border-box;
             margin: 0;
@@ -55,7 +54,7 @@
             --accent-light: #d1fae5;
             --danger: #ef4444;
             --danger-light: #fee2e2;
-            --bg: #f8fafc; /* خلفية أفتح قليلاً لإبراز البطاقات */
+            --bg: #f8fafc;
             --surface: #ffffff;
             --surface-alt: #f1f5f9;
             --ink: #0f172a;
@@ -147,11 +146,9 @@
             z-index: 0;
         }
 
-        /* PROGRESS BAR */
         .progress-bar { position: fixed; top: 0; left: 0; right: 0; height: 4px; z-index: 10003; background: transparent; }
         .progress-fill { height: 100%; background: linear-gradient(90deg, var(--lms), var(--exam)); width: 0%; transition: width 0.1s; border-radius: 0 4px 4px 0; }
 
-        /* TOP NAV */
         .top-nav {
             position: fixed; top: 4px; left: 0; right: 0; z-index: 10002;
             background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
@@ -160,18 +157,18 @@
             display: flex; align-items: center; justify-content: space-between;
         }
         body.dark-mode .top-nav { background: rgba(30, 41, 59, 0.85); }
-        .nav-brand, 
-.nav-brand:link, 
-.nav-brand:visited, 
-.nav-brand:active { 
-    display: flex; 
-    align-items: center; 
-    gap: 14px; 
-    font-size: 1.3rem; 
-    font-weight: 800; 
-    color: var(--primary); 
-    text-decoration: none; 
-}
+        .nav-brand,
+        .nav-brand:link,
+        .nav-brand:visited,
+        .nav-brand:active {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+        }
         .nav-brand-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 15px rgba(37,99,235,0.5); animation: pulse 2s infinite; }
         @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:0.6;transform:scale(0.85);} }
         .nav-links { display: flex; align-items: center; gap: 10px; list-style: none; }
@@ -188,7 +185,6 @@
         .top-nav .dark-mode-toggle:hover { background: var(--primary-light); color: var(--primary); transform: scale(1.05); }
         .top-nav .dark-mode-toggle::before { content: var(--toggle-icon); }
 
-        /* HERO (FIRST SCREEN) */
         .hero {
             min-height: 100vh; display: flex; align-items: center; justify-content: center;
             position: relative; overflow: hidden; padding: 140px 40px 100px;
@@ -235,7 +231,7 @@
         .hero h1 .g2 { background: linear-gradient(135deg, #fcd34d 0%, #f59e0b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         body.dark-mode .hero h1 .g1 { background: linear-gradient(135deg, #60a5fa 0%, #93c5fd 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         body.dark-mode .hero h1 .g2 { background: linear-gradient(135deg, #fbbf24 0%, #fcd34d 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
+
         .hero-sub { font-size: 1.2rem; color: #cbd5e1; max-width: 750px; margin: 0 auto 50px; animation: fadeDown 0.6s 0.2s ease both; }
         .hero-sub2 { font-size: 1.2rem; color: #cbd5e1; max-width: 750px; margin: 0 auto 0px; animation: fadeDown 0.6s 0.2s ease both; }
         .hero-sub3 { font-size: 1.2rem; color: #cbd5e1; max-width: 750px; margin: 0 auto 0px; animation: fadeDown 0.6s 0.2s ease both; }
@@ -265,34 +261,23 @@
 
         @keyframes fadeDown { from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:translateY(0); } }
 
-        /* BACK TO TOP */
         .back-to-top {
             position: fixed; bottom: 30px; left: 30px; z-index: 8000; width: 50px; height: 50px; border-radius: 50%;
             background-color: var(--primary); color: #fff; border: none; box-shadow: var(--shadow-lg);
             display: flex; align-items: center; justify-content: center; cursor: pointer;
             opacity: 0; visibility: hidden; transform: translateY(20px); transition: all 0.3s ease; font-size: 20px;
+            padding: 0;
         }
         .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
-        /* كلاس جديد للتحكم بحجم الصورة داخل الزر */
-.back-to-top-icon {
-    width: 24px;  /* يمكنك تكبير أو تصغير هذا الرقم حسب رغبتك */
-    height: 24px; /* حافظ على الارتفاع مساوياً للعرض لشكل متناسق */
-    display: block; /* لضمان عدم وجود مسافات غريبة حول الصورة */
-    object-fit: contain; /* لضمان عدم تمدد الصورة بشكل مشوه */
-}
-
-/* تعديل بسيط على الزر الأصلي لضمان التوسيط الكامل */
-.back-to-top {
-    /* الخواص التالية موجودة لديك مسبقاً ولكن نؤكد عليها للتوسيط */
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 0; /* لإزالة أي حشوة قد تزيح الصورة عن المركز */
-}
+        .back-to-top-icon {
+            width: 24px;
+            height: 24px;
+            display: block;
+            object-fit: contain;
+        }
         .back-to-top:hover { background-color: var(--primary-dark); transform: translateY(-5px); box-shadow: var(--shadow-xl); }
 
-        /* LAYOUT & SIDEBAR */
-        .wrapper { max-width: 1400px; margin: 0 auto; padding: 0 30px; position: relative; } /* تم حذف الـ z-index لحل المشكلة */
+        .wrapper { max-width: 1400px; margin: 0 auto; padding: 0 30px; position: relative; }
         .two-col { display: grid; grid-template-columns: var(--sidebar-width) 1fr; gap: 40px; align-items: start; }
         .sidebar {
             position: sticky; top: 80px; height: calc(100vh - 120px); overflow-y: auto;
@@ -303,7 +288,7 @@
         .sidebar { isolation: isolate; }
         .sidebar::-webkit-scrollbar { width: 6px; }
         .sidebar::-webkit-scrollbar-thumb { background-color: var(--border); border-radius: 10px; }
-        
+
         .sidebar-group { margin-bottom: 15px; }
         .sidebar-group h3 {
             font-size: 14px; font-weight: 800; color: var(--ink); padding: 14px 16px; cursor: pointer;
@@ -324,10 +309,9 @@
         .toc-link.active { background: var(--primary-light); color: var(--primary); border-right-color: var(--secondary); font-weight: 700; box-shadow: var(--shadow-sm); }
         .toc-sub { padding-right: 30px; font-size: 13.5px; position: relative; }
         .toc-sub::before { content: ''; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); width: 6px; height: 2px; background: var(--border-dark); }
-        
+
         .main-content { padding: 40px 0 80px; min-width: 0; }
 
-        /* CONTENT CARDS & TYPOGRAPHY */
         .content-card {
             background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
             padding: 50px; margin-bottom: 40px; box-shadow: var(--shadow); transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -369,10 +353,9 @@
         .icon-green { background: var(--accent-light); color: var(--accent-dark); }
         .icon-red { background: var(--danger-light); color: var(--danger); }
         h2.section-title { font-size: 2.2rem; font-weight: 800; color: var(--ink); margin: 0; }
-        
+
         h3.subsection { font-size: 1.5rem; font-weight: 800; margin: 40px 0 25px; padding-right: 20px; border-right: 5px solid var(--secondary); color: var(--ink); display: flex; align-items: center; gap: 10px; }
 
-        /* GRID LAYOUTS FOR CONTENT */
         .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px; margin-bottom: 30px; }
         .mini-card {
             background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius);
@@ -400,7 +383,6 @@
 
         .inner-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; margin-bottom: 30px; }
 
-        /* STEPS & LISTS */
         .steps { list-style: none; counter-reset: step; margin-bottom: 30px; }
         .steps li { counter-increment: step; display: flex; gap: 20px; padding: 20px; border-bottom: 1px solid var(--border); transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); border-radius: var(--radius-sm); }
         .steps li:hover { background: var(--surface-alt); padding-right: 28px; }
@@ -419,7 +401,6 @@
         .step-content strong { display: block; font-size: 1.15rem; color: var(--ink); margin-bottom: 6px; }
         .step-content span { font-size: 1rem; color: var(--ink-light); }
 
-        /* STATUS BOXES */
         .status-box { border-radius: var(--radius); padding: 24px 30px; display: flex; align-items: center; gap: 20px; margin-bottom: 24px; box-shadow: var(--shadow-sm); }
         .status-icon { font-size: 32px; flex-shrink: 0; }
         .status-text strong { display: block; font-size: 1.1rem; margin-bottom: 4px; color: var(--ink); }
@@ -429,7 +410,6 @@
         .status-box.success { background: var(--accent-light); border-right: 6px solid var(--accent); }
         .status-box.danger { background: var(--danger-light); border-right: 6px solid var(--danger); }
 
-        /* FEATURE TABLES */
         .feature-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 15px; margin: 30px 0; box-shadow: var(--shadow-sm); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); background: var(--surface); text-align: right; }
         .feature-table th { background: var(--surface-alt); color: var(--ink); padding: 18px 24px; font-weight: 800; border-bottom: 2px solid var(--border); }
         .feature-table td { padding: 18px 24px; border-bottom: 1px solid var(--border); color: var(--ink-light); vertical-align: middle; }
@@ -439,7 +419,6 @@
         .check { color: var(--accent); font-weight: bold; font-size: 18px; }
         .cross { color: var(--danger); font-weight: bold; }
 
-        /* ACCORDION */
         .accordion { margin-bottom: 15px; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--surface); box-shadow: var(--shadow-sm); transition: all 0.3s; }
         .accordion:hover { border-color: var(--border-dark); }
         .accordion-btn { width: 100%; text-align: right; padding: 20px 24px; font-family: 'Cairo', sans-serif; font-weight: 800; font-size: 1.1rem; background: transparent; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--ink); transition: background 0.3s; }
@@ -450,20 +429,19 @@
         .accordion-body { padding: 0 24px; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; color: var(--ink-light); font-size: 1.05rem; line-height: 1.8; background: var(--surface); }
         .accordion-body.open { padding: 24px; max-height: 1000px; }
 
-        /* EXAM HARDWARE UI */
         .screen-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-bottom: 30px; }
         .screen-container { background: var(--surface-alt); padding: 20px; border-radius: var(--radius); border: 1px solid var(--border); text-align: center; }
-        .screen { 
-            background: #9ea78f; /* لون شاشات الكريستال السائل LCD الكلاسيكية */
-            border: 6px solid #2d3748; border-radius: 8px; padding: 15px; 
-            font-family: 'JetBrains Mono', monospace; color: #1a202c; font-size: 15px; 
-            width: 100%; min-height: 120px; text-align: left; line-height: 1.6; 
+        .screen {
+            background: #9ea78f;
+            border: 6px solid #2d3748; border-radius: 8px; padding: 15px;
+            font-family: 'JetBrains Mono', monospace; color: #1a202c; font-size: 15px;
+            width: 100%; min-height: 120px; text-align: left; line-height: 1.6;
             box-shadow: inset 0 3px 8px rgba(0,0,0,0.3); white-space: pre; overflow-x: hidden;
-            display: flex; flex-direction: column; direction: ltr; /* اتجاه الشاشة يسار-يمين */
+            display: flex; flex-direction: column; direction: ltr;
         }
         .screen-top { width: 100%; }
         .screen-label { margin-top: 15px; font-weight: 800; font-size: 1rem; color: var(--ink); background: var(--surface); display: inline-block; padding: 4px 16px; border-radius: 20px; border: 1px solid var(--border); }
-        
+
         .keypad-wrap { display: flex; gap: 40px; align-items: stretch; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; background: var(--surface-alt); padding: 40px; border-radius: var(--radius-lg); border: 1px solid var(--border); box-shadow: inset 0 2px 10px rgba(0,0,0,0.02); }
         .keypad { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; background: #1e293b; padding: 25px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.2), inset 0 2px 0 rgba(255,255,255,0.1); border: 2px solid #0f172a; width: fit-content; }
         .key { width: 60px; height: 50px; background: #334155; color: #f8fafc; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', sans-serif; font-weight: 800; font-size: 20px; border-radius: 8px; border-bottom: 4px solid #0f172a; cursor: pointer; transition: all 0.1s; box-shadow: 0 2px 4px rgba(0,0,0,0.2); user-select: none; }
@@ -485,7 +463,49 @@
         .legend-dot { width: 16px; height: 16px; border-radius: 4px; flex-shrink: 0; box-shadow: inset 0 -2px 0 rgba(0,0,0,0.2); }
         .dot-blue { background: #2563eb; } .dot-gold { background: #f59e0b; } .dot-gray { background: #334155; } .dot-green { background: #10b981; } .dot-red {background: crimson; }
 
-        /* INVESTOR HERO & ARCHITECTURE */
+        /* أزرار التنقل بين الأسئلة */
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 20px;
+        }
+        .nav-btn {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 15px;
+            cursor: pointer;
+            user-select: none;
+            border-bottom: 5px solid rgba(0,0,0,0.25);
+            transition: all 0.15s ease;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+            text-align: center;
+            line-height: 1.2;
+        }
+        .nav-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 28px rgba(0,0,0,0.3);
+            filter: brightness(1.15);
+            border-bottom-width: 7px;
+        }
+        .nav-btn:active {
+            transform: translateY(4px);
+            border-bottom-width: 0;
+            box-shadow: none;
+        }
+        .next-btn {
+            background-color: var(--accent, #10b981);
+        }
+        .prev-btn {
+            background-color: var(--danger, #ef4444);
+        }
+
         .investor-hero { background: linear-gradient(135deg, #0f172a, #1e3a8a 60%, #2563eb 100%); color: #fff; border-radius: var(--radius-xl); padding: 60px; margin-bottom: 40px; text-align: center; box-shadow: var(--shadow-xl); position: relative; overflow: hidden; }
         .investor-hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><circle cx="2" cy="2" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>'); }
         .investor-hero > * { position: relative; z-index: 2; }
@@ -547,7 +567,6 @@
             padding: 0 4px;
         }
 
-        /* IMAGES & MEDIA */
         .image-showcase { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 25px; margin: 30px 0; text-align: center; box-shadow: var(--shadow-sm); transition: all var(--transition); }
         .image-showcase:hover { box-shadow: var(--shadow-lg); border-color: var(--border-dark); }
         .image-showcase img { max-width: 100%; height: auto; border-radius: var(--radius-sm); cursor: zoom-in; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: 1px solid var(--border); transition: transform 0.3s; }
@@ -557,7 +576,6 @@
         .images-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 30px 0; }
         .images-grid .image-showcase { margin: 0; }
 
-        /* CTA SECTION */
         .cta-section { background: linear-gradient(135deg, #1e3a8a 0%, #0f1e5c 100%); color: #fff; border-radius: var(--radius-xl); padding: 60px 50px; margin: 60px 0 20px; text-align: center; box-shadow: var(--shadow-xl); position: relative; overflow: hidden; }
         .cta-section h3 { font-size: 2.2rem; font-weight: 900; margin-bottom: 20px; color: #fff; }
         .cta-sub { font-size: 1.15rem; color: #cbd5e1; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto; }
@@ -568,35 +586,29 @@
         .cta-btn.secondary-cta { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3); color: #fff; }
         .cta-btn.secondary-cta:hover { background: rgba(255,255,255,0.2); transform: translateY(-4px); }
 
-        /* FOOTER */
         .site-footer { background: linear-gradient(135deg, #0b1120 0%, #0f172a 100%); color: #e2e8f0; padding: 60px 40px 40px; margin-top: 80px; text-align: center; border-top: 5px solid var(--secondary); position: relative; }
         .footer-title { display: block; font-size: 1.8rem; font-weight: 900; color: #fff; margin-bottom: 30px; letter-spacing: 1px; }
         .footer-icons { display: flex; justify-content: center; gap: 24px; margin-bottom: 40px; }
-        .footer-icon-link { width: 56px; height: 56px; background: rgba(255,255,255,0.05); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 24px; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s; }
+        .footer-icon-link { width: 56px; height: 56px; background: rgba(255,255,255,0.05); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 24px; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s; color: inherit; text-decoration: none; }
         .footer-icon-link:hover { background: rgba(255,255,255,0.15); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
         .footer-address { font-size: 1.1rem; margin-bottom: 25px; color: #cbd5e1; }
         .footer-contact-row { margin-bottom: 12px; font-size: 1.05rem; }
         .footer-contact-row a { color: #93c5fd; text-decoration: none; font-family: 'JetBrains Mono', sans-serif; transition: 0.2s; }
         .footer-contact-row a:hover { color: #fff; text-decoration: underline; }
         .footer-copyright { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.95rem; color: #64748b; }
-        /* تثبيت لون رابط الخريطة أو أي رابط داخل العنوان */
-/* إلغاء أي تنسيق للروابط داخل الفوتر وتثبيتها بلون النص */
-.site-footer a,
-.site-footer a:link,
-.site-footer a:visited,
-.site-footer a:active {
-    color: inherit !important;      /* أخذ لون نص الفوتر الأصلي */
-    text-decoration: none !important; /* حذف الخط السفلي */
-    border-bottom: none !important;
-    outline: none !important;
-}
+        .site-footer a,
+        .site-footer a:link,
+        .site-footer a:visited,
+        .site-footer a:active {
+            color: inherit !important;
+            text-decoration: none !important;
+            border-bottom: none !important;
+            outline: none !important;
+        }
+        .site-footer a:hover {
+            color: var(--secondary) !important;
+        }
 
-/* تأثير عند تمرير الماوس فقط */
-.site-footer a:hover {
-    color: var(--secondary) !important;
-}
-
-        /* MOBILE MENU & RESPONSIVE */
         .menu-toggle {
             display: none;
             background: var(--primary);
@@ -617,417 +629,316 @@
         .img-modal-close { position: absolute; top: 20px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer; z-index: 100001; }
         .zoom-hint { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); color: #fff; background: rgba(0,0,0,0.6); padding: 8px 20px; border-radius: 20px; font-size: 14px; pointer-events: none; }
 
-/* ══════════════════════════════════════════
-   TABLET  ≤ 1024px
-══════════════════════════════════════════ */
-@media (max-width: 1024px) {
-    .two-col { grid-template-columns: 1fr; }
+        .contact-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .contact-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 20px;
+            padding: 28px 24px;
+            text-align: center;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary), #fcd34d);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .contact-card:hover { background: rgba(255,255,255,0.11); transform: translateY(-4px); border-color: rgba(255,255,255,0.22); }
+        .contact-card:hover::before { opacity: 1; }
+        .contact-card-icon { font-size: 26px; margin-bottom: 12px; }
+        .contact-card-label { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.55); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; }
+        .contact-card-value { font-size: 15px; font-weight: 700; color: #f8fafc; }
+        .contact-card-value a { color: #93c5fd; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 14px; display: block; line-height: 2; transition: color 0.2s; }
+        .contact-card-value a:visited { color: #93c5fd; }
+        .contact-card-value a:hover { color: #fcd34d; }
+        @media(max-width: 760px) { .contact-cards-grid { grid-template-columns: 1fr; } }
 
-    .sidebar {
-        position: fixed;
-        top: 0;
-        right: 0;
-        transform: translateX(100%);
-        width: min(300px, 85vw);
-        height: 100dvh;
-        border-radius: 0;
-        z-index: 10001;
-        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: -10px 0 30px rgba(0,0,0,0.3);
-        overflow-y: auto;
-        padding-top: 70px;
-        padding-bottom: 30px;
-    }
-    .sidebar.mobile-visible { transform: translateX(0); }
-    .menu-toggle { display: flex; }
+        .key-legend-item {
+            display: flex; align-items: center; gap: 12px;
+            font-size: 1.05rem; color: var(--ink); font-weight: 600;
+            padding: 10px 14px;
+            border-radius: var(--radius-sm);
+            border: 1px solid transparent;
+            transition: all 0.2s;
+            cursor: default;
+        }
+        .key-legend-item:hover {
+            background: var(--surface-alt);
+            border-color: var(--border);
+            transform: translateX(-4px);
+            color: var(--primary);
+        }
+        .key-legend-item:hover .legend-dot {
+            transform: scale(1.3);
+            box-shadow: 0 0 10px currentColor;
+        }
+        .legend-dot { transition: all 0.2s; }
 
-    .top-nav { padding: 0 20px; height: 64px; }
-    .nav-links { display: none; }
+        .screens-table { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); margin: 20px 0 30px; }
+        .screens-table th { background: #0f172a; color: #f8fafc; padding: 16px 20px; text-align: right; font-size: 14px; font-weight: 700; letter-spacing: 0.05em; }
+        .screens-table td { padding: 16px 20px; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--ink-light); transition: background 0.2s; vertical-align: middle; }
+        .screens-table tr:last-child td { border-bottom: none; }
+        .screens-table tr:hover td { background: var(--primary-light); color: var(--ink); }
+        .screens-table code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            font-weight: 700;
+            background: #0f172a;
+            color: #34d399;
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid rgba(52,211,153,0.3);
+            letter-spacing: 0.04em;
+            box-shadow: 0 0 8px rgba(52,211,153,0.15);
+            white-space: nowrap;
+        }
 
-    .main-content { padding: 20px 0; }
-    .wrapper { padding: 0 16px; }
+        .msg-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .msg-card {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 14px;
+            overflow: hidden;
+            transition: all 0.25s;
+            cursor: default;
+        }
+        .msg-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--msg-color, #34d399);
+            box-shadow: 0 0 0 1px var(--msg-color, #34d399),
+                        0 12px 30px rgba(0,0,0,0.4),
+                        0 0 20px color-mix(in srgb, var(--msg-color, #34d399) 20%, transparent);
+        }
+        .msg-lcd {
+            background: #9ea78f;
+            border-bottom: 3px solid #1a202c;
+            padding: 14px 16px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 15px;
+            font-weight: 700;
+            color: #1a202c;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            direction: ltr;
+            box-shadow: inset 0 3px 8px rgba(0,0,0,0.25);
+        }
+        .msg-lcd-dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: var(--msg-color, #34d399);
+            box-shadow: 0 0 8px var(--msg-color, #34d399);
+            flex-shrink: 0;
+            animation: blink-dot 2s infinite;
+        }
+        @keyframes blink-dot {
+            0%,100% { opacity: 1; }
+            50%      { opacity: 0.2; }
+        }
+        .msg-card:hover .msg-lcd-dot { animation-duration: 0.4s; }
+        .msg-body {
+            padding: 16px 18px;
+        }
+        .msg-meaning {
+            font-size: 14px;
+            font-weight: 700;
+            color: #e2e8f0;
+            margin-bottom: 8px;
+        }
+        .msg-action {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.6;
+            padding-right: 12px;
+            border-right: 2px solid var(--msg-color, #34d399);
+        }
 
-    .content-card { padding: 28px 24px; }
-    .inner-two-col { grid-template-columns: 1fr; gap: 20px; }
-    .images-grid { grid-template-columns: 1fr; }
+        .footer-address a,
+        .footer-address a:link,
+        .footer-address a:visited,
+        .footer-address a:active {
+            color: #cbd5e1 !important;
+            text-decoration: none !important;
+            transition: color 0.2s;
+        }
+        .footer-address a:hover {
+            color: #fff !important;
+        }
 
-    .part-divider {
-        flex-direction: column;
-        text-align: center;
-        padding: 36px 24px;
-        clip-path: none;
-        margin: 40px 0 30px;
-    }
-    .part-divider .part-num { font-size: 56px; }
-    .part-divider .part-info h2 { font-size: 1.8rem; }
+        @media (max-width: 1024px) {
+            .two-col { grid-template-columns: 1fr; }
+            .sidebar {
+                position: fixed;
+                top: 0;
+                right: 0;
+                transform: translateX(100%);
+                width: min(300px, 85vw);
+                height: 100dvh;
+                border-radius: 0;
+                z-index: 10001;
+                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: -10px 0 30px rgba(0,0,0,0.3);
+                overflow-y: auto;
+                padding-top: 70px;
+                padding-bottom: 30px;
+            }
+            .sidebar.mobile-visible { transform: translateX(0); }
+            .menu-toggle { display: flex; }
+            .top-nav { padding: 0 20px; height: 64px; }
+            .nav-links { display: none; }
+            .main-content { padding: 20px 0; }
+            .wrapper { padding: 0 16px; }
+            .content-card { padding: 28px 24px; }
+            .inner-two-col { grid-template-columns: 1fr; gap: 20px; }
+            .images-grid { grid-template-columns: 1fr; }
+            .part-divider {
+                flex-direction: column;
+                text-align: center;
+                padding: 36px 24px;
+                clip-path: none;
+                margin: 40px 0 30px;
+            }
+            .part-divider .part-num { font-size: 56px; }
+            .part-divider .part-info h2 { font-size: 1.8rem; }
+            .hero-cards { grid-template-columns: 1fr; max-width: 480px; }
+            .hero { padding: 110px 24px 80px; clip-path: none; margin-bottom: 0; }
+            .kpi-row { grid-template-columns: repeat(2, 1fr); }
+            .investor-hero { padding: 40px 28px; }
+            .keypad-wrap { flex-direction: column; align-items: center; padding: 28px 20px; gap: 24px; }
+            .key-legend { padding: 20px; }
+            .screen-row { grid-template-columns: repeat(2, 1fr); }
+            .arch-nodes { grid-template-columns: 1fr; gap: 8px; min-width: unset; }
+            .arch-arrow { display: none; }
+            .cta-section { padding: 40px 24px; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .msg-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-cards-grid { grid-template-columns: 1fr; gap: 14px; }
+        }
 
-    .hero-cards { grid-template-columns: 1fr; max-width: 480px; }
-    .hero { padding: 110px 24px 80px; clip-path: none; margin-bottom: 0; }
-
-    .kpi-row { grid-template-columns: repeat(2, 1fr); }
-    .investor-hero { padding: 40px 28px; }
-
-    .keypad-wrap { flex-direction: column; align-items: center; padding: 28px 20px; gap: 24px; }
-    .key-legend { padding: 20px; }
-
-    .screen-row { grid-template-columns: repeat(2, 1fr); }
-
-    .arch-nodes { grid-template-columns: 1fr; gap: 8px; min-width: unset; }
-    .arch-arrow { display: none; }
-
-    .cta-section { padding: 40px 24px; }
-    .cta-buttons { flex-direction: column; align-items: center; }
-
-    .msg-grid { grid-template-columns: repeat(2, 1fr); }
-
-    .contact-cards-grid { grid-template-columns: 1fr; gap: 14px; }
-}
-
-/* ══════════════════════════════════════════
-   MOBILE  ≤ 640px
-══════════════════════════════════════════ */
-@media (max-width: 640px) {
-    :root { --radius-lg: 16px; --radius-xl: 20px; }
-
-    .top-nav { height: 58px; padding: 0 16px; }
-    .nav-brand { font-size: 1.1rem; gap: 10px; }
-    .nav-brand-dot { width: 10px; height: 10px; }
-    .top-nav .dark-mode-toggle { width: 36px; height: 36px; font-size: 16px; margin-right: 8px; }
-
-    .menu-toggle { width: 38px; height: 38px; font-size: 1.1rem; margin-left: 4px; }
-
-    .hero { padding: 90px 16px 70px; min-height: auto; }
-    .hero h1 { font-size: 1.9rem; line-height: 1.3; }
-    .hero-badge { font-size: 0.78rem; padding: 6px 16px; }
-    .hero-sub, .hero-sub2, .hero-sub3 { font-size: 1rem; }
-    .hero-cards { grid-template-columns: 1fr; max-width: 100%; gap: 16px; margin: 20px auto 30px; }
-    .hero-card { padding: 24px 20px; }
-    .hc-icon { font-size: 2.2rem; }
-    .hc-title { font-size: 1.15rem; }
-    .hero-cta { flex-direction: column; gap: 12px; }
-    .btn { width: 100%; justify-content: center; padding: 14px 24px; font-size: 1rem; }
-
-    .wrapper { padding: 0 12px; }
-    .content-card { padding: 20px 16px; border-radius: var(--radius); margin-bottom: 20px; }
-
-    h2.section-title { font-size: 1.5rem; }
-    h3.subsection { font-size: 1.2rem; padding-right: 14px; border-right-width: 4px; }
-
-    .section-header { gap: 12px; padding-bottom: 14px; }
-    .section-icon { width: 42px; height: 42px; font-size: 20px; }
-
-    .part-divider { padding: 28px 16px; margin: 28px 0 20px; }
-    .part-divider .part-num { font-size: 44px; }
-    .part-divider .part-info h2 { font-size: 1.4rem; }
-
-    .card-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-    .mini-card { padding: 20px 14px; }
-    .mini-card .mc-icon { font-size: 30px; margin-bottom: 10px; }
-    .mini-card .mc-title { font-size: 0.95rem; }
-    .mini-card .mc-desc { font-size: 0.85rem; }
-
-    .steps li { gap: 14px; padding: 16px 12px; }
-    .steps li::before { width: 30px; height: 30px; font-size: 13px; }
-    .step-content strong { font-size: 1rem; }
-    .step-content span { font-size: 0.9rem; }
-
-    .status-box { padding: 18px 16px; gap: 14px; }
-    .status-icon { font-size: 24px; }
-    .status-text strong { font-size: 1rem; }
-    .status-text span { font-size: 0.88rem; }
-
-    .feature-table { font-size: 13px; }
-    .feature-table th, .feature-table td { padding: 12px 14px; }
-
-    .accordion-btn { font-size: 0.95rem; padding: 16px 18px; }
-    .accordion-body.open { padding: 18px; }
-
-    .kpi-row { grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 24px; }
-    .kpi { padding: 20px 12px; }
-    .kpi .val { font-size: 2.2rem; }
-    .kpi .lab { font-size: 0.85rem; }
-    .investor-hero { padding: 30px 18px; border-radius: var(--radius-lg); }
-    .investor-hero h3 { font-size: 1.5rem; }
-    .investor-hero p { font-size: 1rem; }
-
-    .screen-row { grid-template-columns: 1fr; }
-    .screen { font-size: 13px; min-height: 100px; padding: 12px; }
-
-    .keypad-wrap { padding: 20px 14px; gap: 20px; }
-    .keypad { gap: 8px; padding: 18px; }
-    .key { width: 52px; height: 44px; font-size: 17px; }
-    .key-legend { padding: 16px; gap: 10px; }
-    .key-legend-item { font-size: 0.92rem; gap: 10px; padding: 8px 10px; }
-
-    .nav-buttons { gap: 16px; }
-    .nav-btn { width: 58px; height: 58px; font-size: 13px; }
-
-    .msg-grid { grid-template-columns: 1fr; gap: 12px; }
-    .msg-lcd { font-size: 13px; padding: 11px 14px; }
-    .msg-body { padding: 14px 16px; }
-
-    .arch-nodes { gap: 6px; }
-
-    .images-grid { grid-template-columns: 1fr; gap: 16px; }
-    .image-showcase { padding: 16px; margin: 16px 0; }
-
-    .cta-section { padding: 32px 16px; border-radius: var(--radius-lg); }
-    .cta-section h3 { font-size: 1.6rem; }
-    .cta-sub { font-size: 1rem; }
-    .cta-btn { padding: 14px 24px; font-size: 1rem; width: 100%; justify-content: center; border-radius: 14px; }
-
-    .contact-cards-grid { grid-template-columns: 1fr; gap: 12px; }
-    .contact-card { padding: 22px 18px; }
-
-    .site-footer { padding: 40px 16px 28px; }
-    .footer-title { font-size: 1.4rem; }
-    .footer-icons { gap: 16px; }
-    .footer-icon-link { width: 48px; height: 48px; font-size: 20px; }
-    .footer-address { font-size: 0.95rem; }
-
-    .back-to-top { bottom: 20px; left: 16px; width: 44px; height: 44px; }
-
-    .inner-two-col { grid-template-columns: 1fr; gap: 16px; }
-
-    .sidebar { width: min(280px, 88vw); }
-        /* حاوية أزرار التنقل */
-.nav-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 24px;
-}
-
-/* التنسيق الأساسي للزرين الدائريين */
-.nav-btn {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: 800;
-    font-size: 14px;
-    cursor: pointer;
-    user-select: none;
-    border-bottom: 5px solid rgba(0,0,0,0.25);
-    transition: all 0.15s ease;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-}
-.nav-btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 14px 28px rgba(0,0,0,0.3);
-    filter: brightness(1.15);
-    border-bottom-width: 7px;
-}
-.nav-btn:active {
-    transform: translateY(4px);
-    border-bottom-width: 0;
-    box-shadow: none;
-}
-
-/* تأثير الضغط (يحاكي ضغطة الكيباد) */
-.nav-btn:active {
-    transform: translateY(4px); /* نزول الزر للأسفل */
-    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2); /* إخفاء البروز ليعطي شعور الضغط */
-}
-
-/* زر التالي (أخضر) */
-.next-btn {
-    background-color: var(--accent, #10b981);
-}
-
-/* زر السابق (أحمر) */
-.prev-btn {
-    background-color: var(--danger, #ef4444);
-}
-.footer-icon-link,
-.footer-icon-link:visited,
-.footer-icon-link:link {
-    color: inherit;
-    text-decoration: none;
-}
-a.footer-icon-link:visited i { color: inherit !important; }
-.contact-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin: 30px 0;
-}
-.contact-card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 20px;
-    padding: 28px 24px;
-    text-align: center;
-    backdrop-filter: blur(8px);
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
-}
-.contact-card::before {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--secondary), #fcd34d);
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-.contact-card:hover { background: rgba(255,255,255,0.11); transform: translateY(-4px); border-color: rgba(255,255,255,0.22); }
-.contact-card:hover::before { opacity: 1; }
-.contact-card-icon { font-size: 26px; margin-bottom: 12px; }
-.contact-card-label { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.55); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; }
-.contact-card-value { font-size: 15px; font-weight: 700; color: #f8fafc; }
-.contact-card-value a { color: #93c5fd; text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 14px; display: block; line-height: 2; transition: color 0.2s; }
-.contact-card-value a:visited { color: #93c5fd; }
-.contact-card-value a:hover { color: #fcd34d; }
-@media(max-width: 760px) { .contact-cards-grid { grid-template-columns: 1fr; } }
-.key-legend-item {
-    display: flex; align-items: center; gap: 12px;
-    font-size: 1.05rem; color: var(--ink); font-weight: 600;
-    padding: 10px 14px;
-    border-radius: var(--radius-sm);
-    border: 1px solid transparent;
-    transition: all 0.2s;
-    cursor: default;
-}
-.key-legend-item:hover {
-    background: var(--surface-alt);
-    border-color: var(--border);
-    transform: translateX(-4px);
-    color: var(--primary);
-}
-.key-legend-item:hover .legend-dot {
-    transform: scale(1.3);
-    box-shadow: 0 0 10px currentColor;
-}
-.legend-dot { transition: all 0.2s; }
-.screens-table { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); margin: 20px 0 30px; }
-.screens-table th { background: #0f172a; color: #f8fafc; padding: 16px 20px; text-align: right; font-size: 14px; font-weight: 700; letter-spacing: 0.05em; }
-.screens-table td { padding: 16px 20px; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--ink-light); transition: background 0.2s; vertical-align: middle; }
-.screens-table tr:last-child td { border-bottom: none; }
-.screens-table tr:hover td { background: var(--primary-light); color: var(--ink); }
-.screens-table code {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    font-weight: 700;
-    background: #0f172a;
-    color: #34d399;
-    padding: 4px 10px;
-    border-radius: 6px;
-    border: 1px solid rgba(52,211,153,0.3);
-    letter-spacing: 0.04em;
-    box-shadow: 0 0 8px rgba(52,211,153,0.15);
-    white-space: nowrap;
-}
-/* ── مرجع الشاشات ── */
-.msg-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 16px;
-    margin: 24px 0;
-}
-.msg-card {
-    background: #0d1117;
-    border: 1px solid #30363d;
-    border-radius: 14px;
-    overflow: hidden;
-    transition: all 0.25s;
-    cursor: default;
-}
-.msg-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--msg-color, #34d399);
-    box-shadow: 0 0 0 1px var(--msg-color, #34d399),
-                0 12px 30px rgba(0,0,0,0.4),
-                0 0 20px color-mix(in srgb, var(--msg-color, #34d399) 20%, transparent);
-}
-.msg-lcd {
-    background: #9ea78f;
-    border-bottom: 3px solid #1a202c;
-    padding: 14px 16px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 15px;
-    font-weight: 700;
-    color: #1a202c;
-    letter-spacing: 0.05em;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    direction: ltr;
-    box-shadow: inset 0 3px 8px rgba(0,0,0,0.25);
-}
-.msg-lcd-dot {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: var(--msg-color, #34d399);
-    box-shadow: 0 0 8px var(--msg-color, #34d399);
-    flex-shrink: 0;
-    animation: blink-dot 2s infinite;
-}
-@keyframes blink-dot {
-    0%,100% { opacity: 1; }
-    50%      { opacity: 0.2; }
-}
-.msg-card:hover .msg-lcd-dot { animation-duration: 0.4s; }
-.msg-body {
-    padding: 16px 18px;
-}
-.msg-meaning {
-    font-size: 14px;
-    font-weight: 700;
-    color: #e2e8f0;
-    margin-bottom: 8px;
-}
-.msg-action {
-    font-size: 13px;
-    color: #64748b;
-    line-height: 1.6;
-    padding-right: 12px;
-    border-right: 2px solid var(--msg-color, #34d399);
-}
-    .footer-address a,
-.footer-address a:link,
-.footer-address a:visited,
-.footer-address a:active {
-    color: #cbd5e1 !important; /* نفس لون نص الفوتر */
-    text-decoration: none !important; /* إزالة الخط من تحت الخريطة */
-    transition: color 0.2s;
-}
-
-.footer-address a:hover {
-    color: #fff !important; 
-}
+        @media (max-width: 640px) {
+            :root { --radius-lg: 16px; --radius-xl: 20px; }
+            .top-nav { height: 58px; padding: 0 16px; }
+            .nav-brand { font-size: 1.1rem; gap: 10px; }
+            .nav-brand-dot { width: 10px; height: 10px; }
+            .top-nav .dark-mode-toggle { width: 36px; height: 36px; font-size: 16px; margin-right: 8px; }
+            .menu-toggle { width: 38px; height: 38px; font-size: 1.1rem; margin-left: 4px; }
+            .hero { padding: 90px 16px 70px; min-height: auto; }
+            .hero h1 { font-size: 1.9rem; line-height: 1.3; }
+            .hero-badge { font-size: 0.78rem; padding: 6px 16px; }
+            .hero-sub, .hero-sub2, .hero-sub3 { font-size: 1rem; }
+            .hero-cards { grid-template-columns: 1fr; max-width: 100%; gap: 16px; margin: 20px auto 30px; }
+            .hero-card { padding: 24px 20px; }
+            .hc-icon { font-size: 2.2rem; }
+            .hc-title { font-size: 1.15rem; }
+            .hero-cta { flex-direction: column; gap: 12px; }
+            .btn { width: 100%; justify-content: center; padding: 14px 24px; font-size: 1rem; }
+            .wrapper { padding: 0 12px; }
+            .content-card { padding: 20px 16px; border-radius: var(--radius); margin-bottom: 20px; }
+            h2.section-title { font-size: 1.5rem; }
+            h3.subsection { font-size: 1.2rem; padding-right: 14px; border-right-width: 4px; }
+            .section-header { gap: 12px; padding-bottom: 14px; }
+            .section-icon { width: 42px; height: 42px; font-size: 20px; }
+            .part-divider { padding: 28px 16px; margin: 28px 0 20px; }
+            .part-divider .part-num { font-size: 44px; }
+            .part-divider .part-info h2 { font-size: 1.4rem; }
+            .card-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .mini-card { padding: 20px 14px; }
+            .mini-card .mc-icon { font-size: 30px; margin-bottom: 10px; }
+            .mini-card .mc-title { font-size: 0.95rem; }
+            .mini-card .mc-desc { font-size: 0.85rem; }
+            .steps li { gap: 14px; padding: 16px 12px; }
+            .steps li::before { width: 30px; height: 30px; font-size: 13px; }
+            .step-content strong { font-size: 1rem; }
+            .step-content span { font-size: 0.9rem; }
+            .status-box { padding: 18px 16px; gap: 14px; }
+            .status-icon { font-size: 24px; }
+            .status-text strong { font-size: 1rem; }
+            .status-text span { font-size: 0.88rem; }
+            .feature-table { font-size: 13px; }
+            .feature-table th, .feature-table td { padding: 12px 14px; }
+            .accordion-btn { font-size: 0.95rem; padding: 16px 18px; }
+            .accordion-body.open { padding: 18px; }
+            .kpi-row { grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 24px; }
+            .kpi { padding: 20px 12px; }
+            .kpi .val { font-size: 2.2rem; }
+            .kpi .lab { font-size: 0.85rem; }
+            .investor-hero { padding: 30px 18px; border-radius: var(--radius-lg); }
+            .investor-hero h3 { font-size: 1.5rem; }
+            .investor-hero p { font-size: 1rem; }
+            .screen-row { grid-template-columns: 1fr; }
+            .screen { font-size: 13px; min-height: 100px; padding: 12px; }
+            .keypad-wrap { padding: 20px 14px; gap: 20px; }
+            .keypad { gap: 8px; padding: 18px; }
+            .key { width: 52px; height: 44px; font-size: 17px; }
+            .key-legend { padding: 16px; gap: 10px; }
+            .key-legend-item { font-size: 0.92rem; gap: 10px; padding: 8px 10px; }
+            .nav-buttons { gap: 16px; }
+            .nav-btn { width: 70px; height: 70px; font-size: 14px; }
+            .msg-grid { grid-template-columns: 1fr; gap: 12px; }
+            .msg-lcd { font-size: 13px; padding: 11px 14px; }
+            .msg-body { padding: 14px 16px; }
+            .arch-nodes { gap: 6px; }
+            .images-grid { grid-template-columns: 1fr; gap: 16px; }
+            .image-showcase { padding: 16px; margin: 16px 0; }
+            .cta-section { padding: 32px 16px; border-radius: var(--radius-lg); }
+            .cta-section h3 { font-size: 1.6rem; }
+            .cta-sub { font-size: 1rem; }
+            .cta-btn { padding: 14px 24px; font-size: 1rem; width: 100%; justify-content: center; border-radius: 14px; }
+            .contact-cards-grid { grid-template-columns: 1fr; gap: 12px; }
+            .contact-card { padding: 22px 18px; }
+            .site-footer { padding: 40px 16px 28px; }
+            .footer-title { font-size: 1.4rem; }
+            .footer-icons { gap: 16px; }
+            .footer-icon-link { width: 48px; height: 48px; font-size: 20px; }
+            .footer-address { font-size: 0.95rem; }
+            .back-to-top { bottom: 20px; left: 16px; width: 44px; height: 44px; }
+            .inner-two-col { grid-template-columns: 1fr; gap: 16px; }
+            .sidebar { width: min(280px, 88vw); }
+        }
     </style>
 </head>
 <body>
-<button class="back-to-top" id="backToTopBtn" title="العودة إلى الأعلى">
-    <img src="arrow.png" alt="Top" class="back-to-top-icon">
-</button>
+    <button class="back-to-top" id="backToTopBtn" title="العودة إلى الأعلى">
+        <img src="arrow.png" alt="Top" class="back-to-top-icon">
+    </button>
     <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
 
-<nav class="top-nav">
-    <div style="display:flex; align-items:center; gap:12px;">
-        <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
-        <!-- تم إصلاح الرابط هنا ليكون رابطاً واحداً فقط ويشير إلى صفحة الفيسبوك -->
-        <a href="https://www.facebook.com/resalatigroup" class="nav-brand"> 
-            <div class="nav-brand-dot"></div>
-            <span>مجموعة رسالتي</span>
-        </a>
-    </div>
+    <nav class="top-nav">
+        <div style="display:flex; align-items:center; gap:12px;">
+            <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+            <a href="https://www.facebook.com/resalatigroup" class="nav-brand"> 
+                <div class="nav-brand-dot"></div>
+                <span>مجموعة رسالتي</span>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#part-erp">نظام ERP التعليمي</a></li>
+            <li><a href="#part-exam">جهاز الامتحانات</a></li>
+            <li><a href="#part-investor-combined">للمستثمرين</a></li>
+            <li><a href="#request-quote" class="nav-pill">تواصل معنا</a></li>
+        </ul>
+        <div style="display:flex;align-items:center;">
+            <div class="dark-mode-toggle" id="darkModeToggle" title="تبديل الوضع الليلي"></div>
+        </div>
+    </nav>
 
-    <ul class="nav-links">
-        <li><a href="#part-erp">نظام ERP التعليمي</a></li>
-        <li><a href="#part-exam">جهاز الامتحانات</a></li>
-        <li><a href="#part-investor-combined">للمستثمرين</a></li>
-        <li><a href="#request-quote" class="nav-pill">تواصل معنا</a></li>
-    </ul>
-
-    <div style="display:flex;align-items:center;">
-        <div class="dark-mode-toggle" id="darkModeToggle" title="تبديل الوضع الليلي"></div>
-    </div>
-</nav>
     <section class="hero" id="top">
         <div class="hero-content">
             <div class="hero-badge">
@@ -1044,7 +955,7 @@ a.footer-icon-link:visited i { color: inherit !important; }
             <div class="hero-sub">
             (جامعة، مدرسة، مخبر لغوي، مركز تدريب) بكل تفاصيلها، وجهاز امتحانات لاسلكي فريد من نوعه — كلاهما من تصميم وبرمجة  للغات والعلوم.
             </div>
-                                <div class="hero-cards">
+            <div class="hero-cards">
                 <a href="#part-erp" class="hero-card lms">
                     <div class="hc-num">المشروع الأول</div>
                     <div class="hc-icon">🏛️</div>
@@ -1065,7 +976,7 @@ a.footer-icon-link:visited i { color: inherit !important; }
         </div>
     </section>
 
-<div id="sidebarOverlay" style="display:none; position:fixed; inset:0; background:rgba(15,23,42,0.5); backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px); z-index:10000;"></div>  
+    <div id="sidebarOverlay" style="display:none; position:fixed; inset:0; background:rgba(15,23,42,0.5); backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px); z-index:10000;"></div>  
     <div class="two-col wrapper">
         <nav class="sidebar" id="sidebar">
             <div class="sidebar-group open">
@@ -1124,6 +1035,7 @@ a.footer-icon-link:visited i { color: inherit !important; }
         </nav>
 
         <main class="main-content">
+            <!-- ========== القسم الأول: نظام ERP ========== -->
             <div class="part-divider" id="part-erp">
                 <div class="part-num">01</div>
                 <div class="part-info"><div class="part-label">المشروع الأول</div><h2>نظام ERP + LMS لإدارة المؤسسة التعليمية</h2></div>
@@ -1200,7 +1112,6 @@ a.footer-icon-link:visited i { color: inherit !important; }
             <div class="content-card" id="erp-admin-accounting">
                 <h3 class="subsection">النظام المحاسبي الشامل ERP</h3>
                 <p>محاسبة بمعيار القيد المزدوج الكامل — كل تعامل مالي يُولّد أثراً محاسبياً دقيقاً للحفاظ على توازن الميزانية.</p>
-                
                 <div class="accordion">
                     <button class="accordion-btn open" onclick="toggleAcc(this)">📌 القيود اليومية — كيف تعمل؟ <span class="accordion-arrow">▼</span></button>
                     <div class="accordion-body open">أي دفعة تُولّد قيداً مزدوجاً تلقائياً: مدين: الصندوق + دائن: الإيرادات. لا توجد معاملة مالية دون قيد محاسبي موافق له، مما يضمن دقة الحسابات في جميع الأوقات.</div>
@@ -1221,7 +1132,6 @@ a.footer-icon-link:visited i { color: inherit !important; }
                     <button class="accordion-btn" onclick="toggleAcc(this)">📉 قائمة الدخل <span class="accordion-arrow">▼</span></button>
                     <div class="accordion-body">المعادلة البسيطة: إيرادات – مصروفات = صافي الربح. تصدير Excel بضغطة زر. متاحة لأي نطاق زمني تحدده.</div>
                 </div>
-
                 <div class="images-grid">
                     <div class="image-showcase"><img src="10.png" alt="إنشاء قيد يومية" loading="lazy"><div class="img-caption"><span class="caption-dot"></span> إنشاء قيد يومية مزدوج</div></div>
                     <div class="image-showcase"><img src="11.png" alt="سندات الصرف" loading="lazy"><div class="img-caption"><span class="caption-dot"></span> إصدار سند صرف جديد</div></div>
@@ -1571,6 +1481,7 @@ a.footer-icon-link:visited i { color: inherit !important; }
                 </div>
             </div>
 
+            <!-- ========== القسم الثاني: جهاز الامتحانات ========== -->
             <div class="part-divider" id="part-exam">
                 <div class="part-num">02</div>
                 <div class="part-info"><div class="part-label">المشروع الثاني</div><h2>جهاز رسالتي لإدارة الامتحانات</h2></div>
@@ -1583,7 +1494,6 @@ a.footer-icon-link:visited i { color: inherit !important; }
                     <img src="product.png" alt="جهاز رسالتي - دارة الطالب" loading="lazy">
                     <div class="img-caption"><span class="caption-dot"></span> جهاز رسالتي — دارة الطالب (المنتج السوري الفعلي)</div>
                 </div>
-                
                 <h3 class="subsection" id="exam-student-start">▸ التشغيل الأول والاتصال بالشبكة</h3>
                 <ol class="steps">
                     <li><div class="step-content"><strong>الضغط على زر الطاقة</strong><span>اضغط مع الاستمرار لمدة ثانيتين — ستعمل الشاشة وتظهر رسالة الترحيب "Resalaty System".</span></div></li>
@@ -1595,7 +1505,6 @@ a.footer-icon-link:visited i { color: inherit !important; }
 
             <div class="content-card" id="exam-student-login">
                 <h3 class="subsection">▸ تسجيل الدخول للامتحان (محاكاة الشاشات)</h3>
-                
                 <div class="screen-row">
                     <div class="screen-container">
                         <div class="screen">
@@ -1607,7 +1516,6 @@ a.footer-icon-link:visited i { color: inherit !important; }
                         </div>
                         <div class="screen-label">1. إدخال الرقم</div>
                     </div>
-                    
                     <div class="screen-container">
                         <div class="screen">
                             <div class="screen-top">OK    Enter ID:      [BAT]</div>
@@ -1618,7 +1526,6 @@ a.footer-icon-link:visited i { color: inherit !important; }
                         </div>
                         <div class="screen-label">2. جارٍ التحقق</div>
                     </div>
-                    
                     <div class="screen-container">
                         <div class="screen">
                             <div class="screen-top">OK   Set Password:   [BAT]</div>
@@ -1629,7 +1536,6 @@ a.footer-icon-link:visited i { color: inherit !important; }
                         </div>
                         <div class="screen-label">3. كلمة المرور</div>
                     </div>
-                    
                     <div class="screen-container">
                         <div class="screen">
                             <div class="screen-top">OK   Select Q:        [BAT]</div>
@@ -1641,7 +1547,6 @@ a.footer-icon-link:visited i { color: inherit !important; }
                         <div class="screen-label">4. اختيار السؤال</div>
                     </div>
                 </div>
-
                 <ol class="steps">
                     <li><div class="step-content"><strong>أدخل رقمك الدراسي</strong><span>استخدم الأزرار من (0-9) لإدخال رقمك. اضغط [#] للحذف، و [*] لتأكيد الإرسال للسيرفر.</span></div></li>
                     <li><div class="step-content"><strong>انتظر رد السيرفر</strong><span>ستظهر شاشة "Checking..." أثناء تواصل الجهاز مع نقطة المدرس للتحقق من هويتك.</span></div></li>
@@ -1654,29 +1559,23 @@ a.footer-icon-link:visited i { color: inherit !important; }
             <div class="content-card" id="exam-student-exam">
                 <h3 class="subsection">▸ إجراء الامتحان والإجابة على الأسئلة</h3>
                 <div class="keypad-wrap">
-                    <div class="keypad-wrap">
-                    <div class="nav-buttons">
-                        <div class="keypad">
+                    <div class="keypad">
                         <div class="key fn">A</div><div class="key">3</div><div class="key">2</div><div class="key">1</div>
                         <div class="key fn">B</div><div class="key">6</div><div class="key">5</div><div class="key">4</div>
                         <div class="key fn">C</div><div class="key">9</div><div class="key">8</div><div class="key">7</div>
                         <div class="key fn">D</div><div class="key special">#</div><div class="key">0</div><div class="key special">*</div>
-                    <br><div class="nav-btn next-btn">التالي</div>
-                    <div class="nav-btn prev-btn">السابق</div>
                     </div>
-                    
-</div>
-</div>
                     <div class="key-legend">
                         <div class="key-legend-item"><div class="legend-dot dot-blue"></div> الأزرار الزرقاء (A/B/C/D) — لاختيار الإجابة الصحيحة</div>
                         <div class="key-legend-item"><div class="legend-dot dot-gold"></div> الزر النجمي (*) — للحفظ / التأكيد / أو الإرسال</div>
                         <div class="key-legend-item"><div class="legend-dot dot-gold"></div> زر المربع (#) — للحذف التراجعي / أو الرجوع للخلف</div>
                         <div class="key-legend-item"><div class="legend-dot dot-gray"></div> الأزرار الرمادية (0-9) — لإدخال الأرقام الدراسية وتحديد رقم السؤال</div>
-                        <div class="key-legend-item"><div class="legend-dot dot-green"></div>الزر الأخضر - للتنقل للسؤال التالي</div>
-                        <div class="key-legend-item"><div class="legend-dot dot-red"></div>الزر الأحمر - للتنقل للسؤال السابق</div>
                     </div>
                 </div>
-
+                <div class="nav-buttons">
+                    <div class="nav-btn next-btn">التالي</div>
+                    <div class="nav-btn prev-btn">السابق</div>
+                </div>
                 <ol class="steps">
                     <li><div class="step-content"><strong>اختر رقم السؤال</strong><span>في شاشة "Select Q" اكتب رقم السؤال الذي ترغب بحله (مثلاً 1) ثم اضغط [*].</span></div></li>
                     <li><div class="step-content"><strong>أجب باختيار الزر المناسب</strong><span>اضغط على أحد الخيارات (A أو B أو C أو D). ستظهر إجابتك المختارة بشكل كبير وواضح على الشاشة.</span></div></li>
@@ -1685,91 +1584,83 @@ a.footer-icon-link:visited i { color: inherit !important; }
                 </ol>
                 <div class="status-box success"><div class="status-icon">💾</div><div class="status-text"><strong>حفظ تلقائي ودائم</strong><span>كل إجابة تُحفظ فوراً في ذاكرة الجهاز غير المتطايرة (NVS). حتى لو انطفأ الجهاز، بياناتك بأمان.</span></div></div>
             </div>
+
             <div class="content-card" id="exam-student-screens">
                 <h3 class="subsection">▸ مرجع الشاشات ورسائل النظام</h3>
                 <div class="msg-grid">
+                    <div class="msg-card" style="--msg-color:#60a5fa">
+                        <div class="msg-lcd"><div class="msg-lcd-dot"></div>Resalaty System</div>
+                        <div class="msg-body">
+                            <div class="msg-meaning">شاشة البداية وإقلاع النظام</div>
+                            <div class="msg-action">انتظر 3 ثوان حتى يكتمل الإقلاع</div>
+                        </div>
+                    </div>
+                    <div class="msg-card" style="--msg-color:#34d399">
+                        <div class="msg-lcd"><div class="msg-lcd-dot"></div>[OK]</div>
+                        <div class="msg-body">
+                            <div class="msg-meaning">نقطة المدرس متصلة وجاهزة</div>
+                            <div class="msg-action">أكمل إجراءاتك بأمان</div>
+                        </div>
+                    </div>
+                    <div class="msg-card" style="--msg-color:#f87171">
+                        <div class="msg-lcd"><div class="msg-lcd-dot"></div>[--]</div>
+                        <div class="msg-body">
+                            <div class="msg-meaning">نقطة المدرس غير متصلة</div>
+                            <div class="msg-action">انتظر قليلاً أو تواصل مع المشرف بالقاعة</div>
+                        </div>
+                    </div>
+                    <div class="msg-card" style="--msg-color:#fbbf24">
+                        <div class="msg-lcd"><div class="msg-lcd-dot"></div>Checking...</div>
+                        <div class="msg-body">
+                            <div class="msg-meaning">جارٍ التحقق من البيانات مع السيرفر</div>
+                            <div class="msg-action">انتظر لحظات</div>
+                        </div>
+                    </div>
+                    <div class="msg-card" style="--msg-color:#f87171">
+                        <div class="msg-lcd"><div class="msg-lcd-dot"></div>Min 4 Digits!</div>
+                        <div class="msg-body">
+                            <div class="msg-meaning">كلمة المرور قصيرة جداً</div>
+                            <div class="msg-action">أدخل كلمة مرور من 4 أرقام على الأقل</div>
+                        </div>
+                    </div>
+                    <div class="msg-card" style="--msg-color:#f87171">
+                        <div class="msg-lcd"><div class="msg-lcd-dot"></div>Wrong Password!</div>
+                        <div class="msg-body">
+                            <div class="msg-meaning">كلمة المرور غير مطابقة</div>
+                            <div class="msg-action">أعد إدخال الكلمة الصحيحة</div>
+                        </div>
+                    </div>
+                    <div class="msg-card" style="--msg-color:#34d399">
+                        <div class="msg-lcd"><div class="msg-lcd-dot"></div>SAVED!</div>
+                        <div class="msg-body">
+                            <div class="msg-meaning">تم حفظ الإجابة بنجاح في الذاكرة</div>
+                            <div class="msg-action">انتقل للسؤال التالي وتابع الامتحان</div>
+                        </div>
+                    </div>
+                    <div class="msg-card" style="--msg-color:#fbbf24">
+                        <div class="msg-lcd"><div class="msg-lcd-dot"></div>Too Early!</div>
+                        <div class="msg-body">
+                            <div class="msg-meaning">لم ينقضِ الوقت الأدنى للسؤال</div>
+                            <div class="msg-action">انتظر ثوانٍ وفكر بالسؤال جيداً</div>
+                        </div>
+                    </div>
+                    <div class="msg-card" style="--msg-color:#f87171">
+                        <div class="msg-lcd"><div class="msg-lcd-dot"></div>Teacher Offline!</div>
+                        <div class="msg-body">
+                            <div class="msg-meaning">المدرس فَقَد الاتصال أثناء الإرسال</div>
+                            <div class="msg-action">انتظر إشارة [OK] ثم أعد المحاولة فوراً</div>
+                        </div>
+                    </div>
+                    <div class="msg-card" style="--msg-color:#a78bfa">
+                        <div class="msg-lcd"><div class="msg-lcd-dot"></div>FINISHED! Data Sent.</div>
+                        <div class="msg-body">
+                            <div class="msg-meaning">تم إرسال حزمة الإجابات بالكامل</div>
+                            <div class="msg-action">لقد أنهيت الامتحان، يمكنك إغلاق الجهاز</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <div class="msg-card" style="--msg-color:#60a5fa">
-        <div class="msg-lcd"><div class="msg-lcd-dot"></div>Resalaty System</div>
-        <div class="msg-body">
-            <div class="msg-meaning">شاشة البداية وإقلاع النظام</div>
-            <div class="msg-action">انتظر 3 ثوان حتى يكتمل الإقلاع</div>
-        </div>
-    </div>
-
-    <div class="msg-card" style="--msg-color:#34d399">
-        <div class="msg-lcd"><div class="msg-lcd-dot"></div>[OK]</div>
-        <div class="msg-body">
-            <div class="msg-meaning">نقطة المدرس متصلة وجاهزة</div>
-            <div class="msg-action">أكمل إجراءاتك بأمان</div>
-        </div>
-    </div>
-
-    <div class="msg-card" style="--msg-color:#f87171">
-        <div class="msg-lcd"><div class="msg-lcd-dot"></div>[--]</div>
-        <div class="msg-body">
-            <div class="msg-meaning">نقطة المدرس غير متصلة</div>
-            <div class="msg-action">انتظر قليلاً أو تواصل مع المشرف بالقاعة</div>
-        </div>
-    </div>
-
-    <div class="msg-card" style="--msg-color:#fbbf24">
-        <div class="msg-lcd"><div class="msg-lcd-dot"></div>Checking...</div>
-        <div class="msg-body">
-            <div class="msg-meaning">جارٍ التحقق من البيانات مع السيرفر</div>
-            <div class="msg-action">انتظر لحظات</div>
-        </div>
-    </div>
-
-    <div class="msg-card" style="--msg-color:#f87171">
-        <div class="msg-lcd"><div class="msg-lcd-dot"></div>Min 4 Digits!</div>
-        <div class="msg-body">
-            <div class="msg-meaning">كلمة المرور قصيرة جداً</div>
-            <div class="msg-action">أدخل كلمة مرور من 4 أرقام على الأقل</div>
-        </div>
-    </div>
-
-    <div class="msg-card" style="--msg-color:#f87171">
-        <div class="msg-lcd"><div class="msg-lcd-dot"></div>Wrong Password!</div>
-        <div class="msg-body">
-            <div class="msg-meaning">كلمة المرور غير مطابقة</div>
-            <div class="msg-action">أعد إدخال الكلمة الصحيحة</div>
-        </div>
-    </div>
-
-    <div class="msg-card" style="--msg-color:#34d399">
-        <div class="msg-lcd"><div class="msg-lcd-dot"></div>SAVED!</div>
-        <div class="msg-body">
-            <div class="msg-meaning">تم حفظ الإجابة بنجاح في الذاكرة</div>
-            <div class="msg-action">انتقل للسؤال التالي وتابع الامتحان</div>
-        </div>
-    </div>
-
-    <div class="msg-card" style="--msg-color:#fbbf24">
-        <div class="msg-lcd"><div class="msg-lcd-dot"></div>Too Early!</div>
-        <div class="msg-body">
-            <div class="msg-meaning">لم ينقضِ الوقت الأدنى للسؤال</div>
-            <div class="msg-action">انتظر ثوانٍ وفكر بالسؤال جيداً</div>
-        </div>
-    </div>
-
-    <div class="msg-card" style="--msg-color:#f87171">
-        <div class="msg-lcd"><div class="msg-lcd-dot"></div>Teacher Offline!</div>
-        <div class="msg-body">
-            <div class="msg-meaning">المدرس فَقَد الاتصال أثناء الإرسال</div>
-            <div class="msg-action">انتظر إشارة [OK] ثم أعد المحاولة فوراً</div>
-        </div>
-    </div>
-
-    <div class="msg-card" style="--msg-color:#a78bfa">
-        <div class="msg-lcd"><div class="msg-lcd-dot"></div>FINISHED! Data Sent.</div>
-        <div class="msg-body">
-            <div class="msg-meaning">تم إرسال حزمة الإجابات بالكامل</div>
-            <div class="msg-action">لقد أنهيت الامتحان، يمكنك إغلاق الجهاز</div>
-        </div>
-    </div>
-
-</div>
             <div class="content-card" id="exam-student-save">
                 <h3 class="subsection">▸ إنهاء الامتحان وإرسال الإجابات</h3>
                 <ol class="steps">
@@ -1777,7 +1668,6 @@ a.footer-icon-link:visited i { color: inherit !important; }
                     <li><div class="step-content"><strong>التقييم الذاتي (اختياري)</strong><span>اختر تقييمك لمستوى الأسئلة من 1 إلى 5 ثم اضغط [*]. يمكنك تخطي هذه الخطوة بالضغط على [*] مباشرة.</span></div></li>
                     <li><div class="step-content"><strong>تأكيد الإرسال النهائي</strong><span>تأكد من ظهور إشارة [OK] (المدرس متصل) في أعلى الشاشة. ستظهر لك رسالة "FINISHED! Data Sent." لتأكيد استلام السيرفر لإجاباتك.</span></div></li>
                 </ol>
-            </div>
             </div>
 
             <div class="content-card" id="exam-student-sleep">
@@ -1793,61 +1683,57 @@ a.footer-icon-link:visited i { color: inherit !important; }
             <div class="content-card" id="exam-teacher">
                 <div class="section-header"><div class="section-icon icon-green">🖥️</div><h2 class="section-title">دليل المدرس — لوحة التحكم بالامتحان</h2></div>
                 <p>لوحة تحكم ذكية تعمل عبر متصفح الويب (عنوان IP محلي) تتصل بنقطة التجميع (Gateway) وتتحدث البيانات تلقائياً كل 30 ثانية لتتبع حالة القاعة بالكامل.</p>
-                
                 <div class="arch-diagram">
-    <div class="arch-nodes">
-        <div class="arch-node"><div class="an-icon">🗄️</div><div class="an-label">قاعدة البيانات</div><div class="an-sub">MySQL DB</div></div>
-        <div class="arch-arrow"></div>
-        <div class="arch-node"><div class="an-icon">🖥️</div><div class="an-label">لوحة التحكم</div><div class="an-sub">Web Dashboard</div></div>
-        <div class="arch-arrow"></div>
-        <div class="arch-node"><div class="an-icon">📡</div><div class="an-label">البوابة الموجهة</div><div class="an-sub">Network Gateway</div></div>
-        <div class="arch-arrow"></div>
-        <div class="arch-node"><div class="an-icon">📻</div><div class="an-label">نقطة المدرس</div><div class="an-sub">Receiver Node</div></div>
-        <div class="arch-arrow"></div>
-        <div class="arch-node"><div class="an-icon">📱</div><div class="an-label">جهاز الطالب</div><div class="an-sub">ESP-NOW Node</div></div>
-    </div>
-</div>
-
+                    <div class="arch-nodes">
+                        <div class="arch-node"><div class="an-icon">🗄️</div><div class="an-label">قاعدة البيانات</div><div class="an-sub">MySQL DB</div></div>
+                        <div class="arch-arrow"></div>
+                        <div class="arch-node"><div class="an-icon">🖥️</div><div class="an-label">لوحة التحكم</div><div class="an-sub">Web Dashboard</div></div>
+                        <div class="arch-arrow"></div>
+                        <div class="arch-node"><div class="an-icon">📡</div><div class="an-label">البوابة الموجهة</div><div class="an-sub">Network Gateway</div></div>
+                        <div class="arch-arrow"></div>
+                        <div class="arch-node"><div class="an-icon">📻</div><div class="an-label">نقطة المدرس</div><div class="an-sub">Receiver Node</div></div>
+                        <div class="arch-arrow"></div>
+                        <div class="arch-node"><div class="an-icon">📱</div><div class="an-label">جهاز الطالب</div><div class="an-sub">ESP-NOW Node</div></div>
+                    </div>
+                </div>
                 <h3 class="subsection" id="exam-teacher-commands">▸ الأوامر اللاسلكية المتاحة للمدرس</h3>
                 <table class="feature-table">
                     <thead><tr><th>الزر في لوحة التحكم</th><th>الوظيفة والتأثير الفعلي</th><th>نطاق التأثير</th></tr></thead>
                     <tbody>
-                        <tr><td><strong style="color:var(--danger)">إيقاف الجميع (Stop All)</strong></td><td>إرسال أمر لاسلكي يقفل شاشات جميع الطلاب وينهي الامتحان فوراً</td><td>🌐 عام (القاعة بالكامل)</td></tr>
-                        <tr><td><strong style="color:var(--primary)">فحص بطارية الجميع</strong></td><td>طلب قراءة فورية لنسبة البطارية من كل الأجهزة المتصلة لتجنب انطفائها</td><td>🌐 عام (القاعة بالكامل)</td></tr>
-                        <tr><td><strong style="color:var(--secondary-dark)">إيقاف طالب محدد</strong></td><td>قفل جهاز طالب معين يشتبه بغشه أو لانتهاء وقته الخاص</td><td>👤 فردي (جهاز واحد)</td></tr>
-                        <tr><td><strong style="color:var(--danger)">بدء مراقبة (إنذار)</strong></td><td>تفعيل صوت تنبيه (Buzzer) مستمر على جهاز طالب محدد لردعه لفت انتباه المراقب</td><td>👤 فردي (جهاز واحد)</td></tr>
-                        <tr><td><strong style="color:var(--accent-dark)">إيقاف مراقبة</strong></td><td>إيقاف صوت الإنذار وإعادة الجهاز لوضعه الصامت</td><td>👤 فردي (جهاز واحد)</td></tr>
-                        <tr><td><strong style="color:var(--primary)">فحص بطارية طالب</strong></td><td>طلب قراءة البطارية من جهاز طالب واحد محدد فقط</td><td>👤 فردي (جهاز واحد)</td></tr>
+                        <tr><td><strong style="color:var(--danger)">إيقاف الجميع (Stop All)</strong></td><td>إرسال أمر لاسلكي يقفل شاشات جميع الطلاب وينهي الامتحان فوراً</td><td>🌐 عام</td></tr>
+                        <tr><td><strong style="color:var(--primary)">فحص بطارية الجميع</strong></td><td>طلب قراءة فورية لنسبة البطارية من كل الأجهزة المتصلة</td><td>🌐 عام</td></tr>
+                        <tr><td><strong style="color:var(--secondary-dark)">إيقاف طالب محدد</strong></td><td>قفل جهاز طالب معين يشتبه بغشه</td><td>👤 فردي</td></tr>
+                        <tr><td><strong style="color:var(--danger)">بدء مراقبة (إنذار)</strong></td><td>تفعيل صوت تنبيه على جهاز طالب محدد</td><td>👤 فردي</td></tr>
+                        <tr><td><strong style="color:var(--accent-dark)">إيقاف مراقبة</strong></td><td>إيقاف صوت الإنذار وإعادة الجهاز لوضعه الصامت</td><td>👤 فردي</td></tr>
+                        <tr><td><strong style="color:var(--primary)">فحص بطارية طالب</strong></td><td>طلب قراءة البطارية من جهاز طالب واحد محدد</td><td>👤 فردي</td></tr>
                     </tbody>
                 </table>
-
-                <h3 class="subsection" id="exam-teacher-battery">▸ آلية مراقبة طاقة الأجهزة (البطارية)</h3>
+                <h3 class="subsection" id="exam-teacher-battery">▸ آلية مراقبة طاقة الأجهزة</h3>
                 <ol class="steps">
-                    <li><div class="step-content"><strong>فحص فوري شامل للقاعة</strong><span>انقر زر "Check All Connected Devices" — ستُرسل الأجهزة قراءاتها وتُحدث اللوحة بألوان توضيحية (أخضر/أصفر/أحمر).</span></div></li>
-                    <li><div class="step-content"><strong>فحص جهاز بعينه</strong><span>اختر الجهاز المشكوك بطاقته من القائمة المنسدلة ثم اطلب فحص فردي للاطمئنان.</span></div></li>
-                    <li><div class="step-content"><strong>الفحص التلقائي الذكي</strong><span>كل جهاز يُرسل ويُحدّث قيمة بطاريته تلقائياً مع كل عملية حفظ إجابة أو تواصل مع السيرفر.</span></div></li>
+                    <li><div class="step-content"><strong>فحص فوري شامل</strong><span>انقر زر "Check All" — تُحدث الأجهزة قراءاتها بألوان توضيحية.</span></div></li>
+                    <li><div class="step-content"><strong>فحص جهاز بعينه</strong><span>اختر الجهاز من القائمة واطلب فحصاً فردياً.</span></div></li>
+                    <li><div class="step-content"><strong>الفحص التلقائي الذكي</strong><span>كل جهاز يُحدّث بطاريته مع كل عملية حفظ أو تواصل مع السيرفر.</span></div></li>
                 </ol>
             </div>
 
             <div class="content-card" id="exam-investor">
                 <div class="section-header"><div class="section-icon icon-gold">💼</div><h2 class="section-title">دليل المستثمر — جهاز الامتحانات</h2></div>
                 <div class="investor-hero">
-                    <h3>منظومة امتحانات رقمية هاردوير متكاملة</h3>
-                    <p>من يد الطالب إلى قاعدة البيانات — دقة 100% وتصحيح فوري بدون ورق، بدون الحاجة لبنية إنترنت تحتية، وبدون أي تأخير في النتائج.</p>
+                    <h3>منظومة امتحانات رقمية متكاملة</h3>
+                    <p>من يد الطالب إلى قاعدة البيانات — دقة 100% وتصحيح فوري بدون ورق، بدون الحاجة لبنية إنترنت تحتية.</p>
                     <div class="kpi-row">
-                        <div class="kpi"><div class="val">4</div><div class="lab">طبقات اتصال متكاملة</div></div>
-                        <div class="kpi"><div class="val">&lt;10ms</div><div class="lab">زمن انتقال البيانات</div></div>
-                        <div class="kpi"><div class="val">100%</div><div class="lab">تصحيح آلي فوري</div></div>
-                        <div class="kpi"><div class="val">OTA</div><div class="lab">تحديث لاسلكي للنظام</div></div>
+                        <div class="kpi"><div class="val">4</div><div class="lab">طبقات اتصال</div></div>
+                        <div class="kpi"><div class="val">&lt;10ms</div><div class="lab">زمن انتقال</div></div>
+                        <div class="kpi"><div class="val">100%</div><div class="lab">تصحيح آلي</div></div>
+                        <div class="kpi"><div class="val">OTA</div><div class="lab">تحديث لاسلكي</div></div>
                     </div>
                 </div>
-                
-                <h3 class="subsection">▸ الميزات التنافسية الجوهرية (لماذا هذا الجهاز؟)</h3>
+                <h3 class="subsection">▸ الميزات التنافسية الجوهرية</h3>
                 <div class="card-grid">
-                    <div class="mini-card"><div class="mc-icon">📡</div><div class="mc-title">الاتصال اللاسلكي المستقل</div><div class="mc-desc">يعمل ببروتوكول ESP-NOW لشبكة خاصة ومباشرة لا تتأثر بانقطاع الإنترنت.</div></div>
-                    <div class="mini-card"><div class="mc-icon">💾</div><div class="mc-title">موثوقية البيانات التامة</div><div class="mc-desc">كتابة فورية في ذواكر NVS — صفر بالمئة احتمالية فقدان الإجابات.</div></div>
-                    <div class="mini-card"><div class="mc-icon">🔄</div><div class="mc-title">تحديث هوائي (OTA)</div><div class="mc-desc">تحديث أنظمة الأجهزة لاسلكياً بضغطة زر وبدون الحاجة لجمعها ووصلها بالكابلات.</div></div>
-                    <div class="mini-card"><div class="mc-icon">∞</div><div class="mc-title">أسئلة غير محدودة</div><div class="mc-desc">البرمجة الديناميكية تسمح بإنشاء امتحانات بأي عدد من الأسئلة دون تقييد.</div></div>
+                    <div class="mini-card"><div class="mc-icon">📡</div><div class="mc-title">اتصال مستقل</div><div class="mc-desc">بروتوكول ESP-NOW خاص لا يتأثر بانقطاع الإنترنت.</div></div>
+                    <div class="mini-card"><div class="mc-icon">💾</div><div class="mc-title">موثوقية تامة</div><div class="mc-desc">تخزين فوري في ذواكر NVS غير متطايرة.</div></div>
+                    <div class="mini-card"><div class="mc-icon">🔄</div><div class="mc-title">تحديث OTA</div><div class="mc-desc">تحديث الأنظمة لاسلكياً بالكامل دون كابلات.</div></div>
+                    <div class="mini-card"><div class="mc-icon">∞</div><div class="mc-title">أسئلة غير محدودة</div><div class="mc-desc">برمجة ديناميكية تسمح بأي عدد من الأسئلة.</div></div>
                 </div>
             </div>
 
@@ -1857,29 +1743,29 @@ a.footer-icon-link:visited i { color: inherit !important; }
             </div>
 
             <div class="content-card">
-                <div class="section-header"><div class="section-icon icon-gold">🤝</div><h2 class="section-title">منظومة متكاملة لا مثيل لها تسد جميع الثغرات</h2></div>
-                <p>عند دمج نظام إدارة الموارد (ERP) المبرمج داخلياً مع عتاد جهاز الامتحانات اللاسلكي، فإنك تحصل على بيئة تعليمية وإدارية رقمية شاملة تُدار من مكان واحد.</p>
+                <div class="section-header"><div class="section-icon icon-gold">🤝</div><h2 class="section-title">منظومة متكاملة لا مثيل لها</h2></div>
+                <p>عند دمج نظام ERP المبرمج داخلياً مع عتاد جهاز الامتحانات اللاسلكي، تحصل على بيئة تعليمية وإدارية رقمية شاملة تُدار من مكان واحد.</p>
                 <div class="inner-two-col">
-                    <div style="background:var(--primary-light);border:1px solid rgba(30,58,138,0.2);border-radius:var(--radius-lg);padding:35px;box-shadow:var(--shadow-sm);">
-                        <h4 style="color:var(--primary);margin-bottom:20px;font-size:1.3rem;font-weight:800;display:flex;align-items:center;gap:10px;"><i class="fas fa-server"></i> نظام ERP + LMS يوفر:</h4>
+                    <div style="background:var(--primary-light);border:1px solid rgba(30,58,138,0.2);border-radius:var(--radius-lg);padding:35px;">
+                        <h4 style="color:var(--primary);margin-bottom:20px;font-size:1.3rem;font-weight:800;"><i class="fas fa-server"></i> نظام ERP + LMS يوفر:</h4>
                         <div style="display:flex;flex-direction:column;gap:14px;font-size:1.05rem;color:var(--ink);">
-                            <div><i class="fas fa-check text-primary" style="color:var(--primary);margin-left:8px;"></i>محاسبة دقيقة جداً بمعيار القيد المزدوج</div>
-                            <div><i class="fas fa-check text-primary" style="color:var(--primary);margin-left:8px;"></i>منصة LMS متكاملة للتعلم الإلكتروني VOD</div>
-                            <div><i class="fas fa-check text-primary" style="color:var(--primary);margin-left:8px;"></i>إدارة شاملة للطلاب، المعلمين، والموارد البشرية</div>
-                            <div><i class="fas fa-check text-primary" style="color:var(--primary);margin-left:8px;"></i>فصول افتراضية فائقة السرعة بتقنية WebRTC</div>
-                            <div><i class="fas fa-check text-primary" style="color:var(--primary);margin-left:8px;"></i>تطبيق موبايل مخصص (Android و iOS)</div>
-                            <div><i class="fas fa-check text-primary" style="color:var(--primary);margin-left:8px;"></i>تقارير مالية وأكاديمية متكاملة لصناعة القرار</div>
+                            <div><i class="fas fa-check" style="color:var(--primary);margin-left:8px;"></i>محاسبة دقيقة بمعيار القيد المزدوج</div>
+                            <div><i class="fas fa-check" style="color:var(--primary);margin-left:8px;"></i>منصة LMS للتعلم الإلكتروني VOD</div>
+                            <div><i class="fas fa-check" style="color:var(--primary);margin-left:8px;"></i>إدارة شاملة للطلاب والمعلمين</div>
+                            <div><i class="fas fa-check" style="color:var(--primary);margin-left:8px;"></i>فصول افتراضية بتقنية WebRTC</div>
+                            <div><i class="fas fa-check" style="color:var(--primary);margin-left:8px;"></i>تطبيق موبايل (Android و iOS)</div>
+                            <div><i class="fas fa-check" style="color:var(--primary);margin-left:8px;"></i>تقارير مالية وأكاديمية لصناعة القرار</div>
                         </div>
                     </div>
-                    <div style="background:var(--secondary-light);border:1px solid rgba(245,158,11,0.2);border-radius:var(--radius-lg);padding:35px;box-shadow:var(--shadow-sm);">
-                        <h4 style="color:var(--secondary-dark);margin-bottom:20px;font-size:1.3rem;font-weight:800;display:flex;align-items:center;gap:10px;"><i class="fas fa-microchip"></i> جهاز الامتحانات يضيف:</h4>
+                    <div style="background:var(--secondary-light);border:1px solid rgba(245,158,11,0.2);border-radius:var(--radius-lg);padding:35px;">
+                        <h4 style="color:var(--secondary-dark);margin-bottom:20px;font-size:1.3rem;font-weight:800;"><i class="fas fa-microchip"></i> جهاز الامتحانات يضيف:</h4>
                         <div style="display:flex;flex-direction:column;gap:14px;font-size:1.05rem;color:var(--ink);">
                             <div><i class="fas fa-check" style="color:var(--secondary-dark);margin-left:8px;"></i>امتحانات رقمية 100% بدون ورق وبدون إنترنت</div>
-                            <div><i class="fas fa-check" style="color:var(--secondary-dark);margin-left:8px;"></i>تصحيح لحظي فوري بزمن استجابة أقل من 10ms</div>
-                            <div><i class="fas fa-check" style="color:var(--secondary-dark);margin-left:8px;"></i>أمان مضاعف ضد الغش (تعدد النماذج والمراقبة)</div>
-                            <div><i class="fas fa-check" style="color:var(--secondary-dark);margin-left:8px;"></i>يعمل في أي بيئة أو قاعة بدون تجهيز بنية تحتية</div>
-                            <div><i class="fas fa-check" style="color:var(--secondary-dark);margin-left:8px;"></i>تحديث OTA لاسلكي لجميع الأجهزة بثوانٍ</div>
-                            <div><i class="fas fa-check" style="color:var(--secondary-dark);margin-left:8px;"></i>صفر فقدان للبيانات بفضل تخزين الـ NVS</div>
+                            <div><i class="fas fa-check" style="color:var(--secondary-dark);margin-left:8px;"></i>تصحيح لحظي بزمن استجابة أقل من 10ms</div>
+                            <div><i class="fas fa-check" style="color:var(--secondary-dark);margin-left:8px;"></i>أمان مضاعف ضد الغش (تعدد النماذج)</div>
+                            <div><i class="fas fa-check" style="color:var(--secondary-dark);margin-left:8px;"></i>يعمل في أي بيئة بدون بنية تحتية</div>
+                            <div><i class="fas fa-check" style="color:var(--secondary-dark);margin-left:8px;"></i>تحديث OTA لاسلكي لجميع الأجهزة</div>
+                            <div><i class="fas fa-check" style="color:var(--secondary-dark);margin-left:8px;"></i>صفر فقدان للبيانات (تخزين NVS)</div>
                         </div>
                     </div>
                 </div>
@@ -1887,7 +1773,7 @@ a.footer-icon-link:visited i { color: inherit !important; }
 
             <div class="cta-section" id="request-quote">
                 <h3>📋 هل أنت مستعد لتطوير مؤسستك التعليمية؟</h3>
-                <p class="cta-sub">نحن جاهزون لتزويدك بعرض سعر تفصيلي ودراسة تقنية تناسب احتياجات وحجم مؤسستك بالضبط. تواصل معنا الآن وسيقوم فريقنا بالرد عليك خلال 24 ساعة.</p>
+                <p class="cta-sub">نحن جاهزون لتزويدك بعرض سعر تفصيلي ودراسة تقنية تناسب احتياجات وحجم مؤسستك بالضبط. تواصل معنا الآن.</p>
                 <div class="cta-buttons">
                     <a href="https://wa.me/963935111333" target="_blank" class="cta-btn primary-cta"><i class="fab fa-whatsapp"></i> اطلب عرض سعر عبر واتساب</a>
                     <a href="mailto:Anwar.albabily@gmail.com?subject=طلب%20عرض%20سعر%20منظومة%20رسالتي" class="cta-btn secondary-cta"><i class="fas fa-envelope"></i> تواصل عبر البريد الإلكتروني</a>
@@ -1899,41 +1785,43 @@ a.footer-icon-link:visited i { color: inherit !important; }
 
     <footer class="site-footer">
         <span class="footer-title">مجموعة رسالتي للغات والعلوم</span>
-         <div class="contact-cards-grid">
-    <div class="contact-card">
-        <div class="contact-card-icon">💼</div>
-        <div class="contact-card-label">الإدارة والمبيعات</div>
-        <div class="contact-card-value">
-            <a href="tel:+963935111333">+963 935 111 333</a>
-            <a href="mailto:NourAldeenAlbabbili@gmail.com">NourAldeenAlbabbili@gmail.com</a>
+        <div class="contact-cards-grid">
+            <div class="contact-card">
+                <div class="contact-card-icon">💼</div>
+                <div class="contact-card-label">الإدارة والمبيعات</div>
+                <div class="contact-card-value">
+                    <a href="tel:+963935111333">+963 935 111 333</a>
+                    <a href="mailto:NourAldeenAlbabbili@gmail.com">NourAldeenAlbabbili@gmail.com</a>
+                </div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-card-icon">💻</div>
+                <div class="contact-card-label">الاستشارات التقنية</div>
+                <div class="contact-card-value">
+                    <a href="tel:+963934920997">+963 934 920 997</a>
+                    <a href="tel:+963985611518">+963 985 611 518</a>
+                </div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-card-icon">☎️</div>
+                <div class="contact-card-label">الهاتف الثابت</div>
+                <div class="contact-card-value">
+                    <a href="tel:+963113335171">011 - 3335171</a>
+                    <a href="tel:+963113335173">011 - 3335173</a>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="contact-card">
-        <div class="contact-card-icon">💻</div>
-        <div class="contact-card-label">الاستشارات التقنية</div>
-        <div class="contact-card-value">
-            <a href="tel:+963934920997">+963 934 920 997</a>
-            <a href="tel:+963934920997">+963 985 611 518</a>
-        </div>
-    </div>
-    <div class="contact-card">
-        <div class="contact-card-icon">☎️</div>
-        <div class="contact-card-label">الهاتف الثابت</div>
-        <div class="contact-card-value">
-            <a href="tel:+963113335171">011 - 3335171</a>
-            <a href="tel:+963113335173">011 - 3335173</a>
-        </div>
-    </div>
-</div>
         <div class="footer-icons">
             <a href="https://wa.me/963935666333" target="_blank" class="footer-icon-link"><i class="fab fa-whatsapp" style="color:#25D366;"></i></a>
             <a href="https://fb.com/resalatigroup" target="_blank" class="footer-icon-link"><i class="fab fa-facebook-f" style="color:#1877F2;"></i></a>
             <a href="https://instagram.com/resalatigroup" target="_blank" class="footer-icon-link"><i class="fab fa-instagram" style="color:#E4405F;"></i></a>
             <a href="https://t.me/resalate5555" target="_blank" class="footer-icon-link"><i class="fab fa-telegram-plane" style="color:#38bdf8;"></i></a>
-        </div><a href="https://maps.app.goo.gl/CkH6tqPKFFqNZS8i7">
-        <div class="footer-address">
-            <i class="fas fa-map-marker-alt" style="color:var(--secondary);"></i> سوريا - دمشق - الجسر الأبيض - شركسية - جانب جامع الجسر الأبيض
-        </div></a>
+        </div>
+        <a href="https://maps.app.goo.gl/CkH6tqPKFFqNZS8i7" target="_blank">
+            <div class="footer-address">
+                <i class="fas fa-map-marker-alt" style="color:var(--secondary);"></i> سوريا - دمشق - الجسر الأبيض - شركسية - جانب جامع الجسر الأبيض
+            </div>
+        </a>
         <div class="footer-copyright">جميع الحقوق محفوظة لصالح مجموعة رسالتي للغات والعلوم © 2026 - 2027</div>
     </footer>
 
@@ -1944,7 +1832,6 @@ a.footer-icon-link:visited i { color: inherit !important; }
     </div>
 
     <script>
-        // Click sound
         const clickSound = new Audio('click.mp3');
         clickSound.volume = 0.35;
         function playClick() { clickSound.currentTime = 0; clickSound.play().catch(() => {}); }
@@ -1954,7 +1841,6 @@ a.footer-icon-link:visited i { color: inherit !important; }
             });
         });
 
-        // Dark mode toggle
         const toggleBtn = document.getElementById('darkModeToggle');
         const body = document.body;
         if (localStorage.getItem('darkMode') === 'enabled') { body.classList.add('dark-mode'); }
@@ -1963,12 +1849,10 @@ a.footer-icon-link:visited i { color: inherit !important; }
             localStorage.setItem('darkMode', body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
         });
 
-        // Back to top
         const backToTopBtn = document.getElementById('backToTopBtn');
         window.addEventListener('scroll', () => { backToTopBtn.classList.toggle('show', window.scrollY > 300); });
         backToTopBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
-        // Progress bar
         window.addEventListener('scroll', () => {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -1976,12 +1860,10 @@ a.footer-icon-link:visited i { color: inherit !important; }
             document.getElementById('progressFill').style.width = scrolled + '%';
         });
 
-        // Sidebar group toggle
         function toggleSidebarGroup(header) {
             header.parentElement.classList.toggle('open');
         }
 
-        // Active TOC link based on scroll
         const links = document.querySelectorAll('.toc-link');
         window.addEventListener('scroll', () => {
             let current = '';
@@ -1996,7 +1878,6 @@ a.footer-icon-link:visited i { color: inherit !important; }
             }
         });
 
-        // Mobile sidebar functionality
         const sidebar = document.getElementById('sidebar');
         const overlay = document.getElementById('sidebarOverlay');
         const menuToggle = document.getElementById('menuToggle');
@@ -2006,7 +1887,6 @@ a.footer-icon-link:visited i { color: inherit !important; }
             overlay.style.display = 'block';
             document.body.style.overflow = 'hidden';
         }
-
         function closeSidebar() {
             sidebar.classList.remove('mobile-visible');
             overlay.style.display = 'none';
@@ -2014,44 +1894,32 @@ a.footer-icon-link:visited i { color: inherit !important; }
         }
 
         menuToggle.addEventListener('click', () => {
-            if (sidebar.classList.contains('mobile-visible')) {
-                closeSidebar();
-            } else {
-                openSidebar();
-            }
+            sidebar.classList.contains('mobile-visible') ? closeSidebar() : openSidebar();
         });
-
         overlay.addEventListener('click', closeSidebar);
-
         document.querySelectorAll('.sidebar .toc-link').forEach(link => {
             link.addEventListener('click', () => {
                 if (window.innerWidth <= 1024) closeSidebar();
             });
         });
 
-        // Accordion functionality
         function toggleAcc(btn) {
             btn.classList.toggle('open');
             const bodyEl = btn.nextElementSibling;
             if (bodyEl) bodyEl.classList.toggle('open');
         }
 
-        // Image modal with zoom and drag functionality
         const imgModal = document.getElementById('imgModal');
         const modalImg = document.getElementById('modalImage');
         const closeImgModal = document.getElementById('closeImgModal');
-        let zoomScale = 1;
-        let isDragging = false;
-        let startX, startY, translateX = 0, translateY = 0;
+        let zoomScale = 1, isDragging = false, startX, startY, translateX = 0, translateY = 0;
 
         document.querySelectorAll('.image-showcase img').forEach(img => {
             img.addEventListener('click', function(e) {
                 e.stopPropagation();
                 imgModal.style.display = "block";
                 modalImg.src = this.src;
-                zoomScale = 1;
-                translateX = 0;
-                translateY = 0;
+                zoomScale = 1; translateX = 0; translateY = 0;
                 updateTransform();
                 document.body.style.overflow = 'hidden';
             });
@@ -2061,21 +1929,13 @@ a.footer-icon-link:visited i { color: inherit !important; }
             modalImg.style.transform = `translate(calc(-50% + ${translateX}px), calc(-50% + ${translateY}px)) scale(${zoomScale})`;
         }
 
-        function closeTheModal() { 
-            imgModal.style.display = "none"; 
-            document.body.style.overflow = ''; 
-        }
-        
+        function closeTheModal() { imgModal.style.display = "none"; document.body.style.overflow = ''; }
         closeImgModal.onclick = closeTheModal;
-        
-        imgModal.onclick = function(e) { 
-            if (e.target === imgModal) closeTheModal(); 
-        };
-        
+        imgModal.onclick = function(e) { if (e.target === imgModal) closeTheModal(); };
+
         modalImg.addEventListener('wheel', function(e) {
             e.preventDefault();
-            const zoomAmount = 0.15;
-            zoomScale += e.deltaY < 0 ? zoomAmount : -zoomAmount;
+            zoomScale += e.deltaY < 0 ? 0.15 : -0.15;
             zoomScale = Math.max(0.5, Math.min(zoomScale, 4));
             updateTransform();
         });
@@ -2088,11 +1948,7 @@ a.footer-icon-link:visited i { color: inherit !important; }
             modalImg.style.cursor = 'grabbing';
         });
 
-        window.addEventListener('mouseup', () => {
-            isDragging = false;
-            modalImg.style.cursor = 'grab';
-        });
-
+        window.addEventListener('mouseup', () => { isDragging = false; modalImg.style.cursor = 'grab'; });
         window.addEventListener('mousemove', (e) => {
             if (!isDragging) return;
             e.preventDefault();
