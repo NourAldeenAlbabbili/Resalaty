@@ -1010,9 +1010,10 @@ a.footer-icon-link:visited i { color: inherit !important; }
 <nav class="top-nav">
     <div style="display:flex; align-items:center; gap:12px;">
         <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
-        <a href="#" class="nav-brand"> 
+        <!-- تم إصلاح الرابط هنا ليكون رابطاً واحداً فقط ويشير إلى صفحة الفيسبوك -->
+        <a href="https://www.facebook.com/resalatigroup" class="nav-brand"> 
             <div class="nav-brand-dot"></div>
-            <span><a href="https://www.facebook.com/resalatigroup">مجموعة رسالتي</a></span>
+            <span>مجموعة رسالتي</span>
         </a>
     </div>
 
@@ -1995,7 +1996,7 @@ a.footer-icon-link:visited i { color: inherit !important; }
             }
         });
 
-        // Mobile sidebar functionality (✅ Corrected to prevent z-index entrapment and fix toggle logic)
+        // Mobile sidebar functionality
         const sidebar = document.getElementById('sidebar');
         const overlay = document.getElementById('sidebarOverlay');
         const menuToggle = document.getElementById('menuToggle');
@@ -2075,7 +2076,7 @@ a.footer-icon-link:visited i { color: inherit !important; }
             e.preventDefault();
             const zoomAmount = 0.15;
             zoomScale += e.deltaY < 0 ? zoomAmount : -zoomAmount;
-            zoomScale = Math.max(0.5, Math.min(zoomScale, 4)); // حد للتكبير والتصغير
+            zoomScale = Math.max(0.5, Math.min(zoomScale, 4));
             updateTransform();
         });
 
