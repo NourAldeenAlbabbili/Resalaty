@@ -923,19 +923,6 @@ a.footer-icon-link:visited i { color: inherit !important; }
 </button>
     <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
 
-    <nav class="top-nav">
-        <a href="#" class="nav-brand">
-            <div class="nav-brand-dot"></div>
-            مجموعة رسالتي
-        </a>
-        <ul class="nav-links">
-            <li><a href="#part-erp">نظام ERP التعليمي</a></li>
-            <li><a href="#part-exam">جهاز الامتحانات</a></li>
-            <li><a href="#part-investor-combined">للمستثمرين</a></li>
-            <li><a href="#request-quote" class="nav-pill">تواصل معنا</a></li>
-        </ul>
-        <div class="dark-mode-toggle" id="darkModeToggle" title="تبديل الوضع الليلي"></div>
-    </nav>
 <nav class="top-nav">
     <a href="#" class="nav-brand">
         <div class="nav-brand-dot"></div>
@@ -1921,16 +1908,32 @@ a.footer-icon-link:visited i { color: inherit !important; }
         });
 
         // Mobile sidebar functionality
-        const menuToggle = document.getElementById('menuToggle');
-        const sidebar = document.getElementById('sidebar');
-        const overlay = document.getElementById('sidebarOverlay');
-        function openSidebar() { sidebar.classList.add('mobile-visible'); overlay.style.display='block'; document.body.style.overflow = 'hidden'; }
-        function closeSidebar() { sidebar.classList.remove('mobile-visible'); overlay.style.display='none'; document.body.style.overflow = ''; }
-        menuToggle.addEventListener('click', openSidebar);
-        overlay.addEventListener('click', closeSidebar);
-        document.querySelectorAll('.sidebar .toc-link').forEach(link => link.addEventListener('click', () => {
-            if (window.innerWidth <= 1024) closeSidebar();
-        }));
+        // ✅ عرّف المتغيرات أولاً
+const sidebar = document.getElementById('sidebar');
+const overlay = document.getElementById('sidebarOverlay');
+const menuToggle = document.getElementById('menuToggle');
+
+function openSidebar() {
+    sidebar.classList.add('mobile-visible');
+    overlay.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeSidebar() {
+    sidebar.classList.remove('mobile-visible');
+    overlay.style.display = 'none';
+    document.body.style.overflow = '';
+}
+
+// ✅ addEventListener مرة واحدة فقط
+menuToggle.addEventListener('click', openSidebar);
+overlay.addEventListener('click', closeSidebar);
+
+document.querySelectorAll('.sidebar .toc-link').forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 1024) closeSidebar();
+    });
+});
 
         // Accordion functionality - Fixed to properly open/close
         function toggleAcc(btn) {
