@@ -552,6 +552,20 @@
         .footer-contact-row a { color: #93c5fd; text-decoration: none; font-family: 'JetBrains Mono', sans-serif; transition: 0.2s; }
         .footer-contact-row a:hover { color: #fff; text-decoration: underline; }
         .footer-copyright { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.95rem; color: #64748b; }
+        /* تثبيت لون رابط الخريطة أو أي رابط داخل العنوان */
+.footer-address a,
+.footer-address a:link,
+.footer-address a:visited,
+.footer-address a:active {
+    color: inherit; /* بياخد نفس لون النص الأساسي */
+    text-decoration: none; /* عشان نشيل الخط اللي تحت الرابط إذا حابب */
+    transition: color 0.2s;
+}
+
+/* حركة حلوة لما تمرر الماوس عليه */
+.footer-address a:hover {
+    color: #fff; 
+}
 
         /* MOBILE MENU & RESPONSIVE */
         .menu-toggle {
