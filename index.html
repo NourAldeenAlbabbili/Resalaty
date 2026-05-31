@@ -235,6 +235,22 @@
             opacity: 0; visibility: hidden; transform: translateY(20px); transition: all 0.3s ease; font-size: 20px;
         }
         .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+        /* كلاس جديد للتحكم بحجم الصورة داخل الزر */
+.back-to-top-icon {
+    width: 24px;  /* يمكنك تكبير أو تصغير هذا الرقم حسب رغبتك */
+    height: 24px; /* حافظ على الارتفاع مساوياً للعرض لشكل متناسق */
+    display: block; /* لضمان عدم وجود مسافات غريبة حول الصورة */
+    object-fit: contain; /* لضمان عدم تمدد الصورة بشكل مشوه */
+}
+
+/* تعديل بسيط على الزر الأصلي لضمان التوسيط الكامل */
+.back-to-top {
+    /* الخواص التالية موجودة لديك مسبقاً ولكن نؤكد عليها للتوسيط */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0; /* لإزالة أي حشوة قد تزيح الصورة عن المركز */
+}
         .back-to-top:hover { background-color: var(--primary-dark); transform: translateY(-5px); box-shadow: var(--shadow-xl); }
 
         /* LAYOUT & SIDEBAR */
@@ -921,17 +937,17 @@ a.footer-icon-link:visited i { color: inherit !important; }
 </head>
 <body>
 <button class="back-to-top" id="backToTopBtn" title="العودة إلى الأعلى">
-    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+    <img src="arrow.png" alt="Top" class="back-to-top-icon">
 </button>
     <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
 
 <nav class="top-nav">
     <div style="display:flex; align-items:center; gap:12px;">
         <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
-        <a href="#" class="nav-brand">
+        <a href="#" class="nav-brand"> <a href="https://fb.com/resalatigroup">
             <div class="nav-brand-dot"></div>
             مجموعة رسالتي
-        </a>
+        </a></a>
     </div>
 
     <ul class="nav-links">
@@ -1847,10 +1863,10 @@ a.footer-icon-link:visited i { color: inherit !important; }
             <a href="https://fb.com/resalatigroup" target="_blank" class="footer-icon-link"><i class="fab fa-facebook-f" style="color:#1877F2;"></i></a>
             <a href="https://instagram.com/resalatigroup" target="_blank" class="footer-icon-link"><i class="fab fa-instagram" style="color:#E4405F;"></i></a>
             <a href="https://t.me/resalate5555" target="_blank" class="footer-icon-link"><i class="fab fa-telegram-plane" style="color:#38bdf8;"></i></a>
-        </div>
+        </div><a href="https://maps.app.goo.gl/CkH6tqPKFFqNZS8i7">
         <div class="footer-address">
             <i class="fas fa-map-marker-alt" style="color:var(--secondary);"></i> سوريا - دمشق - الجسر الأبيض - شركسية - جانب جامع الجسر الأبيض
-        </div>
+        </div></a>
         <div class="footer-copyright">جميع الحقوق محفوظة لصالح مجموعة رسالتي للغات والعلوم © 2026 - 2027</div>
     </footer>
 
