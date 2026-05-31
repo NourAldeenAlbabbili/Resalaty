@@ -243,7 +243,7 @@
         .sidebar {
             position: sticky; top: 80px; height: calc(100vh - 120px); overflow-y: auto;
             background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
-            padding: 30px 20px; box-shadow: var(--shadow); z-index: 10;
+            padding: 30px 20px; box-shadow: var(--shadow); z-index: 10001;
             scrollbar-width: thin; scrollbar-color: var(--border) transparent;
         }
         .sidebar::-webkit-scrollbar { width: 6px; }
@@ -964,7 +964,7 @@ a.footer-icon-link:visited i { color: inherit !important; }
         </div>
     </section>
 
-<div id="sidebarOverlay" style="display:none; position:fixed; inset:0; background:rgba(15,23,42,0.6); backdrop-filter:blur(4px); z-index:9500;" onclick="closeSidebar()"></div>    
+<div id="sidebarOverlay" style="display:none; position:fixed; inset:0; background:rgba(15,23,42,0.6); backdrop-filter:blur(4px); z-index:9200;" onclick="closeSidebar()"></div>    
     <div class="two-col wrapper">
         <nav class="sidebar" id="sidebar">
             <div class="sidebar-group open">
