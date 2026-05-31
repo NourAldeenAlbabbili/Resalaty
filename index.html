@@ -1557,36 +1557,44 @@
             </div>
 
             <div class="content-card" id="exam-student-exam">
-                <h3 class="subsection">▸ إجراء الامتحان والإجابة على الأسئلة</h3>
-                <div class="keypad-wrap">
-                    <div class="keypad">
-                        <div class="key fn">A</div><div class="key">3</div><div class="key">2</div><div class="key">1</div>
-                        <div class="key fn">B</div><div class="key">6</div><div class="key">5</div><div class="key">4</div>
-                        <div class="key fn">C</div><div class="key">9</div><div class="key">8</div><div class="key">7</div>
-                        <div class="key fn">D</div><div class="key special">#</div><div class="key">0</div><div class="key special">*</div>
-                        <br><div class="nav-buttons">
-                    <div class="nav-btn next-btn">التالي</div>
-                    <div class="nav-btn prev-btn">السابق</div>
-                    </div><br>
-                    <div class="key-legend">
-                        <div class="key-legend-item"><div class="legend-dot dot-blue"></div> الأزرار الزرقاء (A/B/C/D) — لاختيار الإجابة الصحيحة</div>
-                        <div class="key-legend-item"><div class="legend-dot dot-gold"></div> الزر النجمي (*) — للحفظ / التأكيد / أو الإرسال</div>
-                        <div class="key-legend-item"><div class="legend-dot dot-gold"></div> زر المربع (#) — للحذف التراجعي / أو الرجوع للخلف</div>
-                        <div class="key-legend-item"><div class="legend-dot dot-gray"></div> الأزرار الرمادية (0-9) — لإدخال الأرقام الدراسية وتحديد رقم السؤال</div>
-                        <div class="key-legend-item"><div class="legend-dot dot-green"></div>الزر الأخضر - للانتقال للسؤال التالي</div>
-                        <div class="key-legend-item"><div class="legend-dot dot-red"></div>الزر الأحمر - للرجوع للسؤال السابق</div>
-                    </div>
-                </div>
-                </div>
-                <ol class="steps">
-                    <li><div class="step-content"><strong>اختر رقم السؤال</strong><span>في شاشة "Select Q" اكتب رقم السؤال الذي ترغب بحله (مثلاً 1) ثم اضغط [*].</span></div></li>
-                    <li><div class="step-content"><strong>أجب باختيار الزر المناسب</strong><span>اضغط على أحد الخيارات (A أو B أو C أو D). ستظهر إجابتك المختارة بشكل كبير وواضح على الشاشة.</span></div></li>
-                    <li><div class="step-content"><strong>اضغط [*] لحفظ الإجابة</strong><span>عند التأكد، اضغط النجمة. ستظهر رسالة "SAVED!" مع عرض الوقت الكلي المستغرق في حل السؤال.</span></div></li>
-                    <li><div class="step-content"><strong>التنقل بين الأسئلة</strong><span>للانتقال للسؤال التالي أو السابق استخدم أزرار التنقل السريعة، أو اضغط [#] للعودة للقائمة الرئيسية.</span></div></li>
-                </ol>
-                <div class="status-box success"><div class="status-icon">💾</div><div class="status-text"><strong>حفظ تلقائي ودائم</strong><span>كل إجابة تُحفظ فوراً في ذاكرة الجهاز غير المتطايرة (NVS). حتى لو انطفأ الجهاز، بياناتك بأمان.</span></div></div>
+    <h3 class="subsection">▸ إجراء الامتحان والإجابة على الأسئلة</h3>
+    
+    <div class="keypad-wrap">
+        
+        <div class="keypad">
+            <div class="key fn">A</div><div class="key">3</div><div class="key">2</div><div class="key">1</div>
+            <div class="key fn">B</div><div class="key">6</div><div class="key">5</div><div class="key">4</div>
+            <div class="key fn">C</div><div class="key">9</div><div class="key">8</div><div class="key">7</div>
+            <div class="key fn">D</div><div class="key special">#</div><div class="key">0</div><div class="key special">*</div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+            
+            <div class="nav-buttons">
+                <div class="nav-btn next-btn">التالي</div>
+                <div class="nav-btn prev-btn">السابق</div>
             </div>
 
+            <div class="key-legend">
+                <div class="key-legend-item"><div class="legend-dot dot-blue"></div> الأزرار الزرقاء (A/B/C/D) — لاختيار الإجابة</div>
+                <div class="key-legend-item"><div class="legend-dot dot-gold"></div> الزر النجمي (*) — للحفظ / التأكيد</div>
+                <div class="key-legend-item"><div class="legend-dot dot-gold"></div> زر المربع (#) — للحذف / الرجوع</div>
+                <div class="key-legend-item"><div class="legend-dot dot-gray"></div> الأزرار الرمادية (0-9) — تحديد رقم السؤال</div>
+                <div class="key-legend-item"><div class="legend-dot dot-green"></div> الزر الأخضر — التالي</div>
+                <div class="key-legend-item"><div class="legend-dot dot-red"></div> الزر الأحمر — السابق</div>
+            </div>
+        </div>
+
+    </div>
+
+    <ol class="steps">
+        <li><div class="step-content"><strong>اختر رقم السؤال</strong><span>في شاشة "Select Q" اكتب رقم السؤال (مثلاً 1) ثم اضغط [*].</span></div></li>
+        <li><div class="step-content"><strong>أجب باختيار الزر المناسب</strong><span>اضغط على أحد الخيارات (A أو B أو C أو D).</span></div></li>
+        <li><div class="step-content"><strong>اضغط [*] لحفظ الإجابة</strong><span>عند التأكد، اضغط النجمة. ستظهر رسالة "SAVED!".</span></div></li>
+        <li><div class="step-content"><strong>التنقل بين الأسئلة</strong><span>للانتقال للسؤال التالي أو السابق استخدم أزرار التنقل السريعة.</span></div></li>
+    </ol>
+    <div class="status-box success"><div class="status-icon">💾</div><div class="status-text"><strong>حفظ تلقائي ودائم</strong><span>كل إجابة تُحفظ فوراً في ذاكرة الجهاز (NVS).</span></div></div>
+</div>
             <div class="content-card" id="exam-student-screens">
                 <h3 class="subsection">▸ مرجع الشاشات ورسائل النظام</h3>
                 <div class="msg-grid">
